@@ -1,0 +1,19 @@
+    public static String listArray ( byte[] array, char ch )
+    {
+        String result = "";
+        StringBuilder sb = new StringBuilder ( 128 );
+        if ( ( array == null ) || ( array.length == 0 ) ) return result;
+
+        int ic = array.length;
+        for ( int i = 0; i < ic; i++ )
+        {
+            //result = result + array[i] + ch + " ";
+            sb.append ( array[i] );
+            sb.append ( ch );
+            sb.append ( " " );
+        }
+        // удалить последнюю запятую (символ CH)
+        result = sb.toString ();
+        result = result.substring ( 0, result.length () - 2 );
+        return result;
+    }

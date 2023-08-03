@@ -1,0 +1,675 @@
+Ссылки
+1) https://www.zabbix.com/documentation/4.2/manual/api
+2) Масштабируя Zabbix - для 32000 устройств
+https://habr.com/ru/company/zabbix/blog/193472/
+
+Есть Java библиотека.
+zabbix-api by hengyunabc - Java library to access Zabbix API       - https://github.com/hengyunabc/zabbix-api    +++
+zabbix-sender by hengyunabc - Java library to use Zabbix sender protocol  - https://github.com/hengyunabc/zabbix-sender
+   - sender. Кидает какие-то данные на Zabbix, которые в нем можно просматрвиать графически.
+   Create/select a host in zabbix server.
+   Create a item in zabbix server, which name is "testItem", type is "Zabbix trapper".
+   Send data.
+   If success, you can find data in web browser. Open "Monitoring"/"Latest data", then filter with Item name or Hosts.
+
+Zabbix4j by myaaaaa-chan - Java library to access Zabbix API       - https://github.com/myaaaaa-chan/Zabbix4j
+ - 2014 - последние правки. встроен Json
+ - более наворочененый чем hengyunabc. На какжлое действие имеется свой обьект (Host, Interface, Macros...)
+ - Недостатки:
+  а) Ссылается на более старый log4j. Сейчас уже нет таких путей до классов.
+
+
+Мой
+http://localhost/zabbix/
+
+---------------------------------------------------------------------------------------
+Варианты работ
+1) Автобнаружение - само все создает.
+ ЕМС - ищет график по IP
+
+2) ЕМС сам добавляет-удаляет уст-ва в заббикс.
+
+---------------------------------------------------------------------------------------
+1) w_192.168.51.18
+- id = 10265
+2) w_192.168.51.13
+- id = 10263
+
+Полезное
+
+1) Обнаружение
+Настроив правила обнаружения и действия для обнаруженных узлов, Zabbix сам создаст новые обнаруженные узлы, подключит
+необходимые шаблоны, переместит созданный узел в нужную группу.
+2) Zabbix может мониторить java-приложения, с помощью агента Zabbix Java gateway
+
+---------------------------------------------------------------------------------------
+Сделать
++1) Добавить уст-во
+2) Добавить график - icmp
+3) Добавить график - snmp (именно время доступа)
++4) Получить данные графика
+
+Что необходимо
+1) Запоминать ИД хостов в Zabbix - чтобы не терять время на его получение (из списка в 10000 устройств) - zabbix.host.id
+- а также ИД всех их графиков (icmp, snmp) - itemid
+3) Добавление уст-ва. Если не добавился в забикс, выводить ошибку - Уст-во добавлено, только не включено в систему опроса доступности Zabbix. Причина = ...
+4) на графике - параметр - время автообновления страницы
+
+---------------------------------------------------------------------------------------
+
+Вопросы
+1) Как в Zabbix учитывать время отклика уст-ва (время доступа к нему) ?
+2) График - как получить изображение, а не массив данных?
+
+
+OID
+1) 1.3.6.1.2.1.1.1.0   - Description
+
+---------------------------------------------------------------------------------------
+Подзадачи
+
+1) Добавить системную переменную - Тип опроса доступности = zabbix, locale, не исп (Отключено).
+- При выборе zabbix проявляется диалог - ip, login, password +кнопка - тест соединения.
+- Если тест не прошел - переходит в Отключено +причина отключения - нет связи с zabbix (по ПКМ).
+
+2)
+- Создать класс AvailableDevicePingZabbix implements IAvailableDevicePing
+- в AvailableDevicePing расширить функционал: в зависимости от типа опроса доступности создает либо
+AvailableDevicePingV2, либо AvailableDevicePingZabbix
+
+3) AvailableDevicePingZabbix - реализовать старт функционала void starting(SystemConfig config);
+    -- проверить доступность севрера zabbix. результат занести в Журнал (генерить алерт? отчет старта ЕМС?).
+    -- также сохранить в памяти ИД групп, шаблонов, интерфейсов, интерефейсов уст-в и пр, что необходимо при создании гарфиков.
+    -- в спарвочниках искать шаблоны, группы и интерфейсы по их названиям. Если не нашли - отключить услугу Пинга. (В Журнал, алерт, а также - В журнал старта ЕМС)
+    -- ??? может ИД у них всегда одно и тоже? Или может различаться в разных версиях?
+
+
+4) AvailableDevicePingZabbix - реализовать функционал addSnmpObj
+- хранить в БД (params) ID устройств и функций в zabbix - чтобы не искать.
+- при создании гафика в Zabbix необходимо:
+-- создать элементы графиков для ICMP-пинг, SNMP-пинг - согласно их включенности. (получить их ИД)
+-- создать график
+
+5) AvailableDevicePingZabbix - реализовать функционал editSnmpObj
+6) AvailableDevicePingZabbix - реализовать функционал removeObjFromQueue
+7) AvailableDevicePingZabbix - реализовать функционал starting
+- проверить доступность севрера zabbix. результат занести в Журнал (генерить алерт?).
+
+интерфейсные методы:
+
+    void addSnmpObj(SnmpObj snmpObj);
+    void addSnmpObj(int objId);
+    void addSnmpObj(Collection<Integer> newIds);
+
+    void editSnmpObj(SnmpObj snmpObj);
+    void editSnmpObj(int objId);
+
+    - сбросить все данные из очередей в rrd-файлы. НЕ исп.
+    void clearObjQueue(int id);
+
+    void removeObjFromQueue(Collection<Integer> ids);
+    void removeObjFromQueue(int id);
+    void removeObjFromQueue(SnmpObj snmpObj);
+
+    -- ничего не делать
+    void closing();
+
+    void starting(SystemConfig config);
+
+    -- ничего не делать (Ответ: Не используется)
+    Collection<CacheStatInfo> getCacheSize();
+
+8) Изменить функционал показа Доступность устройств
+- анализ системной переменной: Тип опроса доступности
+- либо старый механизм, либо работаем с zabbix
+
+9) получение графиков (массив) - с фильтром диапазона дат.
+Преобразование массива данных в гуи-график.
+Отображение картинки.
+Отображение данных в таблице.
+
+10) Панель Графики (Картинка, Таблоица) - добавить виджет - Период автообновления страницы (минуты, выкл)
+
+ПС
+1) Если сервер Zabbix недоступен, то.. так и ругаться при обращении к графикам.
+
+---------------------------------------------------------------------------------------
+
+1) Авторизация
+- запрос
+
+{
+    "jsonrpc": "2.0",
+    "method": "user.login",
+    "params": {
+        "user": "Admin",
+        "password": "zabbix"
+    },
+    "id": 1,
+    "auth": null
+}
+
+- ответ
+{"jsonrpc":"2.0","result":"49f8758d1661f08563cac6a98ffa4e86","id":1}
+
+49f8758d1661f08563cac6a98ffa4e86 - это auth сессия, ее необходимо передавать при следующих запросах.
+
+
+3) Список хостов
+
+- запрос
+{
+    "jsonrpc": "2.0",
+    "method": "host.get",
+    "params": {
+        "output": [
+            "hostid",
+            "host"
+        ],
+        "selectInterfaces": [
+            "interfaceid",
+            "ip"
+        ]
+    },
+    "id": 2,
+    "auth": "0424bd59b807674191e7d77572075f33"
+}
+
+- ответ
+{
+    "jsonrpc":"2.0",
+    "result":[
+    {
+        "hostid":"10084",
+        "host":"Zabbix server",
+        "interfaces":[{
+            "interfaceid":"1",
+            "ip":"127.0.0.1"
+        }]
+    },
+    {
+        "hostid":"10263",
+        "host":"w_192.168.51.13",
+        "interfaces":[{"interfaceid":"2","ip":"192.168.51.13"}]
+    }],
+    "id":2
+}
+
+4) ИД групп (фильтры
+- запрос
+{
+    "jsonrpc": "2.0",
+    "method": "hostgroup.get",
+    "params": {
+        "output": "extend",
+        "filter": {
+            "name": [
+                "Zabbix servers",
+                "WiFi"
+            ]
+        }
+    },
+    "auth": "6f38cddc44cfbb6c1bd186f9a220b5a0",
+    "id": 1
+}
+
+- ответ
+{"jsonrpc":"2.0","result":[{"groupid":"15","name":"WiFi","internal":"0","flags":"0"},{"groupid":"4","name":"Zabbix servers","internal":"0","flags":"0"}],"id":1}
+
+
+5) Инфа о шаблоне
+- запрос
+{    "jsonrpc": "2.0",    "method": "template.get",    "params": {        "output": "extend",        "filter": {            "host": [                "Template Module Interfaces SNMPv2"            ]        }    },    "auth": "49f8758d1661f08563cac6a98ffa4e86",    "id": 10}
+
+- ответ
+{"jsonrpc":"2.0","result":[{
+  "proxy_hostid":"0","host":"Template Module Interfaces SNMPv2","status":"3","disable_until":"0","error":"",
+"available":"0","errors_from":"0","lastaccess":"0","ipmi_authtype":"-1","ipmi_privilege":"2","ipmi_username":"","ipmi_password":"",
+"ipmi_disable_until":"0","ipmi_available":"0","snmp_disable_until":"0","snmp_available":"0","maintenanceid":"0","maintenance_status":"0",
+"maintenance_type":"0","maintenance_from":"0","ipmi_errors_from":"0","snmp_errors_from":"0","ipmi_error":"","snmp_error":"",
+"jmx_disable_until":"0","jmx_available":"0","jmx_errors_from":"0","jmx_error":"","name":"Template Module Interfaces SNMPv2","flags":"0",
+"templateid":"10190",
+"description":"Template Interfaces version: 0.15\r\nMIBs used:\r\nIF-MIB","tls_connect":"1","tls_accept":"1","tls_issuer":"",
+"tls_subject":"","tls_psk_identity":"","tls_psk":"","proxy_address":"","auto_compress":"1"
+}],"id":10}
+
+
+4) Добавить хост
+
+Cannot find host interface on \"w_192.168.51.18\" for item key \"net.if.discovery\"
+
+-- OK
+{"jsonrpc":"2.0","result":{"hostids":["10264"]},"id":12}
+
+
+-- запрос
+{
+   "jsonrpc": "2.0",
+   "method": "host.create",
+   "params": {
+      "host": "w_192.168.51.18",
+      "ip": "192.168.51.18",
+      "port": 10050,
+      "useip": 1,
+      "groups": [
+         {
+            "groupid": 50
+         }
+      ]
+   },
+   "id": 3, "auth": "49f8758d1661f08563cac6a98ffa4e86"
+}
+
+
+{
+    "jsonrpc": "2.0",
+    "method": "host.create",
+    "params": {
+        "host": "w_192.168.51.18",
+        "interfaces": [
+            {
+                "type": 1,
+                "main": 1,
+                "useip": 1,
+                "ip": "192.168.51.18",
+                "dns": "",
+                "port": "10050"
+            }
+        ],
+        "groups": [
+            {
+                "groupid": "15"
+            }
+        ],
+    },
+    "auth": "49f8758d1661f08563cac6a98ffa4e86",
+    "id": 5
+}
+-ответ
+{"jsonrpc":"2.0","error":{"code":-32700,"message":"Parse error","data":"Invalid JSON. An error occurred on the server while parsing the JSON text."},"id":null}
+
+
+-- неверный ИД группы
+{"jsonrpc":"2.0","error":{"code":-32500,"message":"Application error.","data":"No permissions to referred object or it does not exist!"},"id":3}
+
+-- задать еще и интерфейс?
+{"jsonrpc":"2.0","error":{"code":-32602,"message":"Invalid params.","data":"No interfaces for host \"w_192.168.51.18\"."},"id":3}
+
+-- валидный запрос из Доки
+{
+    "jsonrpc": "2.0",
+    "method": "host.create",
+    "params": {
+        "host": "Linux server",
+        "interfaces": [
+            {
+                "type": 1,
+                "main": 1,
+                "useip": 1,
+                "ip": "192.168.3.1",
+                "dns": "",
+                "port": "10050"
+            }
+        ],
+        "groups": [
+            {
+                "groupid": "50"
+            }
+        ],
+        "tags": [
+            {
+                "tag": "Host name",
+                "value": "Linux server"
+            }
+        ],
+        "templates": [
+            {
+                "templateid": "20045"
+            }
+        ],
+        "macros": [
+            {
+                "macro": "{$USER_ID}",
+                "value": "123321"
+            }
+        ],
+        "inventory_mode": 0,
+        "inventory": {
+            "macaddress_a": "01234",
+            "macaddress_b": "56768"
+        }
+    },
+    "auth": "038e1d7b1735c6a5436ee9eae095879e",
+    "id": 1
+}
+
+-- обязательно - шаблоны и макросы?
+
+10) Удалить хост - id=10264
+
+{
+    "jsonrpc": "2.0",
+    "method": "host.delete",
+    "params": [
+        "10264"
+    ],
+    "auth": "49f8758d1661f08563cac6a98ffa4e86",
+    "id": 6
+}
+
+
+{"jsonrpc":"2.0","result":{"hostids":["10264"]},"id":6}
+
+
+11) Изменить в элементе
+- параметры snmp_port и type (на SNMPV1)
+
+{
+   "jsonrpc":"2.0",
+   "method":"item.update",
+   "params":{
+      "itemid":"22162",
+      "snmp_port":"162",
+      "type":1
+   },
+   "id":1,
+   "auth":"7cd4e1f5ebb27236e820db4faebc1769"
+}
+
+
+12) Графики - толкьо в виде массивов - настройки графиков.
+
+{
+    "jsonrpc": "2.0",
+    "method": "graph.get",
+    "params": {
+        "output": "extend",
+        "hostids": 10263,
+        "sortfield": "name"
+    },
+    "auth": "49f8758d1661f08563cac6a98ffa4e86",
+    "id": 8
+}
+
+{"jsonrpc":"2.0","result":[
+ { "graphid":"812","name":"icmp_ping","width":"900","height":"200",
+   "yaxismin":"0.0000","yaxismax":"100.0000","templateid":"0","show_work_period":"0","show_triggers":"0","graphtype":"0",
+   "show_legend":"1","show_3d":"0","percent_left":"0.0000","percent_right":"0.0000","ymin_type":"0","ymax_type":"0",
+   "ymin_itemid":"0","ymax_itemid":"0","flags":"0"
+ },
+ { "graphid":"813","name":"snmp_ping","width":"900","height":"200","yaxismin":"0.0000","yaxismax":"100.0000","templateid":"0",
+   "show_work_period":"0","show_triggers":"0","graphtype":"0","show_legend":"1","show_3d":"0","percent_left":"0.0000",
+   "percent_right":"0.0000","ymin_type":"0","ymax_type":"0","ymin_itemid":"0","ymax_itemid":"0","flags":"0"
+ },
+ { "graphid":"814","name":"snmp_time","width":"900","height":"200","yaxismin":"0.0000","yaxismax":"100.0000","templateid":"0",
+   "show_work_period":"0","show_triggers":"0","graphtype":"0","show_legend":"1","show_3d":"0","percent_left":"0.0000",
+   "percent_right":"0.0000","ymin_type":"0","ymax_type":"0","ymin_itemid":"0","ymax_itemid":"0","flags":"0"
+ }],
+ "id":8
+}
+
+13) Графики - массив данных.
+Получаем как историю элементов.  - history.get
+
+
+-- веб вариант - сразу генерит картинку.
+<img src="http://zabbix/zabbix/chart2.php?graphid=247&width=640&period=86400">
+generates a graph whose id is 247, 640 pixels wide for last 24h (86400s).
+
+History object types to return.
+Possible values:
+0 - numeric float;
+1 - character;
+2 - log;
+3 - numeric unsigned;
+4 - text.
+Default: 3.
+
+hostids - все гарфики для хоста
+itemids - для элемента графика. на одном графике могут быть несколько элементов.
+
+{    "jsonrpc": "2.0",    "method": "history.get",
+  "params": {        "output": "extend",        "history": 0,        "hostids": "10263",        "limit": 10    },    "auth": "49f8758d1661f08563cac6a98ffa4e86",    "id": 17}
+
+{"jsonrpc":"2.0","result":[
+ {"itemid":"28635","clock":"1561453982","value":"1.0000","ns":"407181849"},
+ {"itemid":"28635","clock":"1561454012","value":"1.0000","ns":"427220374"},
+ {"itemid":"28635","clock":"1561454042","value":"1.0000","ns":"472795637"},
+ {"itemid":"28635","clock":"1561454072","value":"1.0000","ns":"494276420"},
+ {"itemid":"28635","clock":"1561454102","value":"1.0000","ns":"510328969"},
+ {"itemid":"28635","clock":"1561454132","value":"1.0000","ns":"529611185"},
+ {"itemid":"28635","clock":"1561454162","value":"1.0000","ns":"549135272"},
+ {"itemid":"28635","clock":"1561454192","value":"1.0000","ns":"568492844"},
+ {"itemid":"28635","clock":"1561454222","value":"1.0000","ns":"586333902"},
+ {"itemid":"28635","clock":"1561454252","value":"1.0000","ns":"605945092"}
+],"id":17}
+
+
+14) Элементы графика
+
+{    "jsonrpc": "2.0",    "method": "graphitem.get",    "params": {        "output": "extend",        "expandData": 1,        "graphids": "814"    },    "auth": "49f8758d1661f08563cac6a98ffa4e86",    "id": 18}
+
+{"jsonrpc":"2.0","result":[{"gitemid":"6777","graphid":"814","itemid":"28637","drawtype":"0","sortorder":"0",
+ "color":"1A7C11","yaxisside":"0","calc_fnc":"2","type":"0"}],"id":18}
+
+{"jsonrpc":"2.0","result":[{"gitemid":"6790","graphid":"817","itemid":"28658","drawtype":"0","sortorder":"0",
+ "color":"1A7C11","yaxisside":"0","calc_fnc":"2","type":"0"}],"id":18}
+
+
+15) item
+
+{    "jsonrpc": "2.0",    "method": "item.get",    "params": {        "output": "extend",        "hostids": 10263    },    "auth": "49f8758d1661f08563cac6a98ffa4e86",    "id": 19}
+
+{"jsonrpc":"2.0","result":[
+{"itemid":"28635","type":"3","snmp_community":"","snmp_oid":"","hostid":"10263","name":"icmp_ping","key_":"icmpping[,3]",
+ "delay":"30s","history":"90d","trends":"365d","status":"0","value_type":"0","trapper_hosts":"","units":"","snmpv3_securityname":"",
+ "snmpv3_securitylevel":"0","snmpv3_authpassphrase":"","snmpv3_privpassphrase":"","formula":"","error":"","lastlogsize":"0",
+ "logtimefmt":"","templateid":"0","valuemapid":"0","params":"","ipmi_sensor":"","authtype":"0","username":"","password":"",
+ "publickey":"","privatekey":"","mtime":"0","flags":"0",
+ "interfaceid":"2","port":"","description":"","inventory_link":"0",
+ "lifetime":"30d","snmpv3_authprotocol":"0","snmpv3_privprotocol":"0","state":"0","snmpv3_contextname":"","evaltype":"0",
+ "jmx_endpoint":"","master_itemid":"0","timeout":"3s","url":"","query_fields":[],"posts":"",
+ "status_codes":"200","follow_redirects":"1","post_type":"0","http_proxy":"","headers":[],"retrieve_mode":"0",
+ "request_method":"0","output_format":"0","ssl_cert_file":"","ssl_key_file":"","ssl_key_password":"","verify_peer":"0",
+ "verify_host":"0","allow_traps":"0","lastclock":"1561706942","lastns":"759274123","lastvalue":"1.0000","prevvalue":"1.0000"},
+{"itemid":"28658","type":"3","snmp_community":"","snmp_oid":"","hostid":"10263","name":"icmp \u043f\u0438\u043d\u0433",
+ "key_":"icmppingsec[,3]","delay":"30s","history":"90d","trends":"365d","status":"0","value_type":"0","trapper_hosts":"",
+ "units":"\u0441\u0435\u043a","snmpv3_securityname":"","snmpv3_securitylevel":"0","snmpv3_authpassphrase":"",
+ "snmpv3_privpassphrase":"","formula":"","error":"","lastlogsize":"0","logtimefmt":"","templateid":"0",
+ "valuemapid":"0","params":"","ipmi_sensor":"","authtype":"0","username":"","password":"","publickey":"",
+ "privatekey":"","mtime":"0","flags":"0","interfaceid":"2","port":"","description":"","inventory_link":"0","lifetime":"30d",
+ "snmpv3_authprotocol":"0","snmpv3_privprotocol":"0","state":"0","snmpv3_contextname":"","evaltype":"0","jmx_endpoint":"",
+ "master_itemid":"0","timeout":"3s","url":"","query_fields":[],"posts":"","status_codes":"200","follow_redirects":"1","post_type":"0",
+ "http_proxy":"","headers":[],"retrieve_mode":"0","request_method":"0","output_format":"0","ssl_cert_file":"","ssl_key_file":"",
+ "ssl_key_password":"","verify_peer":"0","verify_host":"0","allow_traps":"0","lastclock":"1561706942","lastns":"759274123",
+ "lastvalue":"0.0005","prevvalue":"0.0005"},
+{"itemid":"28636","type":"4","snmp_community":"public","snmp_oid":"1.3.6.1.2.1.1.3.0","hostid":"10263","name":"snmp_uptime","key_":"snmp_ping",
+ "delay":"30s","history":"90d","trends":"365d","status":"0","value_type":"3","trapper_hosts":"","units":"","snmpv3_securityname":"",
+ "snmpv3_securitylevel":"0","snmpv3_authpassphrase":"","snmpv3_privpassphrase":"","formula":"","error":"","lastlogsize":"0",
+ "logtimefmt":"","templateid":"0","valuemapid":"0","params":"","ipmi_sensor":"","authtype":"0","username":"","password":"",
+ "publickey":"","privatekey":"","mtime":"0","flags":"0","interfaceid":"2","port":"","description":"","inventory_link":"0",
+ "lifetime":"30d","snmpv3_authprotocol":"0","snmpv3_privprotocol":"0","state":"0","snmpv3_contextname":"","evaltype":"0",
+ "jmx_endpoint":"","master_itemid":"0","timeout":"3s","url":"","query_fields":[],"posts":"","status_codes":"200","follow_redirects":"1",
+ "post_type":"0","http_proxy":"","headers":[],"retrieve_mode":"0","request_method":"0","output_format":"0","ssl_cert_file":"",
+ "ssl_key_file":"","ssl_key_password":"","verify_peer":"0","verify_host":"0","allow_traps":"0","lastclock":"1561706942",
+ "lastns":"573707506","lastvalue":"17647400","prevvalue":"17644400"},
+{"itemid":"28637","type":"10","snmp_community":"",
+ "snmp_oid":"","hostid":"10263","name":"snmp_time","key_":"snmp_time","delay":"30s","history":"90d","trends":"365d","status":"0",
+ "value_type":"3","trapper_hosts":"","units":"","snmpv3_securityname":"","snmpv3_securitylevel":"0","snmpv3_authpassphrase":"",
+ "snmpv3_privpassphrase":"","formula":"","error":"/usr/lib/zabbix/externalscripts/snmp_time: [2] No such file or directory",
+ "lastlogsize":"0","logtimefmt":"","templateid":"0","valuemapid":"0","params":"","ipmi_sensor":"","authtype":"0","username":"",
+ "password":"","publickey":"","privatekey":"","mtime":"0","flags":"0","interfaceid":"2","port":"","description":"","inventory_link":"0",
+ "lifetime":"30d","snmpv3_authprotocol":"0","snmpv3_privprotocol":"0","state":"1","snmpv3_contextname":"","evaltype":"0",
+ "jmx_endpoint":"","master_itemid":"0","timeout":"3s","url":"","query_fields":[],"posts":"","status_codes":"200","follow_redirects":"1",
+ "post_type":"0","http_proxy":"","headers":[],"retrieve_mode":"0","request_method":"0","output_format":"0","ssl_cert_file":"",
+ "ssl_key_file":"","ssl_key_password":"","verify_peer":"0","verify_host":"0","allow_traps":"0","lastclock":"0","lastns":"0",
+ "lastvalue":"0","prevvalue":"0"}],
+"id":19}
+
+
+16) create item
+
+{    "jsonrpc": "2.0",    "method": "item.create",    "params": {        "name": "ICMP ping",        "key_": "icmppingsec[,3]",        "hostid": "10265",        "type": 3,        "value_type": 0,        "interfaceid": "2",        "delay": "30s"    },    "auth": "49f8758d1661f08563cac6a98ffa4e86",    "id": 17}
+
+{"jsonrpc":"2.0","error":{"code":-32602,"message":"Invalid params.","data":"Item uses host interface from non-parent host."},"id":17}
+-- т.е. "interfaceid": "2" принадлежит другому устройству
+
+{"jsonrpc":"2.0","result":{"itemids":["28659"]},"id":17}
+
+
+17) Создать график
+
+{    "jsonrpc": "2.0",    "method": "graph.create",    "params": {        "name": "ICMP ping",        "width": 900,        "height": 200,        "gitems": [            {                "itemid": "28659",                "color": "00AA00",                "sortorder": "0"            }        ]    },    "auth": "49f8758d1661f08563cac6a98ffa4e86",    "id": 21}
+
+{"jsonrpc":"2.0","result":{"graphids":["818"]},"id":21}
+
+
+
+--------------------------------------------------------------------------------------------
+
+            JSONobject
+
+String       postUrl       = "www.site.com";// put in your url
+Gson         gson          = new Gson();
+HttpClient   httpClient    = HttpClientBuilder.create().build();
+HttpPost     post          = new HttpPost(postUrl);
+StringEntity postingString = new StringEntity(gson.toJson(pojo1));    //gson.tojson() converts your pojo to json
+post.setEntity(postingString);
+post.setHeader("Content-type", "application/json");
+HttpResponse  response = httpClient.execute(post);
+
+
+--------------------------------------------------------------------------------------------
+Типы элементов
+
+Value	Type
+0	Zabbix agent
+1	SNMPv1
+2	Trapper
+3	Simple check
+4	SNMPv2
+5	Internal
+6	SNMPv3
+7	Active check
+8	Aggregate
+9	HTTP test (web monitoring scenario step)
+10	External
+11	Database monitor
+12	IPMI
+13	SSH
+14	telnet
+15	Calculated
+
+
+--------------------------------------------------------------------------------------------
+
+{"jsonrpc":"2.0","result":[{"graphid":"812","name":"icmp_ping","width":"900","height":"200","yaxismin":"0.0000","yaxismax":"100.0000","templateid":"0",
+"show_work_period":"0","show_triggers":"0","graphtype":"0","show_legend":"1","show_3d":"0","percent_left":"0.0000","percent_right":"0.0000","ymin_type":"0",
+"ymax_type":"0","ymin_itemid":"0","ymax_itemid":"0","flags":"0"},
+
+{"graphid":"817","name":"icmp_ping_sec","width":"900","height":"200","yaxismin":"0.0000","yaxismax":"100.0000","templateid":"0","show_work_period":"0",
+"show_triggers":"0","graphtype":"0","show_legend":"1","show_3d":"0","percent_left":"0.0000","percent_right":"0.0000","ymin_type":"0","ymax_type":"0",
+"ymin_itemid":"0","ymax_itemid":"0","flags":"0"},
+
+{"graphid":"813","name":"snmp_ping","width":"900","height":"200","yaxismin":"0.0000","yaxismax":"100.0000","templateid":"0","show_work_period":"0",
+"show_triggers":"0","graphtype":"0","show_legend":"1","show_3d":"0","percent_left":"0.0000","percent_right":"0.0000","ymin_type":"0","ymax_type":"0",
+"ymin_itemid":"0","ymax_itemid":"0","flags":"0"},
+
+{"graphid":"814","name":"snmp_time","width":"900","height":"200","yaxismin":"0.0000","yaxismax":"100.0000","templateid":"0","show_work_period":"0",
+"show_triggers":"0","graphtype":"0","show_legend":"1","show_3d":"0","percent_left":"0.0000","percent_right":"0.0000","ymin_type":"0","ymax_type":"0",
+"ymin_itemid":"0","ymax_itemid":"0","flags":"0"}],"id":8}
+
+
+{"jsonrpc":"2.0","result":[
+{"hostid":"10084","host":"Zabbix server","interfaces":[{"interfaceid":"1","ip":"127.0.0.1"}]},
+{"hostid":"10263","host":"w_192.168.51.13","interfaces":[{"interfaceid":"2","ip":"192.168.51.13"}]},
+{"hostid":"10265","host":"w_192.168.51.18","interfaces":[{"interfaceid":"4","ip":"192.168.51.18"}]}],
+"id":2}
+
+--------------------------------------------------------------------------------------------
+Пример java-zabbix библиотеки
+https://habr.com/ru/company/at_consulting/blog/277027/
+
+Здесь он хочет чтобы автообнаружение добавляло уст-ва, вешало на них шаблоны, заносило в спец группы, переименовывало Имя (т.к. забикс сует туда IP),
+и еще что-то.
+
+Первое, что необходимо сделать – это организовать подключение к серверу Zabbix.
+
+String url = "http://ZabbixServer/zabbix/api_jsonrpc.php";
+ zabbixApi = new DefaultZabbixApi(url);
+ zabbixApi.init();
+
+Затем авторизоваться на сервере Zabbix под пользователем.
+
+boolean login = zabbixApi.login("login", "password");
+
+Теперь нужно найти идентификатор узла, переименовать и перенастроить подключение агента. В документации для метода поиска узла приведен пример запроса.
+Разберем, что он значит.
+
+{
+    "jsonrpc": "2.0",
+    "method": "host.get",                       //вызываемый метод API
+    "params": {                                           // параметры метода
+        "output": "extend",                         // параметр определяет, какие данные будут возвращены
+                                                                    // в этом примере метод вернет результат со всеми  свойствами найденного узла
+        "filter": {                                            // параметр определяет, какие данные вернуть
+            "host": [                                         // свойство объекта Host: техническое обозначение узла
+                "Zabbix server",                        //значение свойства искомого узла
+                "Linux server"
+            ]
+        }
+    },
+    "auth": "038e1d7b1735c6a5436ee9eae095879e",
+    "id": 1
+}
+
+Результатом этого примера станет получение объектов Host с техническими названиями «Zabbix server» и «Linux server» и полными наборами свойств этих узлов.
+
+JSONObject filter = new JSONObject();
+filter.put("host", “127.0.0.1”);
+Request request = RequestBuilder.newBuilder()
+        .method("host.get")
+        .paramEntry("filter", filter)
+        .build();
+
+Чтобы вызвать сформированный метод и получить ответ вызываем  метод call().
+
+JSONObject response = zabbixApi.call(request);
+
+Полученный ответ будет выглядеть так:
+
+{
+ "id":2,
+ "jsonrpc":"2.0",
+ "result":[
+		   {
+		     "hostid":"10503"
+		   }
+             ]
+}
+
+Получаем идентификатор узла из полученного ответа:
+
+String hostid = response.getJSONArray("result").getJSONObject(0).getString("hostid");
+
+Идентификатор узла найден. Используя его, можем переименовать узел. Для этого нужно вызвать метод «host.update» с параметрами " hostid "," host"," name".
+
+request = RequestBuilder.newBuilder()
+                    .method("host.update")
+                    .paramEntry("hostid", hostid)
+                    .paramEntry("host", "localhost")
+                    .paramEntry("name", "localhost")
+                    .build();
+response = zabbixApi.call(request);
+
+... и т.д.
+
+
+
+
+
+
+--------------------------------------------------------------------------------------------
+
+
+

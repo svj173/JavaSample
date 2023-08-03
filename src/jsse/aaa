@@ -1,0 +1,550 @@
+
+Keystore type: jks
+Keystore provider: SUN
+
+Your keystore contains 32 entries
+
+Alias name: equifaxsecureebusinessca1
+Creation date: 19.07.2003
+Entry type: trustedCertEntry
+
+Owner: CN=Equifax Secure eBusiness CA-1, O=Equifax Secure Inc., C=US
+Issuer: CN=Equifax Secure eBusiness CA-1, O=Equifax Secure Inc., C=US
+Serial number: 4
+Valid from: Mon Jun 21 11:00:00 NOVST 1999 until: Sun Jun 21 11:00:00 NOVST 2020
+Certificate fingerprints:
+	 MD5:  64:9C:EF:2E:44:FC:C6:8F:52:07:D0:51:73:8F:CB:3D
+	 SHA1: DA:40:18:8B:91:89:A3:ED:EE:AE:DA:97:FE:2F:9D:F5:B7:D1:8A:41
+
+
+*******************************************
+*******************************************
+
+
+Alias name: verisignclass1g3ca
+Creation date: 26.03.2004
+Entry type: trustedCertEntry
+
+Owner: CN=VeriSign Class 1 Public Primary Certification Authority - G3, OU="(c) 1999 VeriSign, Inc. - For authorized use only", OU=VeriSign Trust Network, O="VeriSign, Inc.", C=US
+Issuer: CN=VeriSign Class 1 Public Primary Certification Authority - G3, OU="(c) 1999 VeriSign, Inc. - For authorized use only", OU=VeriSign Trust Network, O="VeriSign, Inc.", C=US
+Serial number: 8b5b75568454850b00cfaf3848ceb1a4
+Valid from: Fri Oct 01 07:00:00 NOVST 1999 until: Thu Jul 17 06:59:59 NOVST 2036
+Certificate fingerprints:
+	 MD5:  B1:47:BC:18:57:D1:18:A0:78:2D:EC:71:E8:2A:95:73
+	 SHA1: 20:42:85:DC:F7:EB:76:41:95:57:8E:13:6B:D4:B7:D1:E9:8E:46:A5
+
+
+*******************************************
+*******************************************
+
+
+Alias name: verisignclass2g2ca
+Creation date: 26.03.2004
+Entry type: trustedCertEntry
+
+Owner: OU=VeriSign Trust Network, OU="(c) 1998 VeriSign, Inc. - For authorized use only", OU=Class 2 Public Primary Certification Authority - G2, O="VeriSign, Inc.", C=US
+Issuer: OU=VeriSign Trust Network, OU="(c) 1998 VeriSign, Inc. - For authorized use only", OU=Class 2 Public Primary Certification Authority - G2, O="VeriSign, Inc.", C=US
+Serial number: b92f60cc889fa17a4609b85b706c8aaf
+Valid from: Mon May 18 07:00:00 NOVST 1998 until: Wed Aug 02 06:59:59 NOVST 2028
+Certificate fingerprints:
+	 MD5:  2D:BB:E5:25:D3:D1:65:82:3A:B7:0E:FA:E6:EB:E2:E1
+	 SHA1: B3:EA:C4:47:76:C9:C8:1C:EA:F2:9D:95:B6:CC:A0:08:1B:67:EC:9D
+
+
+*******************************************
+*******************************************
+
+
+Alias name: verisignclass3g3ca
+Creation date: 26.03.2004
+Entry type: trustedCertEntry
+
+Owner: CN=VeriSign Class 3 Public Primary Certification Authority - G3, OU="(c) 1999 VeriSign, Inc. - For authorized use only", OU=VeriSign Trust Network, O="VeriSign, Inc.", C=US
+Issuer: CN=VeriSign Class 3 Public Primary Certification Authority - G3, OU="(c) 1999 VeriSign, Inc. - For authorized use only", OU=VeriSign Trust Network, O="VeriSign, Inc.", C=US
+Serial number: 9b7e0649a33e62b9d5ee90487129ef57
+Valid from: Fri Oct 01 07:00:00 NOVST 1999 until: Thu Jul 17 06:59:59 NOVST 2036
+Certificate fingerprints:
+	 MD5:  CD:68:B6:A7:C7:C4:CE:75:E0:1D:4F:57:44:61:92:09
+	 SHA1: 13:2D:0D:45:53:4B:69:97:CD:B2:D5:C3:39:E2:55:76:60:9B:5C:C6
+
+
+*******************************************
+*******************************************
+
+
+Alias name: entrustglobalclientca
+Creation date: 09.01.2003
+Entry type: trustedCertEntry
+
+Owner: CN=Entrust.net Client Certification Authority, OU=(c) 2000 Entrust.net Limited, OU=www.entrust.net/GCCA_CPS incorp. by ref. (limits liab.), O=Entrust.net
+Issuer: CN=Entrust.net Client Certification Authority, OU=(c) 2000 Entrust.net Limited, OU=www.entrust.net/GCCA_CPS incorp. by ref. (limits liab.), O=Entrust.net
+Serial number: 389ef6e4
+Valid from: Mon Feb 07 22:16:40 NOVT 2000 until: Fri Feb 07 22:46:40 NOVT 2020
+Certificate fingerprints:
+	 MD5:  9A:77:19:18:ED:96:CF:DF:1B:B7:0E:F5:8D:B9:88:2E
+	 SHA1: CF:74:BF:FF:9B:86:81:5B:08:33:54:40:36:3E:87:B6:B6:F0:BF:73
+
+
+*******************************************
+*******************************************
+
+
+Alias name: gtecybertrustglobalca
+Creation date: 10.05.2002
+Entry type: trustedCertEntry
+
+Owner: CN=GTE CyberTrust Global Root, OU="GTE CyberTrust Solutions, Inc.", O=GTE Corporation, C=US
+Issuer: CN=GTE CyberTrust Global Root, OU="GTE CyberTrust Solutions, Inc.", O=GTE Corporation, C=US
+Serial number: 1a5
+Valid from: Thu Aug 13 07:29:00 NOVST 1998 until: Tue Aug 14 06:59:00 NOVST 2018
+Certificate fingerprints:
+	 MD5:  CA:3D:D3:68:F1:03:5C:D0:32:FA:B8:2B:59:E8:5A:DB
+	 SHA1: 97:81:79:50:D8:1C:96:70:CC:34:D8:09:CF:79:44:31:36:7E:F4:74
+
+
+*******************************************
+*******************************************
+
+
+Alias name: entrustgsslca
+Creation date: 09.01.2003
+Entry type: trustedCertEntry
+
+Owner: CN=Entrust.net Secure Server Certification Authority, OU=(c) 2000 Entrust.net Limited, OU=www.entrust.net/SSL_CPS incorp. by ref. (limits liab.), O=Entrust.net
+Issuer: CN=Entrust.net Secure Server Certification Authority, OU=(c) 2000 Entrust.net Limited, OU=www.entrust.net/SSL_CPS incorp. by ref. (limits liab.), O=Entrust.net
+Serial number: 389b113c
+Valid from: Fri Feb 04 23:20:00 NOVT 2000 until: Tue Feb 04 23:50:00 NOVT 2020
+Certificate fingerprints:
+	 MD5:  9D:66:6A:CC:FF:D5:F5:43:B4:BF:8C:16:D1:2B:A8:99
+	 SHA1: 89:39:57:6E:17:8D:F7:05:78:0F:CC:5E:C8:4F:84:F6:25:3A:48:93
+
+
+*******************************************
+*******************************************
+
+
+Alias name: verisignclass1ca
+Creation date: 26.03.2004
+Entry type: trustedCertEntry
+
+Owner: OU=Class 1 Public Primary Certification Authority, O="VeriSign, Inc.", C=US
+Issuer: OU=Class 1 Public Primary Certification Authority, O="VeriSign, Inc.", C=US
+Serial number: cdba7f56f0dfe4bc54fe22acb372aa55
+Valid from: Mon Jan 29 06:00:00 NOVT 1996 until: Wed Aug 02 06:59:59 NOVST 2028
+Certificate fingerprints:
+	 MD5:  97:60:E8:57:5F:D3:50:47:E5:43:0C:94:36:8A:B0:62
+	 SHA1: 90:AE:A2:69:85:FF:14:80:4C:43:49:52:EC:E9:60:84:77:AF:55:6F
+
+
+*******************************************
+*******************************************
+
+
+Alias name: thawtepersonalbasicca
+Creation date: 13.02.1999
+Entry type: trustedCertEntry
+
+Owner: EMAILADDRESS=personal-basic@thawte.com, CN=Thawte Personal Basic CA, OU=Certification Services Division, O=Thawte Consulting, L=Cape Town, ST=Western Cape, C=ZA
+Issuer: EMAILADDRESS=personal-basic@thawte.com, CN=Thawte Personal Basic CA, OU=Certification Services Division, O=Thawte Consulting, L=Cape Town, ST=Western Cape, C=ZA
+Serial number: 0
+Valid from: Mon Jan 01 06:00:00 NOVT 1996 until: Fri Jan 01 05:59:59 NOVT 2021
+Certificate fingerprints:
+	 MD5:  E6:0B:D2:C9:CA:2D:88:DB:1A:71:0E:4B:78:EB:02:41
+	 SHA1: 40:E7:8C:1D:52:3D:1C:D9:95:4F:AC:1A:1A:B3:BD:3C:BA:A1:5B:FC
+
+
+*******************************************
+*******************************************
+
+
+Alias name: verisignclass1g2ca
+Creation date: 26.03.2004
+Entry type: trustedCertEntry
+
+Owner: OU=VeriSign Trust Network, OU="(c) 1998 VeriSign, Inc. - For authorized use only", OU=Class 1 Public Primary Certification Authority - G2, O="VeriSign, Inc.", C=US
+Issuer: OU=VeriSign Trust Network, OU="(c) 1998 VeriSign, Inc. - For authorized use only", OU=Class 1 Public Primary Certification Authority - G2, O="VeriSign, Inc.", C=US
+Serial number: 4cc7eaaa983e71d39310f83d3a899192
+Valid from: Mon May 18 07:00:00 NOVST 1998 until: Wed Aug 02 06:59:59 NOVST 2028
+Certificate fingerprints:
+	 MD5:  DB:23:3D:F9:69:FA:4B:B9:95:80:44:73:5E:7D:41:83
+	 SHA1: 27:3E:E1:24:57:FD:C4:F9:0C:55:E8:2B:56:16:7F:62:F5:32:E5:47
+
+
+*******************************************
+*******************************************
+
+
+Alias name: entrustsslca
+Creation date: 09.01.2003
+Entry type: trustedCertEntry
+
+Owner: CN=Entrust.net Secure Server Certification Authority, OU=(c) 1999 Entrust.net Limited, OU=www.entrust.net/CPS incorp. by ref. (limits liab.), O=Entrust.net, C=US
+Issuer: CN=Entrust.net Secure Server Certification Authority, OU=(c) 1999 Entrust.net Limited, OU=www.entrust.net/CPS incorp. by ref. (limits liab.), O=Entrust.net, C=US
+Serial number: 374ad243
+Valid from: Tue May 25 23:09:40 NOVST 1999 until: Sat May 25 23:39:40 NOVST 2019
+Certificate fingerprints:
+	 MD5:  DF:F2:80:73:CC:F1:E6:61:73:FC:F5:42:E9:C5:7C:EE
+	 SHA1: 99:A6:9B:E6:1A:FE:88:6B:4D:2B:82:00:7C:B8:54:FC:31:7E:15:39
+
+
+*******************************************
+*******************************************
+
+
+Alias name: thawtepersonalfreemailca
+Creation date: 13.02.1999
+Entry type: trustedCertEntry
+
+Owner: EMAILADDRESS=personal-freemail@thawte.com, CN=Thawte Personal Freemail CA, OU=Certification Services Division, O=Thawte Consulting, L=Cape Town, ST=Western Cape, C=ZA
+Issuer: EMAILADDRESS=personal-freemail@thawte.com, CN=Thawte Personal Freemail CA, OU=Certification Services Division, O=Thawte Consulting, L=Cape Town, ST=Western Cape, C=ZA
+Serial number: 0
+Valid from: Mon Jan 01 06:00:00 NOVT 1996 until: Fri Jan 01 05:59:59 NOVT 2021
+Certificate fingerprints:
+	 MD5:  1E:74:C3:86:3C:0C:35:C5:3E:C2:7F:EF:3C:AA:3C:D9
+	 SHA1: 20:99:00:B6:3D:95:57:28:14:0C:D1:36:22:D8:C6:87:A4:EB:00:85
+
+
+*******************************************
+*******************************************
+
+
+Alias name: localhost
+Creation date: 23.07.2004
+Entry type: trustedCertEntry
+
+Owner: CN=localhost, OU=Widget Development Group, O="Ficticious Widgets, Inc.", L=Sunnyvale, ST=CA, C=US
+Issuer: CN=localhost, OU=Widget Development Group, O="Ficticious Widgets, Inc.", L=Sunnyvale, ST=CA, C=US
+Serial number: 41004446
+Valid from: Fri Jul 23 05:48:38 NOVST 2004 until: Mon May 23 05:48:38 NOVST 2011
+Certificate fingerprints:
+	 MD5:  51:2C:B6:13:13:C5:AF:CC:C6:2F:AA:D8:65:E8:97:B5
+	 SHA1: 59:0C:44:64:22:3F:05:91:EF:B7:93:33:81:C5:37:5F:A5:57:FC:BD
+
+
+*******************************************
+*******************************************
+
+
+Alias name: verisignclass3ca
+Creation date: 27.10.2003
+Entry type: trustedCertEntry
+
+Owner: OU=Class 3 Public Primary Certification Authority, O="VeriSign, Inc.", C=US
+Issuer: OU=Class 3 Public Primary Certification Authority, O="VeriSign, Inc.", C=US
+Serial number: 70bae41d10d92934b638ca7b03ccbabf
+Valid from: Mon Jan 29 06:00:00 NOVT 1996 until: Wed Aug 02 06:59:59 NOVST 2028
+Certificate fingerprints:
+	 MD5:  10:FC:63:5D:F6:26:3E:0D:F3:25:BE:5F:79:CD:67:67
+	 SHA1: 74:2C:31:92:E6:07:E4:24:EB:45:49:54:2B:E1:BB:C5:3E:61:74:E2
+
+
+*******************************************
+*******************************************
+
+
+Alias name: gtecybertrustca
+Creation date: 10.05.2002
+Entry type: trustedCertEntry
+
+Owner: CN=GTE CyberTrust Root, O=GTE Corporation, C=US
+Issuer: CN=GTE CyberTrust Root, O=GTE Corporation, C=US
+Serial number: 1a3
+Valid from: Sat Feb 24 05:01:00 NOVT 1996 until: Fri Feb 24 05:59:00 NOVT 2006
+Certificate fingerprints:
+	 MD5:  C4:D7:F0:B2:A3:C5:7D:61:67:F0:04:CD:43:D3:BA:58
+	 SHA1: 90:DE:DE:9E:4C:4E:9F:6F:D8:86:17:57:9D:D3:91:BC:65:A6:89:64
+
+
+*******************************************
+*******************************************
+
+
+Alias name: verisignclass2g3ca
+Creation date: 26.03.2004
+Entry type: trustedCertEntry
+
+Owner: CN=VeriSign Class 2 Public Primary Certification Authority - G3, OU="(c) 1999 VeriSign, Inc. - For authorized use only", OU=VeriSign Trust Network, O="VeriSign, Inc.", C=US
+Issuer: CN=VeriSign Class 2 Public Primary Certification Authority - G3, OU="(c) 1999 VeriSign, Inc. - For authorized use only", OU=VeriSign Trust Network, O="VeriSign, Inc.", C=US
+Serial number: 6170cb498c5f984529e7b0a6d9505b7a
+Valid from: Fri Oct 01 07:00:00 NOVST 1999 until: Thu Jul 17 06:59:59 NOVST 2036
+Certificate fingerprints:
+	 MD5:  F8:BE:C4:63:22:C9:A8:46:74:8B:B8:1D:1E:4A:2B:F6
+	 SHA1: 61:EF:43:D7:7F:CA:D4:61:51:BC:98:E0:C3:59:12:AF:9F:EB:63:11
+
+
+*******************************************
+*******************************************
+
+
+Alias name: thawteserverca
+Creation date: 13.02.1999
+Entry type: trustedCertEntry
+
+Owner: EMAILADDRESS=server-certs@thawte.com, CN=Thawte Server CA, OU=Certification Services Division, O=Thawte Consulting cc, L=Cape Town, ST=Western Cape, C=ZA
+Issuer: EMAILADDRESS=server-certs@thawte.com, CN=Thawte Server CA, OU=Certification Services Division, O=Thawte Consulting cc, L=Cape Town, ST=Western Cape, C=ZA
+Serial number: 1
+Valid from: Thu Aug 01 07:00:00 NOVST 1996 until: Fri Jan 01 05:59:59 NOVT 2021
+Certificate fingerprints:
+	 MD5:  C5:70:C4:A2:ED:53:78:0C:C8:10:53:81:64:CB:D0:1D
+	 SHA1: 23:E5:94:94:51:95:F2:41:48:03:B4:D5:64:D2:A3:A3:F5:D8:8B:8C
+
+
+*******************************************
+*******************************************
+
+
+Alias name: thawtepersonalpremiumca
+Creation date: 13.02.1999
+Entry type: trustedCertEntry
+
+Owner: EMAILADDRESS=personal-premium@thawte.com, CN=Thawte Personal Premium CA, OU=Certification Services Division, O=Thawte Consulting, L=Cape Town, ST=Western Cape, C=ZA
+Issuer: EMAILADDRESS=personal-premium@thawte.com, CN=Thawte Personal Premium CA, OU=Certification Services Division, O=Thawte Consulting, L=Cape Town, ST=Western Cape, C=ZA
+Serial number: 0
+Valid from: Mon Jan 01 06:00:00 NOVT 1996 until: Fri Jan 01 05:59:59 NOVT 2021
+Certificate fingerprints:
+	 MD5:  3A:B2:DE:22:9A:20:93:49:F9:ED:C8:D2:8A:E7:68:0D
+	 SHA1: 36:86:35:63:FD:51:28:C7:BE:A6:F0:05:CF:E9:B4:36:68:08:6C:CE
+
+
+*******************************************
+*******************************************
+
+
+Alias name: equifaxsecureca
+Creation date: 19.07.2003
+Entry type: trustedCertEntry
+
+Owner: OU=Equifax Secure Certificate Authority, O=Equifax, C=US
+Issuer: OU=Equifax Secure Certificate Authority, O=Equifax, C=US
+Serial number: 35def4cf
+Valid from: Sat Aug 22 23:41:51 NOVST 1998 until: Wed Aug 22 23:41:51 NOVST 2018
+Certificate fingerprints:
+	 MD5:  67:CB:9D:C0:13:24:8A:82:9B:B2:17:1E:D1:1B:EC:D4
+	 SHA1: D2:32:09:AD:23:D3:14:23:21:74:E4:0D:7F:9D:62:13:97:86:63:3A
+
+
+*******************************************
+*******************************************
+
+
+Alias name: verisignclass3g2ca
+Creation date: 26.03.2004
+Entry type: trustedCertEntry
+
+Owner: OU=VeriSign Trust Network, OU="(c) 1998 VeriSign, Inc. - For authorized use only", OU=Class 3 Public Primary Certification Authority - G2, O="VeriSign, Inc.", C=US
+Issuer: OU=VeriSign Trust Network, OU="(c) 1998 VeriSign, Inc. - For authorized use only", OU=Class 3 Public Primary Certification Authority - G2, O="VeriSign, Inc.", C=US
+Serial number: 7dd9fe07cfa81eb7107967fba78934c6
+Valid from: Mon May 18 07:00:00 NOVST 1998 until: Wed Aug 02 06:59:59 NOVST 2028
+Certificate fingerprints:
+	 MD5:  A2:33:9B:4C:74:78:73:D4:6C:E7:C1:F3:8D:CB:5C:E9
+	 SHA1: 85:37:1C:A6:E5:50:14:3D:CE:28:03:47:1B:DE:3A:09:E8:F8:77:0F
+
+
+*******************************************
+*******************************************
+
+
+Alias name: thawtepremiumserverca
+Creation date: 13.02.1999
+Entry type: trustedCertEntry
+
+Owner: EMAILADDRESS=premium-server@thawte.com, CN=Thawte Premium Server CA, OU=Certification Services Division, O=Thawte Consulting cc, L=Cape Town, ST=Western Cape, C=ZA
+Issuer: EMAILADDRESS=premium-server@thawte.com, CN=Thawte Premium Server CA, OU=Certification Services Division, O=Thawte Consulting cc, L=Cape Town, ST=Western Cape, C=ZA
+Serial number: 1
+Valid from: Thu Aug 01 07:00:00 NOVST 1996 until: Fri Jan 01 05:59:59 NOVT 2021
+Certificate fingerprints:
+	 MD5:  06:9F:69:79:16:66:90:02:1B:8C:8C:A2:C3:07:6F:3A
+	 SHA1: 62:7F:8D:78:27:65:63:99:D2:7D:7F:90:44:C9:FE:B3:F3:3E:FA:9A
+
+
+*******************************************
+*******************************************
+
+
+Alias name: entrust2048ca
+Creation date: 09.01.2003
+Entry type: trustedCertEntry
+
+Owner: CN=Entrust.net Certification Authority (2048), OU=(c) 1999 Entrust.net Limited, OU=www.entrust.net/CPS_2048 incorp. by ref. (limits liab.), O=Entrust.net
+Issuer: CN=Entrust.net Certification Authority (2048), OU=(c) 1999 Entrust.net Limited, OU=www.entrust.net/CPS_2048 incorp. by ref. (limits liab.), O=Entrust.net
+Serial number: 3863b966
+Valid from: Fri Dec 24 23:50:51 NOVT 1999 until: Wed Dec 25 00:20:51 NOVT 2019
+Certificate fingerprints:
+	 MD5:  BA:21:EA:20:D6:DD:DB:8F:C1:57:8B:40:AD:A1:FC:FC
+	 SHA1: 80:1D:62:D0:7B:44:9D:5C:5C:03:5C:98:EA:61:FA:44:3C:2A:58:FE
+
+
+*******************************************
+*******************************************
+
+
+Alias name: entrustclientca
+Creation date: 09.01.2003
+Entry type: trustedCertEntry
+
+Owner: CN=Entrust.net Client Certification Authority, OU=(c) 1999 Entrust.net Limited, OU=www.entrust.net/Client_CA_Info/CPS incorp. by ref. limits liab., O=Entrust.net, C=US
+Issuer: CN=Entrust.net Client Certification Authority, OU=(c) 1999 Entrust.net Limited, OU=www.entrust.net/Client_CA_Info/CPS incorp. by ref. limits liab., O=Entrust.net, C=US
+Serial number: 380391ee
+Valid from: Wed Oct 13 02:24:30 NOVST 1999 until: Sun Oct 13 02:54:30 NOVST 2019
+Certificate fingerprints:
+	 MD5:  0C:41:2F:13:5B:A0:54:F5:96:66:2D:7E:CD:0E:03:F4
+	 SHA1: DA:79:C1:71:11:50:C2:34:39:AA:2B:0B:0C:62:FD:55:B2:F9:F5:80
+
+
+*******************************************
+*******************************************
+
+
+Alias name: verisignserverca
+Creation date: 30.06.1998
+Entry type: trustedCertEntry
+
+Owner: OU=Secure Server Certification Authority, O="RSA Data Security, Inc.", C=US
+Issuer: OU=Secure Server Certification Authority, O="RSA Data Security, Inc.", C=US
+Serial number: 2ad667e4e45fe5e576f3c98195eddc0
+Valid from: Wed Nov 09 06:00:00 NOVT 1994 until: Fri Jan 08 05:59:59 NOVT 2010
+Certificate fingerprints:
+	 MD5:  74:7B:82:03:43:F0:00:9E:6B:B3:EC:47:BF:85:A5:93
+	 SHA1: 44:63:C5:31:D7:CC:C1:00:67:94:61:2B:B6:56:D3:BF:82:57:84:6F
+
+
+*******************************************
+*******************************************
+
+
+Alias name: baltimorecybertrustca
+Creation date: 10.05.2002
+Entry type: trustedCertEntry
+
+Owner: CN=Baltimore CyberTrust Root, OU=CyberTrust, O=Baltimore, C=IE
+Issuer: CN=Baltimore CyberTrust Root, OU=CyberTrust, O=Baltimore, C=IE
+Serial number: 20000b9
+Valid from: Sat May 13 01:46:00 NOVST 2000 until: Tue May 13 06:59:00 NOVST 2025
+Certificate fingerprints:
+	 MD5:  AC:B6:94:A5:9C:17:E0:D7:91:52:9B:B1:97:06:A6:E4
+	 SHA1: D4:DE:20:D0:5E:66:FC:53:FE:1A:50:88:2C:78:DB:28:52:CA:E4:74
+
+
+*******************************************
+*******************************************
+
+
+Alias name: geotrustglobalca
+Creation date: 19.07.2003
+Entry type: trustedCertEntry
+
+Owner: CN=GeoTrust Global CA, O=GeoTrust Inc., C=US
+Issuer: CN=GeoTrust Global CA, O=GeoTrust Inc., C=US
+Serial number: 23456
+Valid from: Tue May 21 11:00:00 NOVST 2002 until: Sat May 21 11:00:00 NOVST 2022
+Certificate fingerprints:
+	 MD5:  F7:75:AB:29:FB:51:4E:B7:77:5E:FF:05:3C:99:8E:F5
+	 SHA1: DE:28:F4:A4:FF:E5:B9:2F:A3:C5:03:D1:A3:49:A7:F9:96:2A:82:12
+
+
+*******************************************
+*******************************************
+
+
+Alias name: duke
+Creation date: 23.07.2004
+Entry type: trustedCertEntry
+
+Owner: CN=Duke, OU=Java Software, O="Sun Microsystems, Inc.", L=Cupertino, ST=CA, C=US
+Issuer: CN=Duke, OU=Java Software, O="Sun Microsystems, Inc.", L=Cupertino, ST=CA, C=US
+Serial number: 3b0afa66
+Valid from: Wed May 23 06:46:46 NOVST 2001 until: Mon May 23 06:46:46 NOVST 2011
+Certificate fingerprints:
+	 MD5:  21:7F:3E:D0:90:A5:CE:03:04:65:BC:17:CB:E0:6E:01
+	 SHA1: 04:C2:E3:CC:23:AC:37:0C:58:CE:04:0E:8F:30:63:D5:DE:D6:3F:92
+
+
+*******************************************
+*******************************************
+
+
+Alias name: gtecybertrust5ca
+Creation date: 10.05.2002
+Entry type: trustedCertEntry
+
+Owner: CN=GTE CyberTrust Root 5, OU="GTE CyberTrust Solutions, Inc.", O=GTE Corporation, C=US
+Issuer: CN=GTE CyberTrust Root 5, OU="GTE CyberTrust Solutions, Inc.", O=GTE Corporation, C=US
+Serial number: 1b6
+Valid from: Fri Aug 14 21:50:00 NOVST 1998 until: Thu Aug 15 06:59:00 NOVST 2013
+Certificate fingerprints:
+	 MD5:  7D:6C:86:E4:FC:4D:D1:0B:00:BA:22:BB:4E:7C:6A:8E
+	 SHA1: 47:C5:4C:BC:DA:5D:76:CE:62:88:38:11:AC:11:66:5D:55:F4:2C:00
+
+
+*******************************************
+*******************************************
+
+
+Alias name: baltimorecodesigningca
+Creation date: 10.05.2002
+Entry type: trustedCertEntry
+
+Owner: CN=Baltimore CyberTrust Code Signing Root, OU=CyberTrust, O=Baltimore, C=IE
+Issuer: CN=Baltimore CyberTrust Code Signing Root, OU=CyberTrust, O=Baltimore, C=IE
+Serial number: 20000bf
+Valid from: Wed May 17 21:01:00 NOVST 2000 until: Sun May 18 06:59:00 NOVST 2025
+Certificate fingerprints:
+	 MD5:  90:F5:28:49:56:D1:5D:2C:B0:53:D4:4B:EF:6F:90:22
+	 SHA1: 30:46:D8:C8:88:FF:69:30:C3:4A:FC:CD:49:27:08:7C:60:56:7B:0D
+
+
+*******************************************
+*******************************************
+
+
+Alias name: equifaxsecureglobalebusinessca1
+Creation date: 19.07.2003
+Entry type: trustedCertEntry
+
+Owner: CN=Equifax Secure Global eBusiness CA-1, O=Equifax Secure Inc., C=US
+Issuer: CN=Equifax Secure Global eBusiness CA-1, O=Equifax Secure Inc., C=US
+Serial number: 1
+Valid from: Mon Jun 21 11:00:00 NOVST 1999 until: Sun Jun 21 11:00:00 NOVST 2020
+Certificate fingerprints:
+	 MD5:  8F:5D:77:06:27:C4:98:3C:5B:93:78:E7:D7:7D:9B:CC
+	 SHA1: 7E:78:4A:10:1C:82:65:CC:2D:E1:F1:6D:47:B4:40:CA:D9:0A:19:45
+
+
+*******************************************
+*******************************************
+
+
+Alias name: equifaxsecureebusinessca2
+Creation date: 19.07.2003
+Entry type: trustedCertEntry
+
+Owner: OU=Equifax Secure eBusiness CA-2, O=Equifax Secure, C=US
+Issuer: OU=Equifax Secure eBusiness CA-2, O=Equifax Secure, C=US
+Serial number: 3770cfb5
+Valid from: Wed Jun 23 19:14:45 NOVST 1999 until: Sun Jun 23 19:14:45 NOVST 2019
+Certificate fingerprints:
+	 MD5:  AA:BF:BF:64:97:DA:98:1D:6F:C6:08:3A:95:70:33:CA
+	 SHA1: 39:4F:F6:85:0B:06:BE:52:E5:18:56:CC:10:E1:80:E8:82:B3:85:CC
+
+
+*******************************************
+*******************************************
+
+
+Alias name: verisignclass2ca
+Creation date: 27.10.2003
+Entry type: trustedCertEntry
+
+Owner: OU=Class 2 Public Primary Certification Authority, O="VeriSign, Inc.", C=US
+Issuer: OU=Class 2 Public Primary Certification Authority, O="VeriSign, Inc.", C=US
+Serial number: 2d1bfc4a178da391ebe7fff58b45be0b
+Valid from: Mon Jan 29 06:00:00 NOVT 1996 until: Wed Aug 02 06:59:59 NOVST 2028
+Certificate fingerprints:
+	 MD5:  B3:9C:25:B1:C3:2E:32:53:80:15:30:9D:4D:02:77:3E
+	 SHA1: 67:82:AA:E0:ED:EE:E2:1A:58:39:D3:C0:CD:14:68:0A:4F:60:14:2A
+
+
+*******************************************
+*******************************************
+
+

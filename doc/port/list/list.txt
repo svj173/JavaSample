@@ -1,0 +1,11 @@
+Windows
+
+1.	Put win32com.dll to <jdk>\jre\bin .
+2.	Put comm.jar to <jdk>\jre\lib\ext.
+3.	Put javax.comm.properties to <jdk>\jre\lib .
+
+Linux
+
+1.	Put *.so to <jdk>\jre\bin (?).
+2.	Put comm.jar to <jdk>\jre\lib\ext.
+3.	Put javax.comm.properties to <jdk>\jre\lib .

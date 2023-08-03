@@ -1,0 +1,42 @@
+
+The com.google.common.hash API offers:
+
+    A unified user-friendly API for all hash functions
+    Seedable 32- and 128-bit implementations of murmur3
+    md5(), sha1(), sha256(), sha512() adapters, change only one line of code to switch between these, and murmur.
+    goodFastHash(int bits), for when you don't care what algorithm you use
+    General utilities for HashCode instances, like combineOrdered / combineUnordered
+
+Read the Users Guide (GuavaExplained) - Hashing explained
+
+For your usecase:
+
+version 13 and later
+
+    getChecksum - Computes and returns the checksum value for a file.
+    hash - Computes and returns the digest value for a file.
+
+For example a sha-1 digest calculation (change SHA-1 to MD5 to get MD5 digest)
+
+HashCode hc = Files.hash(file, Hashing.sha1());
+"SHA-1: " + hc.toString();
+
+Prior to version 13
+
+    getChecksum - Computes and returns the checksum value for a file.
+    getDigest - Computes and returns the digest value for a file.
+
+For example a crc32 checksum calculation
+
+File myfile = new File("myfile.txt");
+long checksum = Files.getChecksum(myfile , new java.util.svj.zip.CRC32());
+
+For example a sha-256 digest calculation (change SHA-256 to MD5 to get MD5 digest)
+
+File myfile = new File("myfile.txt");
+byte[] digest = Files.getDigest(myfile , MessageDigest.getInstance("SHA-256"));
+
+Note that crc32 is much faster than md5, so use crc32 if you do not need a cryptographically secure checksum.
+Note also that md5 should not be used to store passwords and the like since it is to easy to brute force, for passwords use bcrypt, scrypt or sha-256 instead.
+
+To note is that crc32 has a higer collision rate than the others.

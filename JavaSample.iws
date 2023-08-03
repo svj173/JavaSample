@@ -1,0 +1,2405 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CCaseConfig">
+    <option name="checkoutReserved" value="false" />
+    <option name="markExternalChangeAsUpToDate" value="true" />
+    <option name="checkInUseHijack" value="true" />
+    <option name="useUcmModel" value="true" />
+    <option name="isOffline" value="false" />
+    <option name="synchOutside" value="false" />
+    <option name="isHistoryResticted" value="true" />
+    <option name="useIdenticalSwitch" value="true" />
+    <option name="synchActivitiesOnRefresh" value="true" />
+    <option name="lastScr" value="" />
+    <option name="scrTextFileName" value="" />
+    <option name="historyRevisionsNumber" value="4" />
+  </component>
+  <component name="ChangeBrowserSettings">
+    <option name="MAIN_SPLITTER_PROPORTION" value="0.3" />
+    <option name="MESSAGES_SPLITTER_PROPORTION" value="0.8" />
+    <option name="USE_DATE_BEFORE_FILTER" value="false" />
+    <option name="USE_DATE_AFTER_FILTER" value="false" />
+    <option name="USE_CHANGE_BEFORE_FILTER" value="false" />
+    <option name="USE_CHANGE_AFTER_FILTER" value="false" />
+    <option name="DATE_BEFORE" value="" />
+    <option name="DATE_AFTER" value="" />
+    <option name="CHANGE_BEFORE" value="" />
+    <option name="CHANGE_AFTER" value="" />
+    <option name="USE_USER_FILTER" value="false" />
+    <option name="USER" value="" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4a098b3f-327e-421c-bfd3-c1696f1b02ac" name="Default" comment="" />
+    <ignored path="$PROJECT_DIR$/deploy/classes/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CheckStyle-IDEA-workspace">
+    <option name="configuration">
+      <map>
+        <entry key="last-active-plugin-version" value="5.22.0" />
+      </map>
+    </option>
+  </component>
+  <component name="Commander">
+    <leftPanel />
+    <rightPanel />
+    <splitter proportion="0.5" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="Cvs2Configuration">
+    <option name="PRUNE_EMPTY_DIRECTORIES" value="true" />
+    <option name="MERGING_MODE" value="0" />
+    <option name="MERGE_WITH_BRANCH1_NAME" value="HEAD" />
+    <option name="MERGE_WITH_BRANCH2_NAME" value="HEAD" />
+    <option name="RESET_STICKY" value="false" />
+    <option name="CREATE_NEW_DIRECTORIES" value="true" />
+    <option name="DEFAULT_TEXT_FILE_SUBSTITUTION" value="kv" />
+    <option name="PROCESS_UNKNOWN_FILES" value="false" />
+    <option name="PROCESS_DELETED_FILES" value="false" />
+    <option name="PROCESS_IGNORED_FILES" value="false" />
+    <option name="RESERVED_EDIT" value="false" />
+    <option name="CHECKOUT_DATE_OR_REVISION_SETTINGS">
+      <value>
+        <option name="BRANCH" value="" />
+        <option name="DATE" value="" />
+        <option name="USE_BRANCH" value="false" />
+        <option name="USE_DATE" value="false" />
+      </value>
+    </option>
+    <option name="UPDATE_DATE_OR_REVISION_SETTINGS">
+      <value>
+        <option name="BRANCH" value="" />
+        <option name="DATE" value="" />
+        <option name="USE_BRANCH" value="false" />
+        <option name="USE_DATE" value="false" />
+      </value>
+    </option>
+    <option name="SHOW_CHANGES_REVISION_SETTINGS">
+      <value>
+        <option name="BRANCH" value="" />
+        <option name="DATE" value="" />
+        <option name="USE_BRANCH" value="false" />
+        <option name="USE_DATE" value="false" />
+      </value>
+    </option>
+    <option name="SHOW_OUTPUT" value="false" />
+    <option name="ADD_WATCH_INDEX" value="0" />
+    <option name="REMOVE_WATCH_INDEX" value="0" />
+    <option name="UPDATE_KEYWORD_SUBSTITUTION" />
+    <option name="MAKE_NEW_FILES_READONLY" value="false" />
+    <option name="SHOW_CORRUPTED_PROJECT_FILES" value="0" />
+    <option name="TAG_AFTER_PROJECT_COMMIT" value="false" />
+    <option name="OVERRIDE_EXISTING_TAG_FOR_PROJECT" value="true" />
+    <option name="TAG_AFTER_PROJECT_COMMIT_NAME" value="" />
+    <option name="CLEAN_COPY" value="false" />
+  </component>
+  <component name="DebuggerManager">
+    <ui_properties converted="true" />
+    <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true" converted="true">
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </breakpoint_any>
+    <breakpoint_rules converted="true" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="JavaSample" />
+  </component>
+  <component name="FavoritesProjectViewPane">
+    <subPane subId="JavaSample">
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" />
+          <option name="myItemType" value="com.intellij.ide.favoritesTreeView.FavoritesTreeNodeDescriptor" />
+        </PATH_ELEMENT>
+      </PATH>
+    </subPane>
+  </component>
+  <component name="FavoritesViewImpl">
+    <favorites_list name="JavaSample">
+      <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+      <option name="IS_SHOW_MEMBERS" value="false" />
+      <option name="IS_STRUCTURE_VIEW" value="false" />
+      <option name="IS_SHOW_MODULES" value="true" />
+      <option name="IS_FLATTEN_PACKAGES" value="false" />
+      <option name="IS_ABBREVIATION_PACKAGE_NAMES" value="false" />
+      <option name="IS_HIDE_EMPTY_MIDDLE_PACKAGES" value="false" />
+      <option name="IS_SHOW_LIBRARY_CONTENTS" value="true" />
+    </favorites_list>
+    <option name="myCurrentFavoritesList" value="JavaSample" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/svj/irc/IrcConvertTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="145" column="75" lean-forward="true" selection-start-line="145" selection-start-column="75" selection-end-line="145" selection-end-column="75" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#16860#16861#0" expanded="true" />
+                <element signature="e#16900#16901#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$PROJECT_DIR$/lib/irc/IrpTransmogrifier-1.2.12.jar!/org/harctoolbox/ircore/IrSignal.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2822">
+              <caret line="214" column="16" selection-start-line="214" selection-start-column="16" selection-end-line="214" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/svj/irc/InterpretString.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="697">
+              <caret line="62" column="38" selection-start-line="62" selection-start-column="38" selection-end-line="62" selection-end-column="38" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$PROJECT_DIR$/lib/irc/HarcHardware-2.4.0.jar!/org/harctoolbox/harchardware/ir/GlobalCacheParser.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="20" column="11" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/svj/irc/OutputTextFormat.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$PROJECT_DIR$/lib/irc/IrpTransmogrifier-1.2.12.jar!/org/harctoolbox/ircore/Pronto.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3366">
+              <caret line="206" column="25" selection-start-line="206" selection-start-column="25" selection-end-line="206" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/svj/irc/RawIrSignal.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3893">
+              <caret line="281" column="47" selection-start-line="281" selection-start-column="47" selection-end-line="281" selection-end-column="47" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/svj/irc/ParametrizedIrSignal.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="5576">
+              <caret line="384" column="10" selection-start-line="384" selection-start-column="10" selection-end-line="384" selection-end-column="10" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/svj/irc/NamedIrSignal.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2924">
+              <caret line="233" column="8" selection-start-line="233" selection-start-column="8" selection-end-line="233" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$PROJECT_DIR$/lib/irc/IrpTransmogrifier-1.2.12.jar!/org/harctoolbox/irp/Protocol.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="9486">
+              <caret line="650" column="33" selection-start-line="650" selection-start-column="33" selection-end-line="650" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>div</find>
+      <find>Frame</find>
+      <find>HttpURLConnection</find>
+      <find>DateTimeFormatter</find>
+      <find>ImageIO.</find>
+      <find>globalAttributes</find>
+      <find>IrpMaster</find>
+      <find>initialDefinitions</find>
+      <find>protocols</find>
+      <find>decoderParameters</find>
+      <find>decoderParameters =</find>
+      <find>decodeTree</find>
+      <find>did not decode:</find>
+      <find>position</find>
+      <find>rejectNoRepeats</find>
+      <find>irpDatabase</find>
+      <find>set decode =</find>
+      <find>Samsung20</find>
+      <find>,A:</find>
+      <find>7u</find>
+      <find>MD</find>
+      <find>preferedDecode</find>
+      <find>,msb</find>
+      <find>u,-4</find>
+      <find>Samsung2</find>
+      <find>Command</find>
+      <find>properties</find>
+      <find>convertToIr</find>
+      <find>displaySignal</find>
+      <find>scrutinizeIrSignal</find>
+    </findStrings>
+    <dirStrings>
+      <dir>$PROJECT_DIR$/src/svj/irc</dir>
+    </dirStrings>
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="false" />
+    </FindUsagesManager>
+  </component>
+  <component name="HierarchyBrowserManager">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="SORT_ALPHABETICALLY" value="false" />
+    <option name="HIDE_CLASSES_WHERE_METHOD_NOT_IMPLEMENTED" value="false" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/string/regexc/RegexpCircle.java" />
+        <option value="$PROJECT_DIR$/src/convert/FloatIEEE.java" />
+        <option value="$PROJECT_DIR$/src/convert/Vkt9Value.java" />
+        <option value="$PROJECT_DIR$/src/svj/http/HttpClient.java" />
+        <option value="$PROJECT_DIR$/src/svj/algoritm/EventLogTest.java" />
+        <option value="$PROJECT_DIR$/src/svj/algoritm/SchoolTest.java" />
+        <option value="$PROJECT_DIR$/src/string/pattern/Matches_02.java" />
+        <option value="$PROJECT_DIR$/src/svj/string/SubstringTest.java" />
+        <option value="$PROJECT_DIR$/src/svj/string/UseGteTest.java" />
+        <option value="$PROJECT_DIR$/src/svj/date/UnixDate.java" />
+        <option value="$PROJECT_DIR$/src/svj/date/MinusMonthDate.java" />
+        <option value="$PROJECT_DIR$/src/svj/date/DurationTest.java" />
+        <option value="$PROJECT_DIR$/src/swing/url/TestAutoScripts.java" />
+        <option value="$PROJECT_DIR$/src/swing/url/AuthListener.java" />
+        <option value="$PROJECT_DIR$/src/svj/file/FileNameTools.java" />
+        <option value="$PROJECT_DIR$/src/svj/date/LocalTimeTest.java" />
+        <option value="$PROJECT_DIR$/src/svj/lymbda/StreamFilterTest.java" />
+        <option value="$PROJECT_DIR$/src/svj/irc/InterpretString.java" />
+        <option value="$PROJECT_DIR$/src/svj/irc/OutputTextFormat.java" />
+        <option value="$PROJECT_DIR$/src/svj/irc/Props.java" />
+        <option value="$PROJECT_DIR$/src/svj/irc/example/IRPMasterAPIExample.java" />
+        <option value="$PROJECT_DIR$/resource/IrpProtocols.xml" />
+        <option value="$PROJECT_DIR$/src/svj/irc/NamedIrSignal.java" />
+        <option value="$PROJECT_DIR$/src/svj/irc/ParametrizedIrSignal.java" />
+        <option value="$PROJECT_DIR$/src/svj/irc/RawIrSignal.java" />
+        <option value="$PROJECT_DIR$/src/svj/irc/IrcConvertTest.java" />
+      </list>
+    </option>
+  </component>
+  <component name="IntelliJConfiguration">
+    <option name="PROPERTY_FILES">
+      <value>
+        <list size="0" />
+      </value>
+    </option>
+    <option name="REMOVE_NBSP" value="true" />
+    <option name="CREATE_NEW_JSP" value="true" />
+    <option name="KEY_RESOLUTION_TYPE" value="Use all words in label" />
+    <option name="PROMPT_FOR_KEY_PREFIX" value="false" />
+    <option name="LABEL_PART_1" value="&lt;bean:message key=&quot;" />
+    <option name="LABEL_PART_2" value="&quot;/&gt;" />
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState />
+  </component>
+  <component name="MavenRunner">
+    <option name="jreName" value="1.6 (1)" />
+  </component>
+  <component name="ModuleEditorState">
+    <option name="LAST_EDITED_MODULE_NAME" value="JavaSample" />
+    <option name="LAST_EDITED_TAB_NAME" value="Libraries (Classpath)" />
+  </component>
+  <component name="PackagesPane">
+    <subPane>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="JavaSample.ipr" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="JavaSample" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+        </PATH_ELEMENT>
+      </PATH>
+    </subPane>
+  </component>
+  <component name="PerforceChangeBrowserSettings">
+    <option name="USE_CLIENT_FILTER" value="true" />
+    <option name="CLIENT" value="" />
+  </component>
+  <component name="PerforceDirect.Settings">
+    <option name="port" value="jasper:1666" />
+    <option name="useNativeApi" value="true" />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="width" value="1876" />
+    <option name="height" value="1044" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id>Inspections</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>Spelling</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectPane">
+    <subPane>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="JavaSample" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="JavaSample" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="JavaSample" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="JavaSample" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:/home/svj/IdeaProjects/JavaSample" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="JavaSample" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="JavaSample" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:/home/svj/IdeaProjects/JavaSample" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:/home/svj/IdeaProjects/JavaSample/test" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="JavaSample" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="JavaSample" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:/home/svj/IdeaProjects/JavaSample" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:/home/svj/IdeaProjects/JavaSample/test" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:/home/svj/IdeaProjects/JavaSample/test/xml" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="JavaSample" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="JavaSample" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:/home/svj/IdeaProjects/JavaSample" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:/home/svj/IdeaProjects/JavaSample/src" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="JavaSample" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="JavaSample" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:/home/svj/IdeaProjects/JavaSample" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:/home/svj/IdeaProjects/JavaSample/src" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:/home/svj/IdeaProjects/JavaSample/src/xml/stax" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+    </subPane>
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="JavaSample" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JavaSample" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JavaSample" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JavaSample" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JavaSample" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JavaSample" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="irc" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JavaSample" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JavaSample" type="462c0819:PsiDirectoryNode" />
+              <item name="resource" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JavaSample" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JavaSample" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JavaSample" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JavaSample" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="svj" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JavaSample" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JavaSample" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="svj" type="462c0819:PsiDirectoryNode" />
+              <item name="irc" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JavaSample" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JavaSample" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="svj" type="462c0819:PsiDirectoryNode" />
+              <item name="irc" type="462c0819:PsiDirectoryNode" />
+              <item name="example" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JavaSample" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JavaSample" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="svj" type="462c0819:PsiDirectoryNode" />
+              <item name="lymbda" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JavaSample" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JavaSample" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="swing" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JavaSample" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JavaSample" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="swing" type="462c0819:PsiDirectoryNode" />
+              <item name="url" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JavaSample" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JavaSample" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="tools" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JavaSample" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JavaSample" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Favorites" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="FullScreen" value="false" />
+    <property name="GoToClass.includeJavaFiles" value="false" />
+    <property name="GoToClass.includeLibraries" value="false" />
+    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="RESOURCE_BUNDLE_SPLITTER_PROPORTION" value="0.5" />
+    <property name="RunManagerConfig.compileBeforeRunning" value="true" />
+    <property name="RunManagerConfig.showSettingsBeforeRunnig" value="false" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1690363445977" />
+    <property name="dynamic.classpath" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/irc/IrScrutinizer-jar-with-dependencies.jar!/" />
+    <property name="options.lastSelected" value="project.propCompiler" />
+    <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="recentsLimit" value="5" />
+    <property name="restartRequiresConfirmation" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="array.sort.verybig2" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="test.as.server" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/db/hibernate/oracleEms" />
+      <recent name="$PROJECT_DIR$/src/bundle" />
+      <recent name="$PROJECT_DIR$/test/etoken_ems/files" />
+      <recent name="$PROJECT_DIR$/test/etoken_ems" />
+      <recent name="$PROJECT_DIR$/src/swing/editor/html/html4my/images" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="svj.irc" />
+      <recent name="svj.date" />
+      <recent name="array.limit" />
+      <recent name="array.compare" />
+      <recent name="string.regexc" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/test/bundle" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.IrcConvertTest">
+    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
+      <method />
+    </configuration>
+    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
+      <module name="" />
+      <option name="TESTING_TYPE" value="0" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet">
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Action01" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="swing.table.action.Action01" />
+      <module name="JavaSample" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Action02" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="swing.table.action.Action02" />
+      <module name="JavaSample" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ActionDemo" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="swing.menu.ActionDemo" />
+      <module name="JavaSample" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BA_Test" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="comm.billacceptor.BillAcceptor" />
+      <module name="JavaSample" />
+      <option name="PROGRAM_PARAMETERS" value="c:/Serg/Projects/ICS/RemoteKiosk/project/conf/logger.txt COM1" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BillAcceptor" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="comm.billacceptor.BAStart" />
+      <module name="JavaSample" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CheckBoxDemo" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="swing.jbutton.checkbox1.CheckBoxDemo" />
+      <module name="JavaSample" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ColorChooserSample" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="swing.color.ColorChooserSample" />
+      <module name="JavaSample" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ColorPicker" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="swing.color.ColorPicker" />
+      <module name="JavaSample" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ComboMenu" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="swing.menu.ComboMenu" />
+      <module name="JavaSample" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CronTime01" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="scheduler.quartz.cronTime.CronTime01" />
+      <module name="JavaSample" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CronTime02" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="scheduler.quartz.cronTime.CronTime02" />
+      <module name="JavaSample" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DateTest" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="date.DateTest" />
+      <module name="JavaSample" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DecimalFormatDemo" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="format.decimal.DecimalFormatDemo" />
+      <module name="JavaSample" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Decorator" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="swing.decorator.test" />
+      <module name="JavaSample" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DialogDemo" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="swing.dialog.DialogDemo" />
+      <module name="JavaSample" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FileNameTools" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="svj.file.FileNameTools" />
+      <module name="JavaSample" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="svj.file.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FileStringInvertor" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="swing.file.FileStringInvertor" />
+      <module name="JavaSample" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FonDemo" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="swing.fon_img.WatermarkDemo.WatermarkDemo" />
+      <module name="JavaSample" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FontList" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="swing.font.ListFont" />
+      <module name="JavaSample" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FormattedTextFieldDemo" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="swing.text.FormattedTextFieldDemo" />
+      <module name="JavaSample" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GridBagLayoutTest1" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="swing.layout.GridBagLayout.GridBagLayoutTest1" />
+      <module name="JavaSample" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HashCode" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="string.HashCode" />
+      <module name="JavaSample" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="IcmpPing2" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="socket.ping.IcmpPing2" />
+      <module name="JavaSample" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ImageTable" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="swing.table.icon.ImageTable" />
+      <module name="JavaSample" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="InitPIN" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="eToken.init.InitPIN" />
+      <module name="JavaSample" />
+      <option name="PROGRAM_PARAMETERS" value="libeTPkcs11.so 12345678 1234 0" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="InitStyle" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="swing.style.InitStyle" />
+      <module name="JavaSample" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="InterruptExample" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="scheduler.quartz.trigger.simple.InterruptExample" />
+      <module name="JavaSample" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="InterruptExample02" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="scheduler.quartz.trigger.simple.InterruptExample02" />
+      <module name="JavaSample" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="InvokeLater" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="swing.text.in_action.InvokeLater" />
+      <module name="JavaSample" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="IrcConvertTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="svj.irc.IrcConvertTest" />
+      <module name="JavaSample" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="svj.irc.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JButton1" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="swing.jbutton.Start" />
+      <module name="JavaSample" />
+      <option name="PROGRAM_PARAMETERS" value="conf/logger.txt conf/touchparams.txt" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JSwingButton" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="swing.jbutton.JSwingButton" />
+      <module name="JavaSample" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JobStateExample" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="scheduler.quartz.trigger.simple.JobStateExample" />
+      <module name="JavaSample" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Jython" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="jython.Performer" />
+      <module name="JavaSample" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Label_html" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="swing.label.html.JLabels" />
+      <module name="JavaSample" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Layout_GridBag" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="swing.layout.GridBagLayoutDemo" />
+      <module name="JavaSample" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LocalTimeTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="svj.date.LocalTimeTest" />
+      <module name="JavaSample" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="svj.date.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MathTestRound" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="math.TestRound" />
+      <module name="JavaSample" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MenuLook" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="swing.menu.MenuLookDemo" />
+      <module name="JavaSample" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MenuSelection" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="swing.menu.MenuSelectionManagerDemo" />
+      <module name="JavaSample" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Orfogr" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="string.orf.Orf" />
+      <module name="JavaSample" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PageNumberTest" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="fop.PageNumberTest" />
+      <module name="JavaSample" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PaintPanel" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="swing.fon_img.grafic_panel.Start" />
+      <module name="JavaSample" />
+      <option name="PROGRAM_PARAMETERS" value="conf/logger.txt conf/touchparams.txt" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PenFill" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="awt.draw.Draw2DCustomStrokePaint" />
+      <module name="JavaSample" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Ping" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="socket.ping.Ping" />
+      <module name="JavaSample" />
+      <option name="PROGRAM_PARAMETERS" value="192.168.0.215" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Ping2" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="socket.ping.Ping2" />
+      <module name="JavaSample" />
+      <option name="PROGRAM_PARAMETERS" value="-c 8 -s 40 -i 2000 192.168.0.215" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PingMe" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="socket.ping.PingMe" />
+      <module name="JavaSample" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Pinger" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="socket.ping.Pinger" />
+      <module name="JavaSample" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PopupMenu" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="swing.menu.PopupMenu" />
+      <module name="JavaSample" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PortBlackBox" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="comm.BlackBox.BlackBox" />
+      <module name="JavaSample" />
+      <option name="PROGRAM_PARAMETERS" value="-l" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PortList" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="comm.test.test" />
+      <module name="JavaSample" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PortList2" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="comm.list.List" />
+      <module name="JavaSample" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PortSerialDemo" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="comm.SerialDemo.SerialDemo" />
+      <module name="JavaSample" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProgressBar" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="swing.progressbar.ProgressBarDemo" />
+      <module name="JavaSample" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProgressBarDemo" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="thread.progressbar.ProgressBarDemo" />
+      <module name="JavaSample" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProgressBarTricks" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="swing.progressbar.ProgressBarTricks" />
+      <module name="JavaSample" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProgressDemo" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="thread.progressbar.ProgressDemo" />
+      <module name="JavaSample" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PseudoPing" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="socket.ping.PseudoPing" />
+      <module name="JavaSample" />
+      <option name="PROGRAM_PARAMETERS" value="192.168.0.215" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ReachableTest" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="socket.ping.ReachableTest" />
+      <module name="JavaSample" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Regexp2" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="string.regexc.RegexpAsSearch" />
+      <module name="JavaSample" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RoundButton" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="swing.jbutton.RoundButton" />
+      <module name="JavaSample" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SSLServer" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="jsse.sockets.server.ClassFileServer" />
+      <module name="JavaSample" />
+      <option name="PROGRAM_PARAMETERS" value="9000 c:/temp TLS true" />
+      <option name="VM_PARAMETERS" value="-Djavax.net.ssl.trustStore=c:\Serg\Projects\SVJ\JavaSample\src\jsse\samplecacerts  -Djavax.net.ssl.trustStorePassword=changeit" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/src/jsse/sockets/server" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SSLSocket" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="jsse.sockets.client.SSLSocketClientWithClientAuth" />
+      <module name="JavaSample" />
+      <option name="PROGRAM_PARAMETERS" value="localhost 9000 tt.html" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/src/jsse/sockets/client" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SaveImage" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="image.SaveImage" />
+      <module name="JavaSample" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SimpleLists" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="swing.list.SimpleLists" />
+      <module name="JavaSample" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SimpleTable" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="swing.table.SimpleTableDemo" />
+      <module name="JavaSample" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SimpleTest" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="swing.editor.jSyntax.SimpleTest" />
+      <module name="JavaSample" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SimpleWindow" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="swing.jbutton.flag.SimpleWindow" />
+      <module name="JavaSample" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SpringDemo3" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="swing.layout.SpringLayout.SpringDemo3" />
+      <module name="JavaSample" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SpringDemo4" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="swing.layout.SpringLayout.SpringDemo4" />
+      <module name="JavaSample" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SpringDemo5" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="swing.layout.SpringLayout.SpringDemo5" />
+      <module name="JavaSample" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StaticMethods" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="statics.TestStaticMethod" />
+      <module name="JavaSample" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Stax" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="xml.stax.StAXEventTreeViewer" />
+      <module name="JavaSample" />
+      <option name="PROGRAM_PARAMETERS" value="test/xml/zsttk_sberbank.xml" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StreamFilterTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="svj.lymbda.StreamFilterTest" />
+      <module name="JavaSample" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="svj.lymbda.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StyledDoc" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="swing.editor.StyledDoc" />
+      <module name="JavaSample" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TableFilterDemo" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="swing.table.JTableFilterDemo" />
+      <module name="JavaSample" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TableRenderDemo" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="swing.table.TableRenderDemo" />
+      <module name="JavaSample" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestAutoScripts" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="swing.url.TestAutoScripts" />
+      <module name="JavaSample" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="swing.url.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestClient" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="test.as.client.Client" />
+      <module name="JavaSample" />
+      <option name="PROGRAM_PARAMETERS" value="3232" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestServer" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="test.as.server.Server" />
+      <module name="JavaSample" />
+      <option name="PROGRAM_PARAMETERS" value="$PROJECT_DIR$/conf/test.txt" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TextAreaInAction" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="swing.text.in_action.TextAreaInAction" />
+      <module name="JavaSample" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TextComponentDemo" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="swing.editor.TextComponentDemo" />
+      <module name="JavaSample" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TextFieldInAction" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="swing.text.in_action.TextFieldInAction" />
+      <module name="JavaSample" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TextFieldInActionOk" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="swing.text.in_action.TextFieldInActionOk" />
+      <module name="JavaSample" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TextInputDemo" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="swing.text.TextInputDemo" />
+      <module name="JavaSample" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TextSamplerDemo" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="swing.editor.sampler3.TextSamplerDemo" />
+      <module name="JavaSample" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TftpClient" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="ftp.tftp.TftpClient" />
+      <module name="JavaSample" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ToolTipTest" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="swing.table.renderer.ToolTipTest" />
+      <module name="JavaSample" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TouchScreen" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="comm.touchscreen.TSStart" />
+      <module name="JavaSample" />
+      <option name="PROGRAM_PARAMETERS" value="conf/logger.txt  conf/touchparams.txt" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Translit" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="string.Translit2" />
+      <module name="JavaSample" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tree-Dynamic" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="swing.tree.dynamic.DynamicTreeDemo" />
+      <module name="JavaSample" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tw" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="swing.window.Tw" />
+      <module name="JavaSample" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="USB_Mouse" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="usb.javax.MouseDriver" />
+      <module name="JavaSample" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="USB_ShowTopology" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="usb.javax.ShowTopology" />
+      <module name="JavaSample" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UnknowMaxProgressBar" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="swing.progressbar.UnknowMaxProgressBar" />
+      <module name="JavaSample" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WaitingFrame" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="swing.progressbar.wait.WaitingFrame" />
+      <module name="JavaSample" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="graph2d" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="grafics.grafics2.graph2d" />
+      <module name="JavaSample" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="BashConfigurationType" factoryName="Bash">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="INTERPRETER_PATH" value="/bin/bash" />
+      <option name="PROJECT_INTERPRETER" value="false" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <module name="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <extension name="snapshooter" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="wholeProject" />
+      </option>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="TestNG">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <extension name="snapshooter" />
+      <option name="VM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="wholeProject" />
+      </option>
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Action01" />
+      <item itemvalue="Application.Action02" />
+      <item itemvalue="Application.ActionDemo" />
+      <item itemvalue="Application.BA_Test" />
+      <item itemvalue="Application.BillAcceptor" />
+      <item itemvalue="Application.CheckBoxDemo" />
+      <item itemvalue="Application.ColorChooserSample" />
+      <item itemvalue="Application.ColorPicker" />
+      <item itemvalue="Application.ComboMenu" />
+      <item itemvalue="Application.CronTime01" />
+      <item itemvalue="Application.CronTime02" />
+      <item itemvalue="Application.DateTest" />
+      <item itemvalue="Application.DecimalFormatDemo" />
+      <item itemvalue="Application.Decorator" />
+      <item itemvalue="Application.DialogDemo" />
+      <item itemvalue="Application.FileNameTools" />
+      <item itemvalue="Application.FileStringInvertor" />
+      <item itemvalue="Application.FonDemo" />
+      <item itemvalue="Application.FontList" />
+      <item itemvalue="Application.FormattedTextFieldDemo" />
+      <item itemvalue="Application.GridBagLayoutTest1" />
+      <item itemvalue="Application.HashCode" />
+      <item itemvalue="Application.IcmpPing2" />
+      <item itemvalue="Application.ImageTable" />
+      <item itemvalue="Application.InitPIN" />
+      <item itemvalue="Application.InitStyle" />
+      <item itemvalue="Application.InterruptExample02" />
+      <item itemvalue="Application.InterruptExample" />
+      <item itemvalue="Application.InvokeLater" />
+      <item itemvalue="Application.IrcConvertTest" />
+      <item itemvalue="Application.JButton1" />
+      <item itemvalue="Application.JSwingButton" />
+      <item itemvalue="Application.JobStateExample" />
+      <item itemvalue="Application.Jython" />
+      <item itemvalue="Application.Label_html" />
+      <item itemvalue="Application.Layout_GridBag" />
+      <item itemvalue="Application.LocalTimeTest" />
+      <item itemvalue="Application.MathTestRound" />
+      <item itemvalue="Application.MenuLook" />
+      <item itemvalue="Application.MenuSelection" />
+      <item itemvalue="Application.Orfogr" />
+      <item itemvalue="Application.PageNumberTest" />
+      <item itemvalue="Application.PaintPanel" />
+      <item itemvalue="Application.PenFill" />
+      <item itemvalue="Application.Ping2" />
+      <item itemvalue="Application.PingMe" />
+      <item itemvalue="Application.Ping" />
+      <item itemvalue="Application.Pinger" />
+      <item itemvalue="Application.PopupMenu" />
+      <item itemvalue="Application.PortBlackBox" />
+      <item itemvalue="Application.PortList2" />
+      <item itemvalue="Application.PortList" />
+      <item itemvalue="Application.PortSerialDemo" />
+      <item itemvalue="Application.ProgressBarDemo" />
+      <item itemvalue="Application.ProgressBarTricks" />
+      <item itemvalue="Application.ProgressBar" />
+      <item itemvalue="Application.ProgressDemo" />
+      <item itemvalue="Application.PseudoPing" />
+      <item itemvalue="Application.ReachableTest" />
+      <item itemvalue="Application.Regexp2" />
+      <item itemvalue="Application.RoundButton" />
+      <item itemvalue="Application.SSLServer" />
+      <item itemvalue="Application.SSLSocket" />
+      <item itemvalue="Application.SaveImage" />
+      <item itemvalue="Application.SimpleLists" />
+      <item itemvalue="Application.SimpleTable" />
+      <item itemvalue="Application.SimpleTest" />
+      <item itemvalue="Application.SimpleWindow" />
+      <item itemvalue="Application.SpringDemo3" />
+      <item itemvalue="Application.SpringDemo4" />
+      <item itemvalue="Application.SpringDemo5" />
+      <item itemvalue="Application.StaticMethods" />
+      <item itemvalue="Application.Stax" />
+      <item itemvalue="Application.StreamFilterTest" />
+      <item itemvalue="Application.StyledDoc" />
+      <item itemvalue="Application.TableFilterDemo" />
+      <item itemvalue="Application.TableRenderDemo" />
+      <item itemvalue="Application.TestAutoScripts" />
+      <item itemvalue="Application.TestClient" />
+      <item itemvalue="Application.TestServer" />
+      <item itemvalue="Application.TextAreaInAction" />
+      <item itemvalue="Application.TextComponentDemo" />
+      <item itemvalue="Application.TextFieldInActionOk" />
+      <item itemvalue="Application.TextFieldInAction" />
+      <item itemvalue="Application.TextInputDemo" />
+      <item itemvalue="Application.TextSamplerDemo" />
+      <item itemvalue="Application.TftpClient" />
+      <item itemvalue="Application.ToolTipTest" />
+      <item itemvalue="Application.TouchScreen" />
+      <item itemvalue="Application.Translit" />
+      <item itemvalue="Application.Tree-Dynamic" />
+      <item itemvalue="Application.Tw" />
+      <item itemvalue="Application.USB_Mouse" />
+      <item itemvalue="Application.USB_ShowTopology" />
+      <item itemvalue="Application.UnknowMaxProgressBar" />
+      <item itemvalue="Application.WaitingFrame" />
+      <item itemvalue="Application.graph2d" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.IrcConvertTest" />
+        <item itemvalue="Application.StreamFilterTest" />
+        <item itemvalue="Application.LocalTimeTest" />
+        <item itemvalue="Application.FileNameTools" />
+        <item itemvalue="Application.TestAutoScripts" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ScopeViewComponent">
+    <subPane subId="Project">
+      <PATH>
+        <PATH_ELEMENT USER_OBJECT="Root">
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="" />
+        </PATH_ELEMENT>
+      </PATH>
+    </subPane>
+  </component>
+  <component name="StarteamConfiguration">
+    <option name="SERVER" value="" />
+    <option name="PORT" value="49201" />
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="PROJECT" value="" />
+    <option name="VIEW" value="" />
+    <option name="ALTERNATIVE_WORKING_PATH" value="" />
+    <option name="LOCK_ON_CHECKOUT" value="false" />
+    <option name="UNLOCK_ON_CHECKIN" value="false" />
+  </component>
+  <component name="StructureViewFactory">
+    <option name="ACTIVE_ACTIONS" value="ALPHA_COMPARATOR,SHOW_FIELDS" />
+  </component>
+  <component name="Struts Assistant">
+    <option name="showInputs" value="true" />
+    <option name="resources">
+      <value>
+        <option name="strutsPath" />
+        <option name="strutsHelp" />
+      </value>
+    </option>
+    <option name="selectedTaglibs" />
+    <option name="selectedTaglibs" />
+    <option name="myStrutsValidationEnabled" value="true" />
+    <option name="myTilesValidationEnabled" value="true" />
+    <option name="myValidatorValidationEnabled" value="true" />
+    <option name="myReportErrorsAsWarnings" value="true" />
+  </component>
+  <component name="SvnChangesBrowserSettings">
+    <option name="USE_AUTHOR_FIELD" value="true" />
+    <option name="AUTHOR" value="" />
+    <option name="LOCATION" value="" />
+    <option name="USE_PROJECT_SETTINGS" value="true" />
+    <option name="USE_ALTERNATE_LOCATION" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration>$USER_HOME$/.subversion_IDEA</configuration>
+    <supportedVersion>125</supportedVersion>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4a098b3f-327e-421c-bfd3-c1696f1b02ac" name="Default" comment="" />
+      <created>1341302181153</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1341302181153</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TodoView" selected-index="2">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="0" width="1920" height="1044" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.5961969" visible="true" weight="0.2489339" />
+      <window_info id="Web" order="1" weight="0.25" />
+      <window_info id="Palette&#9;" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info active="true" id="Structure" order="6" sideWeight="0.40380314" side_tool="true" visible="true" weight="0.2489339" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" auto_hide="true" x="618" y="446" width="1078" height="466" id="Find" order="1" type="FLOATING" visible="true" weight="0.2579583" />
+      <window_info anchor="bottom" x="783" y="230" width="977" height="636" id="Run" order="2" type="FLOATING" visible="true" weight="0.28619152" />
+      <window_info anchor="bottom" id="EJB" order="3" weight="0.25" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.32930845" />
+      <window_info anchor="bottom" id="TODO" order="8" weight="0.32884398" />
+      <window_info anchor="bottom" id="Application Servers" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32777777" />
+      <window_info anchor="bottom" id="IDEtalk Messages" order="11" />
+      <window_info anchor="bottom" id="CVS" order="12" />
+      <window_info anchor="bottom" id="Duplicates" order="13" />
+      <window_info anchor="bottom" id="WebServices" order="14" />
+      <window_info anchor="bottom" id="Dependency Viewer" order="15" />
+      <window_info anchor="bottom" id="Version Control" order="16" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Changes" order="17" />
+      <window_info anchor="bottom" id="Messages" order="18" weight="0.34451902" />
+      <window_info anchor="bottom" id="CheckStyle" order="19" />
+      <window_info anchor="bottom" id="Regex Tester" order="20" />
+      <window_info anchor="bottom" id="Reviews" order="21" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Hierarchy" order="1" weight="0.25" />
+      <window_info anchor="right" id="Designer" order="2" />
+      <window_info anchor="right" id="JetGradle" order="3" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" id="Capture Analysis" order="5" />
+      <window_info anchor="right" id="News Feed" order="6" />
+      <window_info anchor="right" id="Maven Projects" order="7" weight="0.32953313" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
+      <window_info anchor="right" id="IDEtalk" order="9" />
+      <window_info anchor="right" id="Maven projects" order="10" />
+      <window_info anchor="right" id="Module Dependencies" order="11" />
+      <window_info anchor="right" id="File View" order="12" />
+      <window_info anchor="right" id="Favorites" order="13" side_tool="true" />
+      <window_info anchor="right" id="Ant Build" order="14" sideWeight="0.7138085" weight="0.14171124" />
+      <window_info anchor="right" id="Maven" order="15" />
+      <window_info anchor="right" id="RestServices" order="16" />
+    </layout>
+  </component>
+  <component name="VCS.FileViewConfiguration">
+    <option name="SELECTED_STATUSES" value="DEFAULT" />
+    <option name="SELECTED_COLUMNS" value="DEFAULT" />
+    <option name="SHOW_FILTERS" value="true" />
+    <option name="CUSTOMIZE_VIEW" value="true" />
+    <option name="SHOW_FILE_HISTORY_AS_TREE" value="true" />
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="PERFORM_UPDATE_IN_BACKGROUND" value="false" />
+    <option name="PERFORM_COMMIT_IN_BACKGROUND" value="false" />
+    <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
+  </component>
+  <component name="VssConfiguration">
+    <option name="CLIENT_PATH" value="" />
+    <option name="SRCSAFEINI_PATH" value="" />
+    <option name="USER_NAME" value="" />
+    <option name="PWD" value="" />
+    <CheckoutOptions>
+      <option name="COMMENT" value="" />
+      <option name="DO_NOT_GET_LATEST_VERSION" value="false" />
+      <option name="REPLACE_WRITABLE" value="false" />
+      <option name="RECURSIVE" value="false" />
+    </CheckoutOptions>
+    <CheckinOptions>
+      <option name="COMMENT" value="" />
+      <option name="KEEP_CHECKED_OUT" value="false" />
+      <option name="RECURSIVE" value="false" />
+    </CheckinOptions>
+    <AddOptions>
+      <option name="STORE_ONLY_LATEST_VERSION" value="false" />
+      <option name="CHECK_OUT_IMMEDIATELY" value="false" />
+    </AddOptions>
+    <UndocheckoutOptions>
+      <option name="MAKE_WRITABLE" value="false" />
+      <option name="REPLACE_LOCAL_COPY" value="0" />
+      <option name="RECURSIVE" value="false" />
+    </UndocheckoutOptions>
+    <GetOptions>
+      <option name="REPLACE_WRITABLE" value="0" />
+      <option name="MAKE_WRITABLE" value="false" />
+      <option name="ANSWER_NEGATIVELY" value="false" />
+      <option name="ANSWER_POSITIVELY" value="false" />
+      <option name="RECURSIVE" value="false" />
+      <option name="VERSION" />
+    </GetOptions>
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+    <buildFile url="file://$PROJECT_DIR$/build.xml">
+      <runInBackground value="false" />
+      <targetFilters>
+        <filter targetName="distr" isVisible="false" />
+        <filter targetName="doc" isVisible="true" />
+        <filter targetName="jar" isVisible="false" />
+        <filter targetName="compile" isVisible="false" />
+        <filter targetName="init" isVisible="false" />
+        <filter targetName="clean" isVisible="true" />
+        <filter targetName="all" isVisible="true" />
+      </targetFilters>
+      <expanded value="true" />
+    </buildFile>
+    <buildFile url="file://$PROJECT_DIR$/test.xml">
+      <runInBackground value="false" />
+      <targetFilters>
+        <filter targetName="init" isVisible="false" />
+        <filter targetName="compile" isVisible="false" />
+        <filter targetName="jar" isVisible="false" />
+        <filter targetName="all" isVisible="true" />
+        <filter targetName="clean" isVisible="true" />
+        <filter targetName="doc" isVisible="true" />
+        <filter targetName="distr" isVisible="false" />
+      </targetFilters>
+      <expanded value="true" />
+    </buildFile>
+  </component>
+  <component name="com.intellij.ide.util.scopeChooser.ScopeChooserConfigurable" proportions="" version="1">
+    <option name="myLastEditedConfigurable" />
+  </component>
+  <component name="com.intellij.openapi.roots.ui.configuration.projectRoot.ProjectRootMasterDetailsConfigurable" proportions="0.16666667" version="1">
+    <option name="myPlainMode" value="false" />
+    <option name="myLastEditedConfigurable" value="Modules" />
+  </component>
+  <component name="com.intellij.profile.ui.ErrorOptionsConfigurable" proportions="" version="1">
+    <option name="myLastEditedConfigurable" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/svj/irc/example/IRPMasterAPIExample.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="26" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/irc/IrpTransmogrifier-1.2.12.jar!/org/harctoolbox/irp/NameEngine.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="76" column="56" selection-start-line="76" selection-start-column="56" selection-end-line="76" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/irc/IrpTransmogrifier-1.2.12.jar!/org/harctoolbox/irp/NumberExpression.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="15" column="20" lean-forward="true" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/irc/IrpTransmogrifier-1.2.12.jar!/org/harctoolbox/irp/Number.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="152" column="25" selection-start-line="152" selection-start-column="25" selection-end-line="152" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/irc/IrpTransmogrifier-1.2.12.jar!/org/harctoolbox/irp/RenderData.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="386">
+          <caret line="51" column="16" selection-start-line="51" selection-start-column="16" selection-end-line="51" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/irc/IrpTransmogrifier-1.2.12.jar!/org/harctoolbox/irp/ParameterSpecs.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="246" column="16" selection-start-line="246" selection-start-column="16" selection-end-line="246" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/irc/IrpTransmogrifier-1.2.12.jar!/org/harctoolbox/irp/SignalRecognitionException.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
+          <folding>
+            <element signature="e#252#253#0" expanded="true" />
+            <element signature="e#281#282#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/irc/IrpTransmogrifier-1.2.12.jar!/org/harctoolbox/irp/NamedProtocol.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="373">
+          <caret line="227" column="40" selection-start-line="227" selection-start-column="40" selection-end-line="227" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/irc/IrpTransmogrifier-1.2.12.jar!/org/harctoolbox/irp/ElementaryDecode.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/irc/IrpTransmogrifier-1.2.12.jar!/org/harctoolbox/irp/Decoder.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="720" column="17" selection-start-line="720" selection-start-column="17" selection-end-line="720" selection-end-column="17" />
+          <folding>
+            <element signature="e#11332#11333#0" expanded="true" />
+            <element signature="e#11394#11395#0" expanded="true" />
+            <element signature="e#13478#13479#0" expanded="true" />
+            <element signature="e#13547#13548#0" expanded="true" />
+            <element signature="e#27889#27890#0" expanded="true" />
+            <element signature="e#27934#27935#0" expanded="true" />
+            <element signature="e#31949#31950#0" expanded="true" />
+            <element signature="e#31995#31996#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/irc/IrpTransmogrifier-1.2.12.jar!/org/harctoolbox/irp/BitspecIrstream.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="118" column="26" selection-start-line="118" selection-start-column="26" selection-end-line="118" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/irc/IrpTransmogrifier-1.2.12.jar!/org/harctoolbox/irp/IrStream.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="158" column="29" selection-start-line="158" selection-start-column="29" selection-end-line="158" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/irc/IrpTransmogrifier-1.2.12.jar!/org/harctoolbox/irp/BareIrStream.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="303" column="28" selection-start-line="303" selection-start-column="28" selection-end-line="303" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/irc/IrpTransmogrifier-1.2.12.jar!/org/harctoolbox/irp/IrStreamItem.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="556">
+          <caret line="90" column="9" selection-start-line="90" selection-start-column="9" selection-end-line="90" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/irc/IrpTransmogrifier-1.2.12.jar!/org/harctoolbox/irp/FiniteBitField.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-26">
+          <caret line="257" column="16" selection-start-line="257" selection-start-column="16" selection-end-line="257" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resource/IrpProtocols.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="461">
+          <caret line="2323" column="47" lean-forward="true" selection-start-line="2323" selection-start-column="47" selection-end-line="2323" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/svj/irc/IrcConvertTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="145" column="75" lean-forward="true" selection-start-line="145" selection-start-column="75" selection-end-line="145" selection-end-column="75" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#16860#16861#0" expanded="true" />
+            <element signature="e#16900#16901#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/irc/IrpTransmogrifier-1.2.12.jar!/org/harctoolbox/ircore/IrSignal.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2822">
+          <caret line="214" column="16" selection-start-line="214" selection-start-column="16" selection-end-line="214" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/svj/irc/InterpretString.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="697">
+          <caret line="62" column="38" selection-start-line="62" selection-start-column="38" selection-end-line="62" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/irc/HarcHardware-2.4.0.jar!/org/harctoolbox/harchardware/ir/GlobalCacheParser.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="20" column="11" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="11" />
+          <folding>
+            <element signature="e#720#721#0" expanded="true" />
+            <element signature="e#749#750#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/svj/irc/OutputTextFormat.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/irc/IrpTransmogrifier-1.2.12.jar!/org/harctoolbox/ircore/Pronto.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3366">
+          <caret line="206" column="25" selection-start-line="206" selection-start-column="25" selection-end-line="206" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/svj/irc/RawIrSignal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3893">
+          <caret line="281" column="47" selection-start-line="281" selection-start-column="47" selection-end-line="281" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/svj/irc/ParametrizedIrSignal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5576">
+          <caret line="384" column="10" selection-start-line="384" selection-start-column="10" selection-end-line="384" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/svj/irc/NamedIrSignal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2924">
+          <caret line="233" column="8" selection-start-line="233" selection-start-column="8" selection-end-line="233" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/irc/IrpTransmogrifier-1.2.12.jar!/org/harctoolbox/irp/Protocol.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9486">
+          <caret line="650" column="33" selection-start-line="650" selection-start-column="33" selection-end-line="650" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="Copyright.UI" />
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8 (Oracle JDK)</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>JavaSample</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>irc</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ScopeChooserConfigurable.UI" />
+    </states>
+  </component>
+</project>

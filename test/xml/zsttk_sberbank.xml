@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<module xml_version="3.0">
+  <!-- Уникальный ИД модуля - будет ИД блоба в БД -->
+  <id_name>zsttk-sberbank-xml</id_name>
+  <billing_name>ЗСТТК-xml</billing_name>
+  <module_name>Система платежей 'Сбербанк'</module_name>
+  <!-- Optional. default=false. true - будет выведены кнопки хелперов по мапингу сервисных кодов на доп услугу  -->
+  <use_service_code_helper>false</use_service_code_helper>
+  <!-- Optionsl. default=false. Использовать разделение по регионам (областям - true) или нет (false). -->
+  <use_region>true</use_region>
+
+  <!-- Optional. Мапинг кодов операторов на реальные ИД Поставщиков услуг -->
+  <operators>
+    <base>10</base>
+    <operator name="Базовая компания">
+      <code>10</code>
+      <db_id>2021</db_id>
+    </operator>
+    <operator name="Компания ТрансТелеКом (КТТК)">
+      <!-- Оператор дальней связи на Тестовом сервере ЗСТТК - billtest -->
+      <code>53</code>
+      <db_id>1</db_id>
+    </operator>
+    <operator name="ОАО 'Сибирьтелеком'">
+      <!-- Оператор дальней связи на Тестовом сервере ЗСТТК - billtest -->
+      <code>54</code>
+      <db_id>3590</db_id>
+    </operator>
+    <operator name="Ростелеком">
+      <!-- Оператор дальней связи на Тестовом сервере ЗСТТК - billtest -->
+      <code>55</code>
+      <db_id>4830</db_id>
+    </operator>
+    <operator name="Совинтел">
+      <!-- Оператор дальней связи на Тестовом сервере ЗСТТК - billtest -->
+      <code>56</code>
+      <db_id>626</db_id>
+    </operator>
+    <operator name="Artem Test Company">
+      <!-- Оператор дальней связи на Тестовом сервере Академсофта -->
+      <code>453</code>
+      <db_id>2101</db_id>
+    </operator>
+    <operator name="atest2">
+      <!-- Оператор дальней связи на Тестовом сервере Академсофта -->
+      <code>553</code>
+      <db_id>6181</db_id>
+    </operator>
+  </operators>
+
+
+  <codes>
+    <service_codes name="nsk">
+      <service_code name="Подключение Интернет">
+        <code>101</code>
+        <!-- Тип услуги. Из списка: ip, phone, tv, mts -->
+        <type>ip</type>
+        <!-- Тип мапинга. Из списка: additional_service, all_but_not_additional_service, tariff, transaction_type, transaction_type_w_subtype -->
+        <maping_type>additional_service</maping_type>
+        <!-- Optional. default=true. использовать и старый вариант с доп услугами со спец-типом -->
+        <use_old_install_gorod>true</use_old_install_gorod>
+      </service_code>
+      <service_code name="Услуга доступа в Интернет">
+        <code>102</code>
+        <type>ip</type>
+        <maping_type>all_but_not_additional_service</maping_type>
+        <use_old_install_gorod>true</use_old_install_gorod>
+      </service_code>
+      <service_code name="Установка телефона">
+        <code>201</code>
+        <type>phone</type>
+        <maping_type>additional_service</maping_type>
+        <use_old_install_gorod>true</use_old_install_gorod>
+      </service_code>
+      <service_code name="Услуга местной телефонии">
+        <code>202</code>
+        <type>phone</type>
+        <maping_type>all_but_not_additional_service</maping_type>
+        <use_old_install_gorod>true</use_old_install_gorod>
+      </service_code>
+      <service_code name="Услуга внутризоновой телефонии">
+        <code>203</code>
+        <type>mts</type>
+        <maping_type>transaction_type_w_subtype</maping_type>
+        <!-- Номера типов транзакций. Только для transaction_type и transaction_type_w_subtype -->
+        <transaction_type>700,703,710</transaction_type>
+        <!-- Номера подтипов. Только для transaction_type_w_subtype -->
+        <sub_type>4</sub_type>
+      </service_code>
+      <service_code name="Междугородная и международная телефония">
+        <code>204</code>
+        <type>mts</type>
+        <maping_type>transaction_type_w_subtype</maping_type>
+        <transaction_type>700,703,710</transaction_type>
+        <sub_type>1,2,3</sub_type>
+        <!-- линк на Оператора дальней связи - КТТК -->
+        <operator>53</operator>
+      </service_code>
+      <service_code name="Подключение кабельного ТВ">
+        <code>301</code>
+        <type>tv</type>
+        <maping_type>additional_service</maping_type>
+        <use_old_install_gorod>true</use_old_install_gorod>
+      </service_code>
+      <service_code name="Кабельное ТВ">
+        <code>302</code>
+        <type>tv</type>
+        <maping_type>all_but_not_additional_service</maping_type>
+        <use_old_install_gorod>true</use_old_install_gorod>
+      </service_code>
+    </service_codes>
+
+  </codes>
+
+
+
+  <imports>
+
+    <!-- Если блок отсутствует - useAuto=false -->
+    <auto_import>
+      <time>30</time>
+      <!-- Тип процесса для отчетности. Из списка: remotepay_reestr, import_gorod, export_gorod, import_sberbank, export_sberbank -->
+      <process_type>import_sberbank</process_type>
+      <!-- Если какой-либо из этих параметров будет отсутствовать - внутри модуля автоматически установится - useAuto=false -->
+    </auto_import>
+
+    <!-- Если блок есть - используем ответный квиток -->
+    <use_receipt>
+      <folder>/u/sberbank/in</folder>
+      <code_page>cp1251</code_page>
+    </use_receipt>
+
+    <!-- При разделении по регионам NAME обязательно содержит название Города -->
+    <import name="Новосибирск">
+      <data_format>CSV</data_format>  <!-- CSV, FixField -->
+
+      <!-- Поля -->
+      <fields>
+        <field name="account">
+          <!-- Стартовый номер символа - считая от 0 -->
+          <position>1</position>
+        </field>
+        <field name="amount">
+          <position>3</position>
+        </field>
+        <field name="date">
+          <position>0</position>
+          <!-- Дополнительный обьект поля. Здесь - формат даты -->
+          <object>ddMMyyyy</object>
+        </field>
+        <field name="time">
+          <position>0</position>
+        </field>
+        <field name="bank_service_code">
+          <position>2</position>
+        </field>
+      </fields>
+
+      <widgets active="true">
+        <!-- Разрешить в веб-форме выбор кодовой страницы (true) или нет (use EncodeWidget or no) -->
+        <select_code_page>true</select_code_page>
+      </widgets>
+
+      <!--  Общие параметры  -->
+
+      <date_one_field>true</date_one_field>
+
+      <compare_total>true</compare_total>
+
+      <!-- Optional. Default=account  -->
+      <account_type active="false">
+        <!-- Тип аккаунта - лицевой счет (account), номер телефона (phone), смешанное (mix) определяется по длине значения (для экспорта НЕ исп) -->
+        <type>phone</type>
+        <!-- Optional. Только для type=mix. Задаем размер значения номера телефона. -->
+        <phone_size>10</phone_size>
+        <!-- Optional. default = -1. Привязанный код услуги. -1 - нет привязки. -->
+        <service_code>601</service_code>
+      </account_type>
+
+      <!-- Откуда брать код услуги: Из заголовка (TRUE), либо из строки записи по ее номеру -->
+      <service_code_in_header>false</service_code_in_header>
+
+      <!-- Кодовая страница. Исп в демоне и в виджете - по умолчанию. cp1251, cp866, utf-8, koi8-r -->
+      <code_page>cp1251</code_page>
+      <delimiter>|</delimiter>
+
+      <!-- Тип платежа и его описание -->
+      <payment>
+        <!-- Вид задания типа платежа: custom/enum.  -->
+        <type>enum</type>
+        <!-- Значение Типа платежа.
+            Если custom - то это строковое название типа платежа.
+            Если enum - это значение из списка фиксированных типов: gorod, sberbank, sberbank_omsk, dkb, pkb, tkb, rikt, ursabank. -->
+        <value>sberbank</value>
+        <!-- Обязательное поле. Заносится в acct.Payment.description -->
+        <description>Загрузка платежей системы 'Сбербанк'</description>
+      </payment>
+
+      <!-- Тип загрузки. Заносится в журнал импорта-экспорта при успешной загрузке платежей.-->
+      <package>
+        <!-- Вид задания типа загрузки: custom/enum.  -->
+        <type>enum</type>
+        <!-- Значение Типа загрузки.
+            Если custom (еще НЕ реализовано) - то это строковое название типа загрузки.
+            Если enum - это значение из списка фиксированных типов (LoadPaymentPackage.TypeEnum): gorod, sberbank, dkb, pkb, tkb, rikt -->
+        <value>sberbank</value>
+      </package>
+
+      <!-- Вид суммы - в рублях (true) или в копейках  -->
+      <summa_rub>false</summa_rub>
+
+      <!-- Optional. -->
+      <header>
+        <!-- Из списка значений: gorod, sberbank -->
+        <handler_type>sberbank</handler_type>
+        <!-- Из списка значений: HeaderHandler: HEADER_TYPE_IS_ABSENT (0), HEADER_TYPE_BY_LINE_NUMBER (1), HEADER_TYPE_BY_FIRST_FIELD (2) -->
+        <header_type>HEADER_TYPE_BY_FIRST_FIELD</header_type>
+        <!-- Символ первой позиции записи по которому определяется что эта запись - заголовок -->
+        <header_first_field>=</header_first_field>
+      </header>
+
+      <!-- Optional. Имя должно совпадать с именем в наборе service_codes. Это линк на соответствующий блок сервисных кодов, описанных выше. -->
+      <service_code_name>nsk</service_code_name>
+
+      <!-- Использовать авто-импорт или нет. Если отcутствует - не исп для данного Импортера  -->
+      <auto_import>
+        <folders>
+          <source>/u/sberbank/out</source>
+          <arhive_ok>/u/sberbank/out/ok</arhive_ok>
+          <arhive_error>/u/sberbank/out/error</arhive_error>
+        </folders>
+      </auto_import>
+
+    </import>
+
+  </imports>
+
+
+
+  <exports>
+    <!-- Экспортеры различаются только - форматами данных, заголовки, имена файлов -->
+
+    <common>
+      <!-- Optional. default=false. Использовать разделение по регионам (городам) (true) или нет (false).
+         При веб-выводе - делить ли на регионы
+         При демоне - не исп
+      -->
+      <use_region>true</use_region>
+
+      <auto_export active="true">
+        <time>2:30</time>
+        <process_type>export_sberbank</process_type>
+        <sender type="Folder" active="true">
+          <tmp_folder>/u/tmp</tmp_folder>
+        </sender>
+        <level>ALL</level>
+      </auto_export>
+
+    </common>
+
+
+
+    <export name="All">
+
+      <mode>
+        <!-- Правило формирования имени файла для данного экспортера -->
+        <file_name>
+          <field name='1'>
+            <type>text</type>
+            <value>BC</value>
+          </field>
+          <field name='2'>
+            <type>date3</type>
+            <value>DDMMY</value>
+          </field>
+          <field name='3'>
+            <type>text</type>
+            <value>1.400</value>
+          </field>
+        </file_name>
+
+        <!-- Этот блок передается СендерКреатору и тот сам парсит его и заносит в Сендер под именами Экспортеров -->
+        <auto active="true">
+          <!-- По идее - это должны быть параметры для сендера - простые, под известными ему именами -->
+          <sender>
+            <!--target>/u/sberbank/export/nsk</target-->
+            <target>/u/sberbank/in</target>
+          </sender>
+          <!--use_tmp>true</use_tmp - из Header определяется -->
+        </auto>
+
+        <hand active="true"></hand>
+
+        <dinamic_parameters>
+          <param name="ServiceCode" active="true">
+            <value>cp1251</value>
+            <widget>true</widget>
+            <number>1</number>
+          </param>
+        </dinamic_parameters>
+      </mode>
+
+      <sql>
+        <!-- Здесь добавляются значения из MODE -->
+        <!-- Формировать сумму задолженности клиента из его Начислений (true) либо брать из баланса ЛС (false) -->
+        <create_amount_by_charges>true</create_amount_by_charges>
+        <!-- Optional. default=true. Выбирать только тех клиентов, у которых есть Начисления (true), или всех клиентов (false).
+             Не используется если create_amount_by_charges=false -->
+        <client_only_charges>false</client_only_charges>
+
+        <!-- Delivery - брать адрес из поля доставки. ALL - брать первый попавшийся в следующем порядке: -->
+        <address>delivery</address>
+
+        <dinamic_parameters>
+          <param name="Date" active="true">
+            <value>current</value>    <!-- Текущая дата, начало месяца и тд -->
+            <format></format>         <!-- Формат даты - часы-секунды или без них -->
+            <widget>true</widget>
+            <number>1</number>        <!-- Порядковый номер в массиве выводимых виджетов -->
+          </param>
+          <!-- Типы выводимых клиентов: Только должники, Должники и те у кого 0, Все: ONLY_DEBTOR, DEBTOR_AND_ZERO, ALL_CLIENTS
+             Флаг - есть на нем виджет
+          -->
+          <param name="DebtorType">
+            <value>ALL_CLIENTS</value>  <!-- ONLY_DEBTOR, DEBTOR_AND_ZERO, ALL_CLIENTS -->
+            <widget>true</widget>
+            <number>3</number>        <!-- Порядковый номер в массиве выводимых виджетов -->
+          </param>
+        </dinamic_parameters>
+
+        <use_region>true</use_region>
+
+        <region active="true">
+          <state name="1">Новосибирская область</state>
+          <state name="2">Кемеровская область</state>
+          <state name="3">Томская область</state>
+        </region>
+
+      </sql>
+
+
+      <!-- Optional. Имя должно совпадать с именем в наборе service_codes -->
+      <service_code_name>nsk</service_code_name>
+
+      <!-- Все что относится к структуре формируемого файла -->
+      <file_structure type="Csv">
+
+        <!-- type: Csv, FixField -->
+        <csv>
+          <delimiter>|</delimiter>
+        </csv>
+
+        <!-- Optional. default=false. Инвертировать суммы (исп в Интелком) -->
+        <invert_amount>false</invert_amount>
+
+        <!-- В версии xml =4.0 - этот тег отсюда удалится - в поле Amount -->
+        <!-- Выводить сумму в рублях (true), или в копейках (false). Default = true -->
+        <amount_as_rub>false</amount_as_rub>
+
+        <dinamic_parameters>
+          <param name="CodePage" active="true">
+            <value>cp1251</value>
+            <widget>true</widget>
+            <number>2</number>
+          </param>
+        </dinamic_parameters>
+
+        <!-- Optional. default=false. Для типа "Все" - выводить сумму переплаты как есть (false) или как 0 (true). -->
+        <overpayment_as_zero>true</overpayment_as_zero>
+
+        <fields>
+          <field name="account">
+            <!-- Линк на данные после sql. Номер от 0 -->
+            <!--type>Account</type-->
+            <number>0</number>
+            <max_size>20</max_size>
+          </field>
+          <field name="fio">
+            <type>Fio</type>
+            <max_size>60</max_size>
+          </field>  <!-- Здесь можно наворачивать требвоания на вывод ИО - полное, только инициалы, через точку и тд -->
+          <field name="client_address">
+            <type>Address</type>
+            <max_size>60</max_size>
+            <!-- Поля адреса выводятся в том же порядке, как были заданы в конфиге -->
+            <address>
+              <field name="Город">
+                <type>city</type>
+              </field>
+              <field name="Улица">
+                <type>street</type>
+                <prefix>,</prefix>
+              </field>
+              <field name="Дом">
+                <type>house</type>
+                <prefix>,</prefix>
+              </field>
+              <field name="Строение">
+                <type>building</type>
+                <prefix>/</prefix>
+                <not_use_if_null>true</not_use_if_null>
+              </field>
+              <field name="Корпус">
+                <type>block</type>
+                <prefix>, кор.</prefix>
+                <not_use_if_null>true</not_use_if_null>
+              </field>
+              <field name="Квартира">
+                <type>flat</type>
+                <prefix>, к. </prefix>
+                <not_use_if_null>true</not_use_if_null>
+              </field>
+            </address>
+          </field>
+          <field name="service_code">     <!-- Поле фиксированной длинны -->
+            <type>ServiceCode</type>
+            <fix_size>6</fix_size>
+            <fix_char>0</fix_char>
+          </field>
+          <field name="service_code_name">    <!-- Поле с ограничением длинны -->
+            <type>ServiceCodeName</type>
+            <max_size>25</max_size>
+          </field>
+          <field name="empty-1">
+            <type>Empty</type>
+          </field>
+          <field name="empty-2">
+            <type>Empty</type>
+          </field>
+          <field name="amount">
+            <type>Amount</type>
+            <!-- Выводить сумму в рублях (true), или в копейках (false). Default = true -->
+            <amount_as_rub>false</amount_as_rub>
+          </field>
+        </fields>
+
+
+        <header active="true">
+          <type>LastLine</type>
+        </header>
+
+      </file_structure>
+
+    </export>
+
+
+  </exports>
+
+
+</module>

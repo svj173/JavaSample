@@ -1,0 +1,6 @@
+# Конфиг файл для тестового сервера
+port=3232
+# port timeout (sec)
+timeout=20
+Service1=test.as.server.service.Service1
+Service2=test.as.server.service.Service2

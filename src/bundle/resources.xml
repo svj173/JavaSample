@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This is the configuration file for the common objects that are available in the runtime model -->
+<resourceConfig>
+  <resource nameSpace="common">
+      <!-- resource bundle file mappings -->
+          <resourceBundle name="resources" bundle="com.ibm.commerce.tools.properties.CommonStrings"/>
+          <resourceBundle name="WizardTabNames" bundle="com.ibm.commerce.tools.properties.WizardTabNames"/>
+      <!-- Resource XML file mappings -->
+          <resourceXML name="currencyMap" file="bundle/mybundle.xml" />
+          <resourceXML name="UIPropertyConfig" file="common/UIProperties.xml" />
+  </resource>
+</resourceConfig>

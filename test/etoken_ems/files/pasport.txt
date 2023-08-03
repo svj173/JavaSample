@@ -1,0 +1,3 @@
+clientName=Company1
+id=5123.567
+etoken_serial=009f67d2

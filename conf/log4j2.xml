@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Use log4j version 2  - EMS server
+
+     Параметры в теге configuration
+     - monitorInterval="30" - для перечитки конфиг-файла каждые 30 сек - для отслеживания изменений.
+            - 36000  -  10 часов.
+-->
+
+<configuration monitorInterval="36000">
+    <properties>
+        <property name="basedir">/home/svj/log/eltex-ems</property>
+        <property name="maxSize">20 KB</property>
+        <property name="maxCount">3</property>
+        <property name="defaultPattern">%d{ISO8601} [%t] %-5p %logger{12} %x %C{1}.%M(line:%L). %m%n</property>
+        <property name="monitorPattern">%d{ISO8601} [%t] %-5p %logger{12} %C{1}.%M(line:%L). %m%n</property>
+    </properties>
+
+    <appenders>
+        <!-- new -->
+        <!--
+        <RollingFile name="black" fileName="${basedir}/black_box.log"
+                     filePattern="${basedir}/black_box/black_box-%i.log.gz">
+            <ThresholdFilter level="INFO" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout>
+                <pattern>${defaultPattern}</pattern>
+            </PatternLayout>
+            <SizeBasedTriggeringPolicy size="${maxSize}"/>
+            <DefaultRolloverStrategy max="${maxCount}"/>
+        </RollingFile>
+
+        <RollingFile name="errorLog" fileName="${basedir}/error.log"
+                     filePattern="${basedir}/error/error-%i.log.gz">
+            <ThresholdFilter level="ERROR" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout>
+                <pattern>${defaultPattern}</pattern>
+            </PatternLayout>
+            <SizeBasedTriggeringPolicy size="${maxSize}"/>
+            <DefaultRolloverStrategy max="${maxCount}"/>
+        </RollingFile>
+        -->
+        <!-- OLD -->
+        <RollingFile name="black" fileName="${basedir}/black_box.log"
+                     filePattern="${basedir}/black_box/$${date:yyyy-MM}/black_box-%d{yyyy-MM-dd-HH}-%i.log.gz">
+            <ThresholdFilter level="INFO" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout>
+                <pattern>${defaultPattern}</pattern>
+            </PatternLayout>
+            <!-- Правила когда надо создавать новый файл - по "И" -->
+            <Policies>
+                <!-- Правило по времени (например, через каждые 6 часов) -->
+                <TimeBasedTriggeringPolicy/>
+                <!-- Правило по размерам файла (например, нарезать новые через каждые 10Мб), для боевой реализации = 10MB -->
+                <SizeBasedTriggeringPolicy size="${maxSize}"/>
+            </Policies>
+            <!-- Ограничение на кол-во файлов. для боевой реализации - не более 20 штук. -->
+            <DefaultRolloverStrategy max="${maxCount}"/>
+        </RollingFile>
+        <!--
+        <RollingFile name="errorLog" fileName="${basedir}/error.log"
+                     filePattern="${basedir}/error/$${date:yyyy-MM}/error-%d{yyyy-MM-dd-HH}-%i.log.gz">
+            <ThresholdFilter level="ERROR" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout>
+                <pattern>${defaultPattern}</pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="24" modulate="true" />
+                <SizeBasedTriggeringPolicy/>
+            </Policies>
+            <DefaultRolloverStrategy max="${maxCount}"/>
+        </RollingFile>
+        -->
+        <RollingFile name="errorLog" fileName="${basedir}/error.log"
+                     filePattern="${basedir}/error/$${date:yyyy-MM}/error-%d{yyyy-MM-dd-HH}-%i.log.gz">
+            <ThresholdFilter level="ERROR" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout>
+                <pattern>${defaultPattern}</pattern>
+            </PatternLayout>
+            <TimeBasedTriggeringPolicy interval="24" modulate="true" />
+            <DefaultRolloverStrategy max="${maxCount}"/>
+        </RollingFile>
+    </appenders>
+
+    <loggers>
+        <root level="debug">
+            <!--appender-ref ref="List"/-->
+            <!--appender-ref ref="async"/-->
+            <appender-ref ref="errorLog"/>
+            <appender-ref ref="black"/>
+            <!--appender-ref ref="syslogApp"/-->
+        </root>
+    </loggers>
+
+</configuration>

@@ -1,0 +1,72 @@
+Упаковка
+
+1) http://www.hardline.ru/1/3/329/673-3.html
+
+Zip - формат архивного файла, популярный на PC, который содержит несколько сжатых файлов внутри.
+GZIP - это GNU ZIP. Реально это подмножество формата ZIP с одним файлом
+внутри. В GZIP нельзя поместить целую директорию, а можно только один файл.
+
+PKZIP - набор коммерческих программ для создания файлов Zip.
+Все три используют алгоритм сжатия, основанный на LZ77. Этот метод сжатия
+также используется библиотекой ZLIB и, следовательно, графическим форматом
+PNG (который использует ZLIB). PNG - Portable Network Graphics -
+предоставляет свободную, не защищенную какими-либо патентами, замену GIF и TIFF.
+
+Альтернативная технология сжатия, LZW, защищена патентом Unisys. LZW
+используется в файлах GIF и в команде Unix'а compress. К счастью, будучи
+свободным от патентных зависимостей, LZ77 также дает лучшее сжатие, чем
+LZW. LZW - начальные буквы фамилий трех ученых, разработавших алгоритм
+(Lempel, Ziv, Welch).
+
+Основные классы (они находятся в java.util.svj.zip), поддерживающие формат LZ77
+- Deflater и Inflater. Они используются классами DeflaterOutputStream и
+InflaterInputStream. В пакете java.util.svj.zip есть так же классы
+GZIPInputStream и ZipInputStream, унаследованные от InflaterInputStream.
+
+PKZIP - коммерческая программа для DOS, Windows и OS/2, продаваемая PKWARE.
+
+Файлы Jar (Java Archive) хранятся в формате ZIP, но существует одно отличие - не сохраняются атрибуты файлов.
+
+!!!
+Известно, что некоторые версии WinZip неправильно поддерживают полный формат ZIP. Лучше использовать InfoZIP или PKZIP.
+
+
+Надо применять ZipArchiveInputStream
+
+Recommendations for Interoperability
+
+The optimal setting of flags depends on the archivers you expect as consumers/producers of the ZIP archives. Below are some test results which may be superseded with later versions of each tool.
+
+- The java.util.svj.zip package used by the jar executable or to read jars from your CLASSPATH reads and writes UTF-8 names, it doesn't set or recognize any flags or Unicode extra fields.
+- Starting with Java7 java.util.svj.zip writes UTF-8 by default and uses the language encoding flag. It is possible to specify a different encoding when reading/writing ZIPs via new constructors. The package now recognizes the language encoding flag when reading and ignores the Unicode extra fields.
+- 7Zip - writes CodePage 437 by default but uses UTF-8 and the language encoding flag when writing entries that cannot be encoded as CodePage 437 (similar to the svj.zip task with fallbacktoUTF8 set to true). It recognizes the language encoding flag when reading and ignores the Unicode extra fields.
+- WinZIP - writes CodePage 437 and uses Unicode extra fields by default. It recognizes the Unicode extra field and the language encoding flag when reading.
+- Windows' "compressed folder" feature - doesn't recognize any flag or extra field and creates archives using the platforms default encoding - and expects archives to be in that encoding when reading them.
+- InfoZIP - based tools can recognize and write both, it is a compile time option and depends on the platform so your mileage may vary.
+- PKWARE - svj.zip tools recognize both and prefer the language encoding flag. They create archives using CodePage 437 if possible and UTF-8 plus the language encoding flag for file names that cannot be encoded as CodePage 437.
+
+
+Классы
+
+1) ZipArchiveInputStream  - не нашел в java-8   - apache tomcat ?
+2) GZIPInputStream extends InflaterInputStream
+3) ZipInputStream extends InflaterInputStream implements ZipConstants
+
+
+Параллельная компрессия
+
+Multiple threads can write to their own ScatterZipOutputStream instance that is backed to file or to some user-implemented form of storage (implementing ScatterGatherBackingStore).
+
+
+
+GZIP vs Zip
+
+GZIP is a more primitive file format than zip.
+GZIPInputStream and GZIPOutputStream let you read and create compressed files, but not using the zip directory structure.
+The file consists of just one compressed lump, without any embedded members filenames, timestamps etc.
+-- GZIP более примитивен и не применяет директории.
+
+
+
+PKZIP - платные утилиты для линукса, винды...
+

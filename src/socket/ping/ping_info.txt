@@ -1,0 +1,74 @@
+
+How To: ICMP Ping in Java (JDK 1.5 and above)
+By Angsuman Chakraborty, Gaea News Network
+January 6th, 2007
+
+Programatically using ICMP Ping is a great way to establish that a server is up and running. Previously you couldn't do ICMP ping (what ping command does in Linux/Unix & Windows) in java without using JNI or exec calls. Here is a simple and reliable method to do ICMP pings in Java without using JNI or NIO.
+
+
+String host = "172.16.0.2"
+int timeOut = 3000; // I recommend 3 seconds at least
+boolean status = InetAddress.getByName(host).isReachable(timeOut)
+
+status is true if the machine is reachable by ping; false otherwise. Best effort is made to try to reach the host, but firewalls and server configuration may block requests resulting in a unreachable status while some specific ports may be accessible. A typical implementation will use ICMP ECHO REQUESTs if the privilege can be obtained, otherwise it will try to establish a TCP connection on port 7 (Echo) of the destination host.
+
+In Linux/Unix you may have to suid the java executable to get ICMP Ping working, ECHO REQUESTs will be fine even without suid. However on Windows you can get ICMP Ping without any issues whatsoever.
+
+----------------------------------------------------------------------------------------------------------------
+ Question   	  How do I use Java to ping a host?
+
+Answer
+Starting with Java 5, there is an isReachable() method in the InetAddress class. You can specify either a timeout or the NetworkInterface to use. For more information on the underlying Internet Control Message Protocol (ICMP) used by ping, see RFC 792 (http://www.faqs.org/rfcs/rfc792.html).
+
+Comment on this FAQ entry
+	isReachable is not an ICMP Ping
+Lee Clemens, Jun 2, 2006  [replies:1]
+I have read this a few other places as well, but InetAddress.isReachable() instance method actually attempts a TCP 3-way handshake with the host's port 7 (Echo). If it cannot complete the handshake (SYN -> SYN,ACK -> ACK)) or does not get a reply (JavaDocs don't specify which) before the timeout specified, it returns false.
+This is vastly different from an ICMP Ping, which sends ICMP Type 8 (echo) to the host and awaits an ICMP Type 0 (echo reply).
+So, if the server is not listening on Port 7, isReachable(int) returns false, while if the network link is up, a Ping will receive a reply.
+However,
+ public boolean isReachable ( NetworkInterface netif, int ttl, int timeout )
+will attempt an ICMP Echo (PING).
+
+----------------------------------------------------------------------------------------------------------------
+
+-- only Windows
+
+I implemented a real ICMP for Java with native support for win32, and I put it up on http://www.shortpasta.org — here is some sample code:
+
+final IcmpPingResponse icmpPingResponse =
+IcmpUtil.executeIcmpPingRequest (
+final String ipAddress,
+final int packetSize,
+final long timeout);
+
+
+ ShortPasta-icmp
+
+    - ICMP ping implementation for Java with a clean interface:
+
+        final IcmpPingResponse icmpPingResponse = IcmpUtil.executeIcmpPingRequest (
+
+            final String ipAddress,
+            final int packetSize,
+            final long timeout);
+
+
+    - Stand-alone and small footprint: shortpasta-icmp.jar (20k) + shortpasta-icmp.dll (241k debug, 40k release)
+    - Stand-alone project: build with Java 1.6 and Ant 1.7, native code built with VCPP6
+    - Developed, unit tested, documented, and supported by shortpasta.org
+    - Open Source, LGPL license. Free for commercial use, but please contribute, after all this is saving you at least some time!
+
+     - Uses real ICMP sockets via native calls which offers very accurate delay calcs
+    - Live site: http://www.everyping.com
+
+        - Why not use InetAddress.isReachable ()?
+        That's not what it was designed to do: isReachable () might use TCP instead of ICMP, and checking for
+        localhost always comes back with a delay of ~1000 msecs.
+
+        - Why not use jna or other wrappers?
+        They usually come with larger payloads. Still very good options for apps where size is not a concern
+
+        
+----------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------

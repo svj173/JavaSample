@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<monitors>
+
+    <!-- простой пример пропертей -->
+    <monitor name="FwNteUpdate">
+        <id>8</id>
+        <class>org.eltex.ems.web.server.monitor.monitors.ont_fw.FwNteUpdateMonitor</class>
+        <ru_name>Обновление ПО NTE</ru_name>
+        <job_group>group1</job_group>
+        <type>MANUAL</type>
+        <log_file_name>nte_update</log_file_name>
+        <trigger_name>nte_update</trigger_name>
+        <trigger_group>group1</trigger_group>
+        <properties>
+            <period>3:00</period>
+            <process_size>10</process_size>
+        </properties>
+    </monitor>
+
+
+    <!-- вложенные проперти -->
+    <monitor name="EmsServerDiagnostics">
+        <id>10</id>
+        <class>org.eltex.ems.web.server.monitor.monitors.EmsServerDiagnosticsMonitor</class>
+        <ru_name>Диагностика сервера EMS</ru_name>
+        <cron_date>0 0/5 * * * ?</cron_date>
+        <job_group>group1</job_group>
+        <type>MANUAL</type>
+        <log_file_name>ems_server_diagnostics</log_file_name>
+        <trigger_name>ems_server_diagnostics</trigger_name>
+        <trigger_group>group1</trigger_group>
+        <properties>
+            <process_size>10</process_size>
+            <group name="state">
+                <group name="MemoryAvailable">
+                    <value>76</value>
+                    <compare>LT</compare>
+                </group>
+                <group name="MemoryTotal">
+                    <value>10</value>
+                    <compare>GT</compare>
+                </group>
+            </group>
+            <group name="storage">
+                <group name="/">
+                    <value>12</value>
+                    <compare>LT</compare>
+                </group>
+                <group name="/var/lib">
+                    <value>5</value>
+                    <compare>GT</compare>
+                </group>
+            </group>
+        </properties>
+    </monitor>
+
+</monitors>

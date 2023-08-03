@@ -1,0 +1,141 @@
+  Использование Event
+
+  Задача: Самим гененрит событие (эмулируем нажатие мыши), выдавая X и Y, чтобы ява разруливала,
+какой компонент был нажат и уже ява переадвала этому окмпоненту наше собыите, дергая его листенер.
+
+  Реализация.
+  Создавать AWTEvent (MouseEvent) и дергать у frame метод dispatchEvent ( Event event);
+
+
+dispatchEvent
+-------------
+
+ This method allows the dispatch of events into the implementations event model. Events dispatched
+in this manner will have the same capturing and bubbling behavior as events dispatched directly
+by the implementation. The target of the event is the EventTarget on which dispatchEvent is called.
+
+    Parameters
+        evt - of type Event
+Specifies the event type, behavior, and contextual information to be used in processing the event.
+
+    Return Value
+        boolean
+ The return value of dispatchEvent indicates whether any of the listeners which handled the event
+called preventDefault. If preventDefault was called the value is false, else the value is true.
+
+    Exceptions
+        EventException
+ UNSPECIFIED_EVENT_TYPE_ERR: Raised if the Event's type was not specified by initializing the event
+before dispatchEvent was called. Specification of the Event's type as null or an empty string
+will also trigger this exception.
+
+
+------------------------------------------------------------------------------------
+The dispatchEvent method allows the dispatch of events into the implementation's event model.
+
+        Syntax
+boolean = element.dispatchEvent(event)
+
+        Parameters
+event - is an event object that contains information about the type, behavior, and contextual
+information of the event to be dispatched.
+
+        Example
+
+b = document.getElementById("button1");
+res = b.dispatchEvent("click");
+if ( res )
+{
+   // event dispatch was successful
+   b.disabled = true;
+}
+
+        Notes
+When you create and dispatch an event using this method, the event has the same effect as events
+dispatched by user interaction. They are "real" events, in other words, and they bubble up the
+UI in the same way. See the event object interface for more information about the information
+that is passed in with this method.
+
+------------------------------------------------------------------------------------
+
+    Попытка разобрать механизм Явы по парсингу нажатия мыши и передаче управления соовтетсвующему обьекту.
+
+java.lang.Exception: 45
+	at comm.touchscreen.TSActionListener.actionPerformed(TSActionListener.java:33)
+	at javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:1849)
+	at javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2169)
+	at javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:420)
+	at javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:258)
+	at javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:234)
+	at java.awt.Component.processMouseEvent(Component.java:5488)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3093)
+	at java.awt.Component.processEvent(Component.java:5253)
+	at java.awt.Container.processEvent(Container.java:1966)
+	at java.awt.Component.dispatchEventImpl(Component.java:3955)
+	at java.awt.Container.dispatchEventImpl(Container.java:2024)
+	at java.awt.Component.dispatchEvent(Component.java:3803)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4212)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:3892)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:3822)
+	at java.awt.Container.dispatchEventImpl(Container.java:2010)
+	at java.awt.Window.dispatchEventImpl(Window.java:1766)
+	at java.awt.Component.dispatchEvent(Component.java:3803)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:463)
+	at java.awt.EventDispatchThread.pumpOneEventForHierarchy(EventDispatchThread.java:234)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:163)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:157)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:149)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:110)
+
+Вид события
+java.awt.event.MouseEvent[MOUSE_CLICKED,(203,507),button=0,modifiers=Shift,extModifiers=Shift,clickCount=1] on frame0
+
+------------------------------------------------------------------------------------
+
+Второй путь.
+
+Брать обьект по координатам, создать свой ActionEvent, вызывать у обьекта листенер, передав ему ActionEvent
+
+Вид ActionEvent
+
+ActionEvent(Object source, int id, String command)
+
+java.awt.event.ActionEvent[ACTION_PERFORMED,cmd=55,when=1142501704218,modifiers=Button1] on
+ javax.swing.JButton[,635,495,127x99,alignmentX=0.0,alignmentY=0.5,
+ border=javax.swing.plaf.BorderUIResource$CompoundBorderUIResource@aa9835,flags=296,
+ maximumSize=,minimumSize=,preferredSize=,defaultIcon=,disabledIcon=,disabledSelectedIcon=,
+ margin=javax.swing.plaf.InsetsUIResource[top=2,left=14,bottom=2,right=14],paintBorder=true,
+ paintFocus=true,pressedIcon=,rolloverEnabled=true,rolloverIcon=,rolloverSelectedIcon=,
+ selectedIcon=,text=55,defaultCapable=true]
+
+Пример для простой панели, полностью забитой кнопками (без вложенных панелей)
+
+Component c, c2, c3, c4;
+c2   = frame.getContentPane ();
+// Здесь мы уже получаем требуемый обьект
+c3   = c2.getComponentAt ( x, y );
+if ( c3 instanceof JButton )
+{
+    JButton button;
+    String  cmd;
+    ActionListener ass[];
+    ActionEvent act;
+    //
+    logger.debug ( " It is JButton" );
+    button  = (JButton) c3;
+    cmd = button.getActionCommand ();
+    logger.debug ( " Cmd = " + cmd );
+    //
+    ass = button.getActionListeners ();
+    logger.debug ( " Ass[0] = " + ass[0] );
+    // ActionEvent(Object source, int id, String command)
+    act = new ActionEvent ( button, ActionEvent.ACTION_PERFORMED, cmd );
+    ass[0].actionPerformed ( act );
+}
+
+Вопрос
+Будет ли это работать в сложной структуре, где много вложенных панелей с кнопками?
+
+------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------

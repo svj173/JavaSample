@@ -1,0 +1,32 @@
+
+    Замечания:
+    1. Русские буквы в тексте тоже берет.
+    2. Передаваемые в параметрах классы почему-то не требуют наличия в коде программы блоков
+import на эти классы. Т.е. import пишется только на используемые внутри классы.
+
+    Возвращаемые классы.
+
+    1. Простые типы.
+     а) double
+     # Python type: <- org.python.core.PyFloat
+     # Java type:   <- java.lang.Double
+
+    2. Vector
+    Возвращает - org.python.core.PyJavaInstance
+    При конвертации в ява-обьект (Object.class) - возвращает именно Vector.
+    # <- org.python.core.PyJavaInstance
+    # <- java.util.Vector
+
+    3. Массивы возвращаются обьектом org.python.core.PyList, который имеет свои методы
+append, get, del и т.д.
+    bArray=[1,2,3]
+    # <- org.python.core.PyList
+    # <- org.python.core.PyList
+    
+    4. Обьекты. Передаем с параметрами ява-обьект, модернизируем, возвращаем.
+    returnValue = MyObject
+    returnValue.setName ( "Тестинг !!!" )
+    # <- org.python.core.PyJavaInstance
+    # <- jython.MyObject
+
+

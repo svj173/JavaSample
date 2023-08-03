@@ -1,0 +1,16 @@
+port=COM1
+#port=/dev/ttyS0
+speed=9600
+parity=0
+bits=8
+stop_bit=1
+x1=0
+x2=256
+x3=512
+x4=768
+y0=0
+y1=0
+y2=256
+y3=512
+dx=0
+dy=0

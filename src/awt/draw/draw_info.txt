@@ -1,0 +1,47 @@
+
+drawLine(int x1, int y1, int x2, int y2) – рисует линию;
+
+drawRect(int x, int y, int width, int height) и fillRect (int x, int y, int width, int height) – рисуют прямоугольник и заполненный прямоугольник;
+
+draw3DRect (int x, int y, int width, int height, boolean raised) – рисует трехмерный прямоугольник;
+
+drawRoundRect (int x, int y, int width, int height, int arcWidth, int arcHeight) – рисует округленный прямоугольник;
+
+drawOval (int x, int y, int width, int height) – рисует овал;
+
+drawPolygon (int[] xPoints, int[] yPoints, int nPoints) – рисует полигон (многоугольник), заданный массивами координат x и y;
+
+drawPolygon(Polygon p) – рисует полигон, заданный объектом Polygon;
+
+drawPolyline(int[] xPoints, int[] yPoints, int nPoints) – рисует последовательность связных линий, заданных массивами x и y;
+
+drawArc (int x, int y, int width, int height, int startAngle, int arcAngle) – рисует дугу окружности;
+
+drawImage (Image img, int x, int y, Color bgcolor, ImageObserver observer) – вставляет изображение;
+
+drawString(String str, int x, int y) – рисует строку;
+
+setColor (Color c), getColor () – устанавливает и возвращает текущий цвет;
+
+getFont () – возвращает текущий шрифт;
+
+setFont (Font font) – устанавливает новый шрифт.
+
+
+Четвертый метод выводит текст, занесенный в объект класса, реализующего интерфейс AttributedCharacterIterator.
+Это позволяет задавать свой шрифт для каждого выводимого симвoла:
+    drawString ( AttributedCharacterIterator iter, int x, int y );
+ - Точка (х, у) -- это левая нижняя точка первой буквы текста на базовой линии (baseline) вывода шрифта.
+
+
+//загрузка изображения из корня проекта
+img = getImage ( getCodeBase(), "joli.gif" );
+
+
+Примеры исп таблиц
+http://download.oracle.com/javase/tutorial/uiswing/components/table.html
+
+jtable + icon
+1. Для нужной колонки TableModel должна на getColumnClass()  возвращать ImageIcon
+2. В таблице для класса ImageIcon должен быть зарегистрирован рендерер
+3. Рендерер должен возвращать JLabel с иконкой. По умолчанию он возвращает себя (он extends JLabel) без иконки и с текстом object.toString()

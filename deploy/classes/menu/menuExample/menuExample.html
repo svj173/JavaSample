@@ -1,0 +1,345 @@
+<html>
+<head>
+<title>Пример создания меню (JMenuBar, JMenu, JItemMenu)</title>
+<META http-equiv=Content-Type content="text/html; charset=windows-1251">
+<META NAME="title" CONTENT="Пример создания меню (JMenuBar, JMenu, JItemMenu)"
+<META NAME="keywords" CONTENT="JBuilder, JСreator, ContentPane, main, String, frame, Default, Mutable, Tree, Node,Java, JavaScript, faq, programming, вопрос, ответ, пример,class, класс, JTree, рассылка, словарь, термин, конференция,web,цуи,html,реьд, script, ыскшзе, скрипт, cbcntvf, yjdjcnb">
+<META NAME="description" CONTENT="Пример создания меню (JMenuBar, JMenu, JItemMenu) на сайте JavaPortal, новости и всё о java и javascript">
+<link rel=stylesheet href="images/style.css" type="text/css">
+</head>
+<body bgColor="#ffffff">
+<a name="top"></a>
+<table cellSpacing="0" cellPadding="10" width="100%" border="0">
+<tr height="70"><!--Line 1-->
+<td bgColor="#006000" colSpan="3">
+<table width="100%">
+<tr>
+<td><img src="images/logo1.gif" alt="JavaPortal logo">
+</td>
+<td align="right">
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<!--Line 2-->
+<tr><!--Menu-->
+<td vAlign="top" width="135" bgColor="#f0fff0">
+<center>
+<a href="mailto:webmaster@javaportal.ru"><img src="images/mailmark.gif" border="0" alt="Mail to webmaster@javaportal.ru"></a>
+<a href="http://www.javaportal/project.html"><img src="images/infomark.gif" border="0" alt="О проекте"></a>
+<a href="#" onClick=javascript:window.external.AddFavorite(document.location.href,"JavaPortal--"+document.title)><img src="images/favoritemark.gif" border="0" alt="Добавить в избранное"></a><br>
+<br>
+<a class="menu"  href="http://www.javaportal/news/news.html">Новости</a><br>
+<a class="menu"  href="http://www.javaportal/project.html">О проекте</a><br>
+<a class="menu"  href="http://www.javaportal/subs/subs.html">Рассылки</a><br>
+<a class="menu"  href="http://www.javaportal/link.html">Связь с нами</a><br><br>
+<table width="135"><tr><td bgcolor=006000><font size=4 color="ffffff"><center><b>Java</b></center></font></td></tr></table>
+<br>
+<a class="menu"  href="http://www.javaportal/java/applets/applets.html">Апплеты</a><br>
+<a class="menu"  href="http://www.javaportal/java/faq/faq.html">Вопрос-ответ</a><br>
+<a class="menu"  href="http://www.javaportal/java/class/class.html">Классы</a><br>
+<a class="menu"  href="http://www.javaportal/java/conference/conference.html">Конференция</a><br>
+<a class="menu"  href="http://www.javaportal/java/examples/examples.html">Примеры</a><br>
+<a class="menu"  href="http://www.javaportal/java/articles/articles.html">Статьи</a><br>
+<br>
+<table width="135"><tr><td bgcolor=006000><font size=4 color="ffffff"><center><b>JavaScript</b></center></font></td></tr></table>
+<br>
+<a class="menu"  href="http://www.javaportal/javascript/faq/faq.html">Вопрос-ответ</a><br>
+<a class="menu"  href="http://www.javaportal/javascript/conference/conference.html">Конференция</a><br>
+<a class="menu"  href="http://www.javaportal/javascript/examples/examples.html">Примеры</a><br>
+<a class="menu"  href="http://www.javaportal/javascript/articles/articles.html">Статьи</a><br>
+<br>
+<table width="135"><tr><td bgcolor=006000><font size=4 color="ffffff"><center><b>Разное</b></center></font></td></tr></table>
+<br>
+<a class="menu"  href="http://www.javaportal/dictionary/dictionary.html">Словарь терминов</a><br>
+<a class="menu"  href="http://www.javaportal/articles/articles.html">Статьи</a><br>
+</center>
+</td>
+<!--2-я колонка-->
+<td vAlign="top" align="left" bgColor="#ffffff" rowspan="2">
+
+<a href="http://www.javaportal/java/examples/examples.html">Примеры</a><b><img src="images/mark2.gif">Пример создания меню (JMenuBar, JMenu, JItemMenu)</b><br>
+<hr color=006000>
+
+<h1><font color="#006000">Пример создания меню (JMenuBar, JMenu, JItemMenu) </font></h1>
+<h2>Основной класс</h2>
+<pre><font color="0000ff">
+package menuexample;
+
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+import javax.swing.border.*;
+
+public class MenuExample extends JFrame
+{
+ JPanel contentPane;
+ BorderLayout borderLayout1 = new BorderLayout();
+ JLabel status = new JLabel(" ");<font color="#305000"> //Строка статуса</font>
+ <font color="#305000">/**Конструктор
+  */</font>
+ public MenuExample()
+ {
+  enableEvents(AWTEvent.WINDOW_EVENT_MASK);
+  try
+  {
+   jbInit();
+  }
+  catch(Exception e)
+  {
+   e.printStackTrace();
+  }
+ }
+ <font color="#305000"> /**Производим инициализацию компонентов
+  */</font>
+ private void jbInit() throws Exception
+ {
+  contentPane = (JPanel) this.getContentPane();
+  <font color="#305000"> //Устанавливаем менеджер размещения компонентов</font>
+  contentPane.setLayout(borderLayout1);
+  <font color="#305000">//Создаём рамку для строки статуса</font>
+  Border border = BorderFactory.createEtchedBorder(Color.white,new Color(178, 178, 178));
+  status.setBorder(border);
+  <font color="#305000"> //Делаем фон строки непрозрачным</font>
+  status.setOpaque(true);
+  <font color="#305000">//Добавляем стоку статуса на панель</font>
+  contentPane.add(status,BorderLayout.SOUTH);
+  <font color="#305000">//Устанавливаем размер окна</font>
+  this.setSize(new Dimension(400, 300));
+  <font color="#305000">//Устанавливаем заголовок окна</font>
+  this.setTitle("Menu example");
+  <font color="#305000">//Создаем основное меню</font>
+  JMenuBar menuBar = new JMenuBar();
+  <font color="#305000">//Создаем три подменю</font>
+  JMenu menuFile = new JMenu("File");
+  JMenu menuView = new JMenu("View");
+  JMenu menuThread = new JMenu("Thread");
+  <font color="#305000">//Добавляем к нашем подменю обработчики событий(о них позже)</font>
+  menuFile.addMouseListener(new MenuExampleMouseAdapter("Menu file"," ",status));
+  menuView.addMouseListener(new MenuExampleMouseAdapter("Menu view"," ",status));
+  menuThread.addMouseListener(new MenuExampleMouseAdapter("Thread"," ",status));
+  <font color="#305000">//Создаем элементы подменю File с обработчиками событий</font>
+  JMenuItem item1 = new JMenuItem("New");
+  item1.addMouseListener(new MenuExampleMouseAdapter("New file"," ",status));
+  JMenuItem item2 = new JMenuItem("Open");
+  item2.addMouseListener(new MenuExampleMouseAdapter("Open file"," ",status));
+  JMenuItem item3 = new JMenuItem("Save");
+  item3.addMouseListener(new MenuExampleMouseAdapter("Save file"," ",status));
+  JMenuItem item4 = new JMenuItem("Save as..");
+  item4.addMouseListener(new MenuExampleMouseAdapter("Save file as.."," ",status));
+  JMenuItem item5 = new JMenuItem("Close");
+  item5.addMouseListener(new MenuExampleMouseAdapter("Close file"," ",status));
+  JMenuItem item6 = new JMenuItem("Exit");
+  item6.addMouseListener(new MenuExampleMouseAdapter("Exit prorgamm"," ",status));
+  <font color="#305000">//Добавляем обработчик события по нажатию</font>
+  item6.addActionListener(new java.awt.event.ActionListener()
+  {
+   public void actionPerformed(ActionEvent e)
+   {
+    System.exit(0);<font color="#305000">//Выход из системы</font>
+   }
+  });
+  <font color="#305000">//Добавляем созданные элементы подменю File</font>
+  menuFile.add(item1);
+  menuFile.add(item2);
+  menuFile.addSeparator();<font color="#305000">//Разделитель</font>
+  menuFile.add(item3);
+  menuFile.add(item4);
+  menuFile.addSeparator();<font color="#305000">//Разделитель</font>
+  menuFile.add(item5);
+  menuFile.addSeparator();<font color="#305000">//Разделитель</font>
+  menuFile.add(item6);
+  <font color="#305000">//Создаем элементы подменю View с обработчиками событий</font>
+  JMenuItem itemv1 = new JMenuItem("BGColor");
+  itemv1.addMouseListener(new MenuExampleMouseAdapter("Change background color"," ",status));
+  itemv1.setAccelerator(KeyStroke.getKeyStroke(67,Event.CTRL_MASK));
+  <font color="#305000">//Создаём обработчик события по нажатию на элемент itemv1</font>
+  itemv1.addActionListener(new ActionListener()
+  {
+   public void actionPerformed(ActionEvent e)
+   {
+    <font color="#305000">//Случайным образом меняем цвет фона панели</font>
+    int r=(int)(Math.random()*255);
+    int g=(int)(Math.random()*255);
+    int b=(int)(Math.random()*255);
+    contentPane.setBackground(new Color(r,g,b));
+   }
+  });
+  <font color="#305000">//Создаем подменю в подменю View</font>
+  JMenu menuUI = new JMenu("Look & Feel");
+  menuUI.addMouseListener(new MenuExampleMouseAdapter("Change Look & Feel"," ",status));
+  <font color="#305000">//Создаём элементы подменю View в виде JRadioButton</font>
+  JMenuItem itemui1 = new JRadioButtonMenuItem("Windows Look & Feel");
+  JMenuItem itemui2 = new JRadioButtonMenuItem("Metal Look & Feel");
+  JMenuItem itemui3 = new JRadioButtonMenuItem("Motif Look & Feel");
+  <font color="#305000">//Объединяем их в группу</font>
+  ButtonGroup bg = new ButtonGroup();
+  bg.add(itemui1);
+  bg.add(itemui2);
+  bg.add(itemui3);
+  <font color="#305000">//Создаем обработчики событий</font>
+  itemui1.addMouseListener(new MenuExampleMouseAdapter("Windows Look & Feel"," ",status));
+  itemui2.addMouseListener(new MenuExampleMouseAdapter("Metal Look & Feel"," ",status));
+  itemui3.addMouseListener(new MenuExampleMouseAdapter("Motif Look & Feel"," ",status));
+  itemui1.addActionListener(new ActionListener()
+  {
+   public void actionPerformed(ActionEvent e)
+   {
+    setLookAndFeel(1);<font color="#305000">//Меняем Look & Feel</font>
+   }
+  });
+  itemui2.addActionListener(new ActionListener()
+  {
+   public void actionPerformed(ActionEvent e)
+   {
+    setLookAndFeel(2);<font color="#305000">//Меняем Look & Feel</font>
+   }
+  });
+  itemui3.addActionListener(new ActionListener()
+  {
+   public void actionPerformed(ActionEvent e)
+   {
+    setLookAndFeel(3);<font color="#305000">//Меняем Look & Feel</font>
+   }
+  });
+  itemui2.setSelected(true);<font color="#305000">//Делаем выбранным по умолчанию</font>
+  <font color="#305000">//Добавляем элементы</font>
+  menuUI.add(itemui1);
+  menuUI.add(itemui2);
+  menuUI.add(itemui3);
+  itemv1.addMouseListener(new MenuExampleMouseAdapter("Change background color"," ",status));
+  <font color="#305000">//Добавляем "горячею клавишу"</font>
+  itemv1.setAccelerator(KeyStroke.getKeyStroke(67,Event.CTRL_MASK));
+  <font color="#305000">//Добавляем элемент</font>
+  menuView.add(itemv1);
+  <font color="#305000">//Добавляем подменю</font>
+  menuView.add(menuUI);
+  <font color="#305000">//Создаем элементы подменю Thread с обработчиками событий</font>
+  JMenuItem itemT1 = new JMenuItem("Add");
+  JMenuItem itemT2 = new JMenuItem("Run");
+  JMenuItem itemT3 = new JMenuItem("Pause");
+  JMenuItem itemT4 = new JMenuItem("Delete");
+  itemT1.addMouseListener(new MenuExampleMouseAdapter("Add thread"," ",status));
+  itemT2.addMouseListener(new MenuExampleMouseAdapter("Run thread"," ",status));
+  itemT3.addMouseListener(new MenuExampleMouseAdapter("Pause thread"," ",status));
+  itemT4.addMouseListener(new MenuExampleMouseAdapter("Delete thread"," ",status));
+  <font color="#305000">//Создаём иконки для элементов меню</font>
+  ImageIcon image1 = new ImageIcon(getToolkit().createImage("images/add.gif"));
+  ImageIcon image2 = new ImageIcon(getToolkit().createImage("images/play.gif"));
+  ImageIcon image3 = new ImageIcon(getToolkit().createImage("images/pause.gif"));
+  ImageIcon image4 = new ImageIcon(getToolkit().createImage("images/delete.gif"));
+  <font color="#305000">//Назначаем иконки элементам</font>
+  itemT1.setIcon(image1);
+  itemT2.setIcon(image2);
+  itemT3.setIcon(image3);
+  itemT4.setIcon(image4);
+  <font color="#305000">//Добавляем элементы в подменю Thread</font>
+  menuThread.add(itemT1);
+  menuThread.addSeparator();<font color="#305000">//Разделитель</font>
+  menuThread.add(itemT2);
+  menuThread.add(itemT3);
+  menuThread.addSeparator();<font color="#305000">//Разделитель</font>
+  menuThread.add(itemT4);
+  <font color="#305000">//Добавляем подменю в основное меню</font>
+  menuBar.add(menuFile);
+  menuBar.add(menuView);
+  menuBar.add(menuThread);
+  <font color="#305000">//Устанавливаем полученное меню на окно</font>
+  this.setJMenuBar(menuBar);
+ }
+ <font color="#305000">/**Изменяем Look & Feel
+  */</font>
+ public void setLookAndFeel(int type)
+ {
+  String laf= "javax.swing.plaf.metal.MetalLookAndFeel";
+  switch(type)
+  {
+   case 1: laf = "com.sun.java.swing.plaf.windows.WindowsLookAndFeel";
+   break;
+   case 2: laf = "javax.swing.plaf.metal.MetalLookAndFeel";
+   break;
+   case 3: laf = "com.sun.java.swing.plaf.motif.MotifLookAndFeel";
+   break;
+  }
+  try
+  {
+   <font color="#305000">//Меняем</font>
+   UIManager.setLookAndFeel(laf);
+   <font color="#305000">//Обновляем</font>
+   SwingUtilities.updateComponentTreeUI(this);
+  }
+  catch(Exception e)
+  {
+   e.printStackTrace();
+  }
+ }
+ protected void processWindowEvent(WindowEvent e)
+ {
+  super.processWindowEvent(e);
+  if (e.getID() == WindowEvent.WINDOW_CLOSING)
+  {
+   System.exit(0);
+  }
+ }
+}
+</font></pre>
+
+<h2>Вспомогательный класс для обработки событий по входу курсора на эелмент и выходу курсора за пределы элемента</h2>
+<pre><font color="0000ff">
+package menuexample;
+
+import java.awt.event.*;
+import javax.swing.JLabel;
+
+public class MenuExampleMouseAdapter extends MouseAdapter
+{
+ String messageEntered;
+ String messageExited;
+ JLabel status;
+ <font color="#305000">/**
+  * Конструктор
+  * @param messageEntered строка которую выводим в строку 
+  * статуса по входу курсора на элемент
+  * @param messageExited строка которую выводим в строку 
+  * статуса по выходу курсора за пределы элемента
+  * status строка статуса в которую происходит вывод
+  */ </font>
+ public MenuExampleMouseAdapter(String messageEntered,String messageExited, JLabel status)
+ {
+  this.messageEntered=messageEntered;
+  this.messageExited=messageExited;
+  this.status=status;
+ }
+ public void mouseEntered(MouseEvent e)
+ {
+  status.setText(messageEntered);
+ }
+ public void mouseExited(MouseEvent e)
+ {
+  status.setText(messageExited);
+ }
+}
+</font></pre>
+<a href="menuExample.jar">Jar-архив</a><br>
+</td>
+<td vAlign="top" align="left" width="135" bgColor="#f0fff0">
+
+</td>
+</tr>
+<tr height="20" bgColor="#f0fff0">
+<td vAlign="bottom" align="right">
+<a href="#top"><img src="images/upmark.gif" border="0" alt="Наверх"></a>
+</td>
+<td vAlign="bottom">
+<a href="#top"><img src="images/upmark.gif" border="0" alt="Наверх"></a>
+</td>
+</tr>
+</table>
+<hr color="#006000">
+
+<hr color="#006000">
+<div align="right"><font size="2">Copyright © 2001-2002 Ю.В.Ладик</font></div>
+</body>
+</html>
+

@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="windows-1251"?>
+
+<project name="JavaSample" basedir="." default="compile">
+
+    <property name="author" value="Sergey Zhiganov"/>
+    <property name="project" value="jsample"/>
+    <property name="projectName" value="JavaSample"/>
+    <property name="company" value="ICS"/>
+    <property name="deploy"  value="deploy"/>
+    <property name="version" value="1.3"/>
+    <property name="docdir"  value="${deploy}/javadoc"/>
+    <property name="sourceCode" value="src"/>
+    <property name="classes"  value="${deploy}/classes"/>
+    <property name="lib"  value="lib"/>
+    <property name="keys" value="keys"/>
+    <property name="bin"  value="bin"/>
+    <property name="img"  value="img"/>
+    <property name="distrib"  value="distrib"/>
+
+    <path id="project.class.path">
+	     <pathelement location="./"/>
+        <pathelement path="%classpath%"/>
+        <pathelement path="${deploy}/classes"/>
+	     <fileset dir="${lib}" includes="**/*.jar, **/*.svj.zip"/>
+    </path>
+
+   <!--
+    <classpath>
+      <pathelement location="./"/>
+      <pathelement path="${classpath}"/>
+      <pathelement path="${deploy}/classes"/>
+      <fileset dir="lib">
+        <include name="**/*.jar, **/*.svj.zip" />
+      </fileset>
+    </classpath>
+    -->
+
+    <target name="init">
+        <!-- Vkl mode - auto inc for build number. This create file 'build.number' -->
+        <buildnumber/>
+        <tstamp/>
+        <mkdir  dir="${deploy}"/>
+        <mkdir  dir="${classes}"/>
+        <mkdir  dir="${deploy}/jar"/>
+        <mkdir  dir="${docdir}"/>
+        <echo message="ANT  : ${ant.version}"/>
+        <echo message="JAVA : ${ant.java.version}"/>
+    </target>
+
+
+
+    <target name="compile" depends="init">
+        <echo message="Compiling ${project}"/>
+
+        <javac srcdir="${sourceCode}"
+               destdir="${deploy}/classes"
+               debug="on"
+		         optimize="off"
+               deprecation="false">
+<!--
+               compiler="jikes"
+               compiler="classic"
+-->
+	        <classpath refid="project.class.path"/>
+           <exclude name="**/CVS/**" />
+        </javac>
+    </target>
+
+
+
+    <target name="jar" depends="init,compile">
+
+        <echo message="Create JAR"/>
+
+        <jar jarfile="${deploy}/jar/${project}.jar"
+		      compress="true"
+		      index="false"
+		      basedir="${deploy}/classes">
+
+           <manifest>
+              <attribute name="Built-By" value="${author}"/>
+              <attribute name="Main-Class" value="com.ics.kiosk.StartKiosk"/>
+              <attribute name="Class-Path" value="svjUtil.jar log4j.jar 
+                   kiosk.jar comm.jar log4j.properties"/>
+
+              <section name="common">
+                 <attribute name="Specification-Title" value="${projectName}"/>
+                 <attribute name="Specification-Version" value="${version}"/>
+                 <attribute name="Specification-Vendor" value="${company}"/>
+                 <attribute name="Implementation-Title" value="${projectName}"/>
+                 <attribute name="Implementation-Version" value="${version} ${TODAY} build ${build.number}"/> 
+                 <attribute name="Implementation-Vendor" value="${company}"/>
+              </section>
+    
+           </manifest>
+        </jar>
+    </target>
+
+    <!--
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.7.0
+Created-By: 1.4.2_17-b06 (Sun Microsystems Inc.)
+Main-Class: com.lowagie.tools.ToolboxAvailable
+
+    -->
+    <target name="jar.iText">
+
+        <echo message="Create JAR"/>
+
+        <jar jarfile="/home/svj/tmp/iText-2.1.5.jar"
+		      compress="true"
+		      index="false"
+		      basedir="/home/svj/projects/G/Itext">
+
+           <manifest>
+              <!--attribute name="Built-By" value="${author}"/ -->
+              <attribute name="Main-Class" value="com.lowagie.tools.ToolboxAvailable"/>
+              <!-- attribute name="Class-Path" value="svjUtil.jar log4j.jar kiosk.jar comm.jar log4j.properties"/ -->
+
+               <!--
+              <section name="common">
+                 <attribute name="Specification-Title" value="${projectName}"/>
+                 <attribute name="Specification-Version" value="${version}"/>
+                 <attribute name="Specification-Vendor" value="${company}"/>
+                 <attribute name="Implementation-Title" value="${projectName}"/>
+                 <attribute name="Implementation-Version" value="${version} ${TODAY} build ${build.number}"/>
+                 <attribute name="Implementation-Vendor" value="${company}"/>
+              </section>
+               -->
+
+           </manifest>
+        </jar>
+    </target>
+
+
+
+    <target name="all" depends="jar,doc" description="Build everything.">
+        <echo message="Create All"/>
+    </target>
+
+
+
+    <target name="clean" depends="init" description="Clean all build products.">
+        <delete>
+            <fileset dir="${deploy}"/>
+        </delete>
+    </target>
+
+
+
+
+    <target name="doc" depends="init" description="Javadoc for Library API.">
+
+        <echo message="Create Java Doc"/>
+        <javadoc destdir="${docdir}"
+                 author="true"
+                 excludepackagenames="com.ftc.mp.components.*, javax.xml.transform.*"
+                 charset="1251"
+                 bottom="&lt;i>Copyright &#169; 2004 Sergey Zhiganov, Inc. All Rights Reserved.&lt;/i>"
+	         windowtitle="${projectName}"
+		 Private="yes"
+                 version="true">
+
+		<classpath refid="project.class.path"/>
+
+		<packageset dir="src" defaultexcludes="yes">
+			<include name="**" />
+        	</packageset>
+
+        </javadoc>
+    </target>
+
+
+
+    <target name="distr"  depends="jar">
+       <echo message="Create Directories Pool for ${projectName} projects (bin, lib, log)."/>
+
+        <mkdir  dir="${distrib}"/>
+        <delete>
+            <fileset dir="${distrib}"/>
+        </delete>
+
+        <mkdir  dir="${distrib}/log"/>
+
+        <copy todir="${distrib}/bin" >
+            <fileset file="bin/kiosk.*"/>
+            <!--fileset file="bin/pkeyDeploy.*"/-->
+        </copy>
+        <copy todir="${distrib}/conf" >
+           <fileset dir="conf"/>
+        </copy>
+        <copy todir="${distrib}/doc" >
+           <fileset file="doc/readme.txt"/>
+        </copy>
+        <!--
+        <copy todir="${distrib}/key" >
+            <fileset dir="key"/>
+        </copy>
+        -->
+        <copy todir="${distrib}/img" >
+            <fileset dir="${img}"/>
+        </copy>
+        <copy todir="${distrib}/lib" >
+            <fileset dir="${lib}"/>
+        </copy>
+        <copy todir="${distrib}/keys" >
+            <fileset dir="${keys}"/>
+        </copy>
+        <copy todir="${distrib}/lib" >
+            <fileset file="${deploy}/jar/${project}.jar"/>
+        </copy>
+        <copy todir="${distrib}" >
+            <fileset file="doc/readme*.*"/>
+        </copy>
+        <!--
+        <copy tofile="${distrib}/lib/log4j.properties" >
+            <fileset file="conf/logger.txt"/>
+        </copy>
+        -->
+
+        <chmod file="${distrib}/bin/*.sh" perm="755"/>
+        <chmod file="${distrib}/conf/*.*" perm="644"/>
+
+        <zip destfile="${deploy}/${project}-${version}-distr.zip"
+             basedir="${distrib}"
+             whenempty="create" />
+
+    </target>
+
+
+</project>

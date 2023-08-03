@@ -1,0 +1,56 @@
+0. element = BranchElement(section) 0,70
+, name = section, titleName = null, istart = 0, iend = 70, ic = 70, text = 'проверка тескта была здесь.
+вторя строка.
+
+заголовок.
+
+простой текст.
+'
+0.0. element = BranchElement(paragraph) 0,28
+, name = paragraph, titleName = null, istart = 0, iend = 28, ic = 28, text = 'проверка тескта была здесь.
+'
+0.0.0. element = LeafElement(content) 0,9
+, name = content, titleName = null, istart = 0, iend = 9, ic = 9, text = 'проверка '
+0.0.1. element = LeafElement(content) 9,15
+, name = content, titleName = title1, istart = 9, iend = 15, ic = 6, text = 'тескта'
+0.0.2. element = LeafElement(content) 15,22
+, name = content, titleName = null, istart = 15, iend = 22, ic = 7, text = ' была з'
+0.0.3. element = LeafElement(content) 22,24
+, name = content, titleName = title1, istart = 22, iend = 24, ic = 2, text = 'де'
+0.0.4. element = LeafElement(content) 24,28
+, name = content, titleName = null, istart = 24, iend = 28, ic = 4, text = 'сь.
+'
+0.1. element = BranchElement(paragraph) 28,42
+, name = paragraph, titleName = null, istart = 28, iend = 42, ic = 14, text = 'вторя строка.
+'
+0.1.0. element = LeafElement(content) 28,42
+, name = content, titleName = null, istart = 28, iend = 42, ic = 14, text = 'вторя строка.
+'
+0.2. element = BranchElement(paragraph) 42,43
+, name = paragraph, titleName = null, istart = 42, iend = 43, ic = 1, text = '
+, char = 10'
+0.2.0. element = LeafElement(content) 42,43
+, name = content, titleName = null, istart = 42, iend = 43, ic = 1, text = '
+, char = 10'
+0.3. element = BranchElement(paragraph) 43,54
+, name = paragraph, titleName = null, istart = 43, iend = 54, ic = 11, text = 'заголовок.
+'
+0.3.0. element = LeafElement(content) 43,53
+, name = content, titleName = title1, istart = 43, iend = 53, ic = 10, text = 'заголовок.'
+0.3.1. element = LeafElement(content) 53,54
+, name = content, titleName = null, istart = 53, iend = 54, ic = 1, text = '
+, char = 10'
+0.4. element = BranchElement(paragraph) 54,55
+, name = paragraph, titleName = null, istart = 54, iend = 55, ic = 1, text = '
+, char = 10'
+0.4.0. element = LeafElement(content) 54,55
+, name = content, titleName = null, istart = 54, iend = 55, ic = 1, text = '
+, char = 10'
+0.5. element = BranchElement(paragraph) 55,70
+, name = paragraph, titleName = null, istart = 55, iend = 70, ic = 15, text = 'простой текст.
+'
+0.5.0. element = LeafElement(content) 55,69
+, name = content, titleName = null, istart = 55, iend = 69, ic = 14, text = 'простой текст.'
+0.5.1. element = LeafElement(content) 69,70
+, name = content, titleName = null, istart = 69, iend = 70, ic = 1, text = '
+, char = 10'

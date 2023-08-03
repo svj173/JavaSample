@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<modules>
+
+    <module id="tftpserver" serverClass="org.eltex.ems.web.server.module.tftp.TFtpServerModule">
+        <title>TFTP</title>
+        <descr>TFTP Server</descr>
+        <depends>
+            <depend>ponCommon</depend>
+        </depends>
+        <logger>
+            <fileName>tftpserver</fileName>
+            <level>DEBUG</level>
+        </logger>
+        <guiClass>org.eltex.ems.web.gui.module.tftp.TFTPGuiModule</guiClass>
+
+        <!-- actionsFile>conf/module/pon/ma4000/ma4000_action.xml</actionsFile>
+        <elementsFile>conf/module/pon/ma4000/ma4000_elements.xml</elementsFile -->
+
+        <params>
+            <tftp.port>69</tftp.port>
+            <tftp.addr>192.168.26.65</tftp.addr>
+            <tftp.boot>/tftpboot</tftp.boot>
+            <tftp.station.images>station_images</tftp.station.images>
+      <!--  <tftp.ntp.images>ntp_images</tftp.ntp.images>
+            <tftp.nte.images>nte_images</tftp.nte.images>     -->
+            <tftp.config.dir>ems</tftp.config.dir>
+            <tftp.showResults>false</tftp.showResults>
+        </params>
+    </module>
+
+    <module id="ltp" serverClass="org.eltex.ems.web.server.module.pon.gpon.ltp.LtpServerModule">
+        <title>LTP</title>
+        <descr>ltp - технологии LTP.</descr>
+        <depends>
+            <depend>ponCommon</depend>
+            <depend>gPon</depend>
+        </depends>
+        <logger>
+            <fileName>ltp</fileName>
+            <level>ERROR</level>
+        </logger>
+        <elementsFile>conf/module/pon/gpon/ltp8x/ltp8x_elements.xml</elementsFile>
+    </module>
+
+    <module id="plc8" serverClass="org.eltex.ems.web.server.module.pon.gpon.plc8.Plc8ServerModule">
+        <title>PLC8</title>
+        <descr>plc - технологии PLC.</descr>
+        <depends>
+            <depend>ponCommon</depend>
+            <depend>gPon</depend>
+            <depend>ma4000</depend>
+            <depend>ltp</depend>
+        </depends>
+        <logger>
+            <fileName>plc8</fileName>
+            <level>ERROR</level>
+        </logger>
+        <!--guiClass>org.eltex.ems.web.gui.module.tl1.Tl1GuiModule</guiClass-->
+
+        <!--actionsFile>conf/module/pon/pon_action.xml</actionsFile-->
+        <!--elementsFile>conf/module/pon/ma4000/ma4000_elements.xml</elementsFile-->
+    </module>
+
+    <module id="gePon" serverClass="org.eltex.ems.web.server.module.pon.gepon.GePonServerModule">
+        <title>GePON Common</title>
+        <descr>gePON - технологии gePon.</descr>
+        <depends>
+            <depend>ponCommon</depend>
+        </depends>
+        <logger>
+            <fileName>gepon</fileName>
+            <level>DEBUG</level>
+        </logger>
+        <monitorsFile>conf/module/pon/gepon/gepon_monitors.xml</monitorsFile>
+    </module>
+
+    <module id="tl1" serverClass="org.eltex.ems.web.server.module.tl1.Tl1ServerModule">
+        <title>PON Common</title>
+        <descr>TL1 - прием команд от OSS, нотификации в OSS.</descr>
+        <depends>
+            <depend>ponCommon</depend>
+        </depends>
+        <logger>
+            <fileName>tl1</fileName>
+            <level>DEBUG</level>
+        </logger>
+        <guiClass>org.eltex.ems.web.gui.module.tl1.Tl1GuiModule</guiClass>
+
+        <!--actionsFile>conf/module/pon/pon_action.xml</actionsFile-->
+        <elementsFile>conf/module/tl1/tl1_elements.xml</elementsFile>
+
+        <params>
+            <telnet.port>9340</telnet.port>
+            <!-- количество параллельных обработчиков на порту -->
+            <telnet.handler.pool.size>5</telnet.handler.pool.size>
+            <!-- timeout бездействия на сокет. В секундах. 0 - отсутствует. -->
+            <telnet.connection.timeout.sec>0</telnet.connection.timeout.sec>
+            <!-- Пул обработчиков команд. Вешается на каждый сокет. (=12 - т.е. на одном сокете параллельно могут обрабатываться 12 долгоиграющих команд) -->
+            <commander.pool.size>12</commander.pool.size>
+        </params>
+    </module>
+
+    <module id="acs" serverClass="org.eltex.ems.web.server.module.acs.AcsServerModule">
+        <title>ACS</title>
+        <descr>ACS</descr>
+        <logger>
+            <fileName>acs</fileName>
+            <level>ERROR</level>
+        </logger>
+        <elementsFile>conf/module/acs/acs_elements.xml</elementsFile>
+    </module>
+
+    <module id="mxa" serverClass="org.eltex.ems.web.server.module.mxa.MxaServerModule">
+        <title>MXA</title>
+        <descr>MXA</descr>
+        <logger>
+            <fileName>mxa</fileName>
+            <level>ERROR</level>
+        </logger>
+        <elementsFile>conf/module/mxa/mxa_elements.xml</elementsFile>
+    </module>
+
+    <module id="mxl2e" serverClass="org.eltex.ems.web.server.module.mxl2e.Mxl2eServerModule">
+        <title>mxl2e</title>
+        <descr>mxl2e</descr>
+        <logger>
+            <fileName>mxl2e</fileName>
+            <level>ERROR</level>
+        </logger>
+        <elementsFile>conf/module/mxl2e/mxl2e_elements.xml</elementsFile>
+    </module>
+
+    <module id="smg" serverClass="org.eltex.ems.web.server.module.smg.SmgServerModule">
+        <title>smg</title>
+        <descr>smg</descr>
+        <logger>
+            <fileName>smg</fileName>
+            <level>ERROR</level>
+        </logger>
+        <elementsFile>conf/module/smg/smg_elements.xml</elementsFile>
+    </module>
+
+    <module id="tau" serverClass="org.eltex.ems.web.server.module.tau.TauServerModule">
+        <title>tau</title>
+        <descr>tau</descr>
+        <logger>
+            <fileName>tau</fileName>
+            <level>ERROR</level>
+        </logger>
+        <elementsFile>conf/module/tau/tau_elements.xml</elementsFile>
+    </module>
+
+    <module id="topgate" serverClass="org.eltex.ems.web.server.module.topgate.TopgateServerModule">
+        <title>topgate</title>
+        <descr>topgate</descr>
+        <logger>
+            <fileName>topgate</fileName>
+            <level>ERROR</level>
+        </logger>
+        <elementsFile>conf/module/topgate/topgate_elements.xml</elementsFile>
+    </module>
+
+    <module id="uep" serverClass="org.eltex.ems.web.server.module.uep.UepServerModule">
+        <title>uep</title>
+        <descr>uep</descr>
+        <logger>
+            <fileName>uep</fileName>
+            <level>ERROR</level>
+        </logger>
+        <elementsFile>conf/module/uep/uep_elements.xml</elementsFile>
+    </module>
+
+    <module id="msan" serverClass="org.eltex.ems.web.server.module.msan.MsanServerModule">
+        <title>msan</title>
+        <descr>msan</descr>
+        <logger>
+            <fileName>msan</fileName>
+            <level>ERROR</level>
+        </logger>
+        <elementsFile>conf/module/msan/msan_elements.xml</elementsFile>
+    </module>
+
+</modules>
