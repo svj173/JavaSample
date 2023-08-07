@@ -1,6 +1,10 @@
 package svj.file.irdb;
 
+import tools.DumpTools;
+
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
 import java.util.*;
 
 /**
@@ -54,24 +58,218 @@ public class IrdbDataParser {
             "VCR", "Video Controller", "Video Processor", "Video Projector", "Video Scaler", "Video Switcher", "iPod", "iPod Dock",
     };
 
+    // по вхождению
+    //private final static String[] AIR_CONDITIONER = new String[] {"TEMP -", "TEMP +", "TEMP/TIME +", "TEMP/TIME -"};
+    private final static String[] AIR_CONDITIONER = new String[] {"TEMP"};
+
     public static void main (String[] args ) {
 
         String irdbDirName = "/home/svj/projects/Eltex/IOT/IR/irdb/codes";
         IrdbDataParser parser = new IrdbDataParser();
 
         // сбор общей статистики. собираем инфу о директориях.
-        // которые чатсо встречаются - считаем названиями типов устройств
+        // которые часто встречаются - считаем названиями типов устройств
         // подсчитываем общее кол-во файло и директорий
     //    parser.processCommonStatistic(irdbDirName);
 
 
         // сбор статистики уже только по диреткориям - типы устройств
         // - запоминаем пути до этих файлов
-        parser.processTypeStatistic(irdbDirName);
+    //    parser.processTypeStatistic(irdbDirName);
+
+    //    parser.findByFunctions(irdbDirName, AIR_CONDITIONER);
+
+        parser.parseIrdb(irdbDirName);
     }
 
-    public IrdbDataParser() {
+    private void parseIrdb(String irdbDirName) {
+
+        Collection<String> typeNames;
+        typeNames = new ArrayList<>();
+        Collections.addAll(typeNames, TYPES);
+
+        // Открыть директорию
+        File dirFile = new File(irdbDirName);
+
+        File[] files;
+        String name;
+        int icType = 0;
+        int icDevice = 0;
+
+        for (File brandDir : dirFile.listFiles()) {
+            files = brandDir.listFiles();
+            if (files == null) {
+                continue;
+            }
+            for (File file: files) {
+                if (file.isDirectory()) {
+                    // Анализируем поддиректории на предмет названий Типов устройств
+                    name = file.getName();
+                    if (typeNames.contains(name))  {
+                        icType++;
+                        // диерктория - тип устройства
+                        // - берем файлы, парсим, заносим в БД прлатформы
+                        File[] fList = file.listFiles();
+                        if (fList == null) {
+                            continue;
+                        }
+                        for (File f: fList) {
+                            if (f.isDirectory()) {
+                                System.out.println("Wrong directory = '" + f.getAbsolutePath() + "'");
+                            }
+                            // парсим файл
+                            //System.out.println("icType = " + icType);
+                            icDevice++;
+                            processFile(f, brandDir.getName(), name);
+                        }
+                    }
+                }
+            }
+        }
+
+        System.out.println("icType = " + icType);       // 742
+        System.out.println("icDevice = " + icDevice);   // 1701
+        System.out.println("------------------ \n");
     }
+
+    private void processFile(File file, String vendor, String deviceType) {
+
+        //System.out.println("\n---- file = " + file.getAbsolutePath());
+
+        // смотрим - это CSV файл ?
+        String fileName = file.getName();
+        String fileName2 = fileName.toLowerCase();
+        try {
+            if (fileName2.endsWith("csv")) {
+                // парсим
+                String row, str;
+                BufferedReader csvReader = new BufferedReader(new FileReader(file));
+                while ((row = csvReader.readLine()) != null) {
+                    // KEY_POWER | NEC | 134 | 114 | 9
+                    String[] data = row.split(",");
+                    if (data.length != 5) {
+                        System.out.println("Wrong function for file '" + file.getAbsolutePath() + "'");
+                        System.out.println(" - " + DumpTools.printArray(data, " | "));
+                    }
+
+                    // сгенерить ИД
+                    String id = null;
+
+                    IrTemplateObj irObj = new IrTemplateObj(id, vendor, deviceType, data[0], data[1], data[2], data[3], data[4]);
+                    /*
+                    str = data[0].toLowerCase();
+                    if (str.contains("sett"))  {
+                        System.out.println("Setting function for file '" + file.getAbsolutePath() + "'");
+                        System.out.println(DumpTools.printArray(data, " | "));
+
+                    }
+                    */
+                }
+                csvReader.close();
+            } else {
+                // нет такого
+                System.out.println("processFile: Wrong CSV file = " + file.getAbsolutePath());
+            }
+        } catch (Exception e) {
+            System.out.println("File error: " + file.getAbsolutePath());
+            e.printStackTrace();
+        }
+    }
+
+    private void findByFunctions(String irdbDirName, String[] airConditioner) {
+
+        Collection<String> functionNames;
+        //typeNames = Arrays.asList(TYPES);
+        functionNames = new ArrayList<>();
+        Collections.addAll(functionNames, airConditioner);
+        System.out.println("functionNames = " + functionNames);
+
+        // Пробегаем по всем, ищем вхождения функций
+
+        // Открыть директорию
+        File dirFile = new File(irdbDirName);
+
+        File[] files, files2;
+        int ic = 0;
+        // цикл по производителя
+        for (File brandDir : dirFile.listFiles()) {
+            // цикл по типам устройств
+            files = brandDir.listFiles();
+            if (files != null) {
+                for (File f: files) {
+                    if (f.isDirectory()) {
+                        // пробег по файлам диреткории
+                        files2 = f.listFiles();
+                        if (files2 != null) {
+                            for (File f2: files2) {
+                                if (f2.isDirectory()) {
+                                    // нет такого
+                                    System.out.println("findByFunctions: Wrong file = " + f2.getAbsolutePath());
+                                } else {
+                                    processFile(f2, functionNames);
+                                }
+                            }
+
+                        }
+                    } else {
+                        // это файл - анализ
+                        processFile(f, functionNames);
+                    }
+                }
+            }
+            ic++;
+            //if (ic > 3) break;
+        }
+
+        System.out.println("ic = " + ic);   // 625
+        //System.out.println("------------------ \n");
+    }
+
+    private void processFile(File file, Collection<String> functionNames) {
+
+        //System.out.println("\n---- file = " + file.getAbsolutePath());
+
+        // смотрим - это CSV файл ?
+        String fileName = file.getName();
+        String fileName2 = fileName.toLowerCase();
+        try {
+            if (fileName2.endsWith("csv")) {
+                // парсим
+                String row, str;
+                BufferedReader csvReader = new BufferedReader(new FileReader(file));
+                while ((row = csvReader.readLine()) != null) {
+                    // KEY_POWER | NEC | 134 | 114 | 9
+                    String[] data = row.split(",");
+                    //System.out.println(DumpTools.printArray(data, " | "));
+                    /*
+                    str = data[0].trim();
+                    if (str.length() > 1) {
+                        for (String name : functionNames) {
+                            if (str.contains(name)) {
+                                System.out.println("\n------- file = " + file.getAbsolutePath());
+                                System.out.println("  Has function: '" + data[0] + "' (" + name + ")");
+                            }
+                        }
+                    }
+                    */
+                    //*
+                    if (functionNames.contains(data[0])) {
+                        System.out.println("\n------- file = " + file.getAbsolutePath());
+                        System.out.println("  Has function: '" + data[0] + "'");
+                    }
+                    //*/
+                }
+                csvReader.close();
+            } else {
+                // нет такого
+                System.out.println("processFile: Wrong file = " + file.getAbsolutePath());
+            }
+        } catch (Exception e) {
+            System.out.println("File error: " + file.getAbsolutePath());
+            e.printStackTrace();
+        }
+    }
+
 
     private void processTypeStatistic(String irdbDirName) {
         Map<String, StatisticInfo> typesInfo = new TreeMap<>();
