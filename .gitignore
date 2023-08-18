@@ -1,0 +1,16 @@
+.idea
+
+*.iml
+*.ipr
+*.iws
+
+JavaSample.iml
+
+ant/build.number
+
+deploy
+docs
+out
+
+**/*~
+ 

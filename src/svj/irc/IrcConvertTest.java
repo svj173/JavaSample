@@ -65,8 +65,8 @@ public class IrcConvertTest {
 
         try {
             // импульсы в код
-            IrcConvertTest handler = new IrcConvertTest();
-            handler.convertToIr(str);
+        //    IrcConvertTest handler = new IrcConvertTest();
+        //    handler.convertToIr(str);
 
             // код в импульсы  - протокол - утсройство - подустройство - функция
             // - задаем: Протокол=Samsung20, D=1, S=8, F=63
@@ -75,7 +75,18 @@ public class IrcConvertTest {
             // 0000 006C 0000 0016 00AD 00AD 0016 0041 0016 0016 0016 0016 0016 0016 0016 0016 0016 0016 0016 0016 0016 0016 0016 0016 0016 0041 0016 0016 0016 0016 0016 0041 0016 0041 0016 0041 0016 0041 0016 0041 0016 0041 0016 0016 0016 0016 0016 08D3
             // Scrut = A=0x804fc
 
-            handler.convertToImpuls();
+        //    handler.convertToImpuls();
+
+            String irp = "{38.0k,136,msb}<3,-5|3,-13>(4587u,-4587u,A:48,3,-4587u)*{A=0xb24d7b84e01f}";
+            System.out.println("\nirp = " + irp);
+            Protocol protocol = new Protocol(irp);
+
+            System.out.println("protocol.getGeneralSpec = " + protocol.getGeneralSpec());
+            System.out.println("protocol.getBitspecIrstream = " + protocol.getBitspecIrstream());
+            System.out.println("protocol.getDefinitions = " + protocol.getDefinitions());
+            System.out.println("protocol = " + protocol);
+
+
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -85,6 +96,7 @@ public class IrcConvertTest {
     //private org.harctoolbox.guicomponents.IrpRenderBean irpMasterBean;
 
     public IrcConvertTest() throws Exception {
+        /*
         setupIrpDatabase();
         setupDecoder();
 
@@ -96,6 +108,7 @@ public class IrcConvertTest {
         map.put("0", 8);
         map.put("0x", 16);
         IrCoreUtils.setRadixPrefixes(map);
+        */
     }
 
 
