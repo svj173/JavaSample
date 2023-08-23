@@ -16,6 +16,28 @@ import java.util.Map;
  */
 public class DumpTools
 {
+    public static String printIntArray(int[] array) {
+        return printIntArray(array, array.length);
+    }
+
+    public static String printIntArray(int[] array, int size) {
+        if (array == null) {
+            return "empty";
+        } else {
+            StringBuffer result = new StringBuffer(512);
+            if (size > array.length) {
+                size = array.length;
+            }
+
+            for(int i = 0; i < size; ++i) {
+                result.append(array[i]);
+                result.append(" ");
+            }
+
+            return result.toString();
+        }
+    }
+
     /**
      * Перечислить содержимое  массива через символ CH.
      * В конце строки символа CH - нет

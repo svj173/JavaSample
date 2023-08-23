@@ -65,7 +65,7 @@ public class IrcConvertTest {
 
         try {
             // импульсы в код
-        //    IrcConvertTest handler = new IrcConvertTest();
+            IrcConvertTest handler = new IrcConvertTest();
         //    handler.convertToIr(str);
 
             // код в импульсы  - протокол - утсройство - подустройство - функция
@@ -77,15 +77,15 @@ public class IrcConvertTest {
 
         //    handler.convertToImpuls();
 
-            String irp = "{38.0k,136,msb}<3,-5|3,-13>(4587u,-4587u,A:48,3,-4587u)*{A=0xb24d7b84e01f}";
+            String irp;
+            //irp = "{38.0k,136,msb}<3,-5|3,-13>(4587u,-4587u,A:48,3,-4587u)*{A=0xb24d7b84e01f}";
+            irp = "{38.0k,136,msb}<3,-5|3,-13>(4587u,-4587u,A:48,3,-4587u)*{A=0xb24d7b84e01f}";
             System.out.println("\nirp = " + irp);
             Protocol protocol = new Protocol(irp);
+            printProtocol(protocol);
 
-            System.out.println("protocol.getGeneralSpec = " + protocol.getGeneralSpec());
-            System.out.println("protocol.getBitspecIrstream = " + protocol.getBitspecIrstream());
-            System.out.println("protocol.getDefinitions = " + protocol.getDefinitions());
-            System.out.println("protocol = " + protocol);
 
+            handler.convertToImpuls(protocol);
 
 
         } catch (Exception e) {
@@ -93,10 +93,26 @@ public class IrcConvertTest {
         }
     }
 
+    private static void printProtocol(Protocol protocol) {
+        System.out.println("protocol = " + protocol);
+        if (protocol != null) {
+            // parameterSpecs - ,
+
+            System.out.println("protocol.getGeneralSpec = " + protocol.getGeneralSpec());
+            System.out.println("protocol.getBitspecIrstream = " + protocol.getBitspecIrstream());
+            System.out.println("protocol.getDefinitions = " + protocol.getDefinitions());
+
+            // Ни у нас, ни у Самсунга его нет  -пустая строка
+            System.out.println("protocol.getParameterSpecs = " + protocol.getParameterSpecs());
+            // кол-во бит в команде - у нас = 48 (6 байт)  - A:48
+            System.out.println("protocol.numberOfBits = " + protocol.numberOfBits());
+        }
+    }
+
     //private org.harctoolbox.guicomponents.IrpRenderBean irpMasterBean;
 
     public IrcConvertTest() throws Exception {
-        /*
+        //*
         setupIrpDatabase();
         setupDecoder();
 
@@ -108,7 +124,7 @@ public class IrcConvertTest {
         map.put("0", 8);
         map.put("0x", 16);
         IrCoreUtils.setRadixPrefixes(map);
-        */
+        //*/
     }
 
 
@@ -133,6 +149,81 @@ public class IrcConvertTest {
             ex.printStackTrace();
         }
     }
+
+    private void convertToImpuls(Protocol protocol) {
+        try {
+            System.out.println("\n------------------------ convertToImpuls 2 -------------------------");
+
+            // из параметров формируется код команды - т.к. в протоколе этого кода нет
+            Map<String, Long> parameters = getParameters();
+            System.out.println("parameters = " + parameters);
+
+            IrSignal irSignal = protocol.toIrSignal(parameters);
+            printIrSignal(irSignal);
+            //NameEngine nameEngine = new NameEngine(params);
+            //return this.toIrSignal(nameEngine);
+
+            String strIrSignal = irSignal.toString();
+            //System.out.println("strIrSignal = " + strIrSignal);
+
+            String strIrSignal2 = strIrSignal.replace(',', ';');
+            //System.out.println("strIrSignal2 = " + strIrSignal2);
+
+            //String result = formatIrSignal(irSignal, 0);
+            String result = OutputTextFormat.newOutputTextFormat(0).formatIrSignal(irSignal);
+            //System.out.println("line = " + result);
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    private void printIrSignal(IrSignal irSignal) {
+        //System.out.println("irSignal = " + irSignal);
+        if (irSignal != null) {
+            // parameterSpecs - ,
+            /*
+            System.out.println("irSignal.getFrequencyAsString = " + irSignal.getFrequencyAsString());
+            System.out.println("irSignal.getDutyCycle = " + irSignal.getDutyCycle());
+            System.out.println("irSignal.getEndingSequence = " + irSignal.getEndingSequence());
+            System.out.println("irSignal.getIntroSequence = " + irSignal.getIntroSequence());
+
+            System.out.println("irSignal.getRepeatLength = " + irSignal.getRepeatLength());
+            System.out.println("irSignal.getRepeatSequence = " + irSignal.getRepeatSequence());
+            System.out.println("irSignal.getEndingLength = " + irSignal.getEndingLength());
+            System.out.println("irSignal.getEndingInts = " + DumpTools.printIntArray(irSignal.getEndingInts()));
+            //System.out.println("irSignal.getGap = " + irSignal.getGap());
+            System.out.println("irSignal.getEndingPulses = " + DumpTools.printIntArray(irSignal.getEndingPulses()));
+            System.out.println("irSignal.getIntroInts = " + DumpTools.printIntArray(irSignal.getIntroInts()));
+            System.out.println("irSignal.getIntroPulses = " + DumpTools.printIntArray(irSignal.getIntroPulses()));
+            System.out.println("irSignal.getRepeatInts = " + DumpTools.printIntArray(irSignal.getRepeatInts()));
+            System.out.println("irSignal.getRepeatPulses = " + DumpTools.printIntArray(irSignal.getRepeatPulses()));
+            System.out.println("irSignal.getTotalDuration = " + irSignal.getTotalDuration());
+            System.out.println("irSignal.toIrSequences = " + irSignal.toIrSequences());
+
+            String result = Math.round(irSignal.getFrequencyWithDefault()) + "|"
+                    + IrSequence.concatenate(irSignal.toIrSequences()).toString(false, ";");
+            System.out.println("result = " + result);
+            */
+            //int[] array = irSignal.getRepeatInts();
+            // преобразовать в строку кроем последнего
+
+            String s1 = IrSequence.concatenate(irSignal.toIrSequences()).toString(false, ";");
+            System.out.println("s1 = " + s1);
+
+            // удалить последнее число
+            String s2 = "";
+            int ic = s1.lastIndexOf(';');
+            if (ic > 0) {
+                s2 = s1.substring(0, ic);
+            }
+            System.out.println("s2 = " + s2);
+
+            String result2 = Math.round(irSignal.getFrequencyWithDefault()) + "|" + s1 + ";" + s2 + ";";
+            System.out.println("result2 = " + result2);
+        }
+    }
+
 
     private Protocol getProtocol(String intialProtocol) throws Exception {
         System.out.println("intialProtocol = " + intialProtocol);
@@ -161,9 +252,18 @@ public class IrcConvertTest {
     public Map<String, Long> getParameters() {
         Map<String, Long> parameters = new LinkedHashMap<>(4);
 
+        // Команда ВКЛ у кондиционера Самсунг - 1 - 8 -63
+        /*
         parameters.put("D", 1L);
         parameters.put("S", 8L);
-        parameters.put("F", 63L);
+        //parameters.put("F", 63L);
+        parameters.put("F", 60L);
+        //parameters.put("T", null);
+        */
+        parameters.put("D", 15L);
+        parameters.put("S", 12L);
+        //parameters.put("F", 63L);
+        parameters.put("F", 7L);
         //parameters.put("T", null);
 
         /*
@@ -195,12 +295,18 @@ public class IrcConvertTest {
                             properties.getInvokeRepeatFinder(), properties.getInvokeCleaner(),
                             properties.getAbsoluteTolerance(), properties.getRelativeTolerance(), properties.getMinRepeatLastGap());
 
+            /*
+            IrSignal irSignal2 = InterpretString.interpretString(strArray, 38000.0D, 50000.0D,
+                            properties.getInvokeRepeatFinder(), properties.getInvokeCleaner(),
+                            properties.getAbsoluteTolerance(), properties.getRelativeTolerance(), properties.getMinRepeatLastGap());
+            */
             System.out.println("irSignal = " + irSignal);
 
             // выделили внятный сигнал - анализируем его
             if (irSignal != null) {
                 Protocol protocol = scrutinizeIrSignal(irSignal, properties);
-                System.out.println("protocol = " + protocol);
+                printProtocol(protocol);
+                //System.out.println("protocol = " + protocol);
 
                 // выделение декодера
                 Decoder.SimpleDecodesSet decoders = setDecodeIrParameters(irSignal);
@@ -413,8 +519,11 @@ public class IrcConvertTest {
     //    setDecodeResult(decodes);
 
         // todo
-        Decoder.SimpleDecodesSet decodeList = decoder.decodeIrSignal(irSignal, decoderParameters);
-        System.out.println("decodeList = " + decodeList);
+        if (decoder != null) {
+            Decoder.SimpleDecodesSet decodeList = decoder.decodeIrSignal(irSignal, decoderParameters);
+            System.out.println("decodeList = " + decodeList);
+            return decodeList;
+        }
         /*
         if (decodeList != null) {
             System.out.println("decodeList.size = " + decodeList.size());
@@ -468,7 +577,7 @@ decodeList.size = 1
 
          */
 
-        return decodeList;
+        return null;
     }
 
     public Decoder.AbstractDecodesCollection<? extends ElementaryDecode> getDecode(IrSignal irSignal, Decoder.DecoderParameters decoderParams) {

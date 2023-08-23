@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
-<properties>
-<comment>Favorite Things</comment>
-<entry key="favoriteContinent">Россия</entry>
-<entry key="favoriteAnimal">мамонт</entry>
-<entry key="favoritePerson">Маня</entry>
-</properties>

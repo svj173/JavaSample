@@ -77,9 +77,9 @@ public class IrdbDataParser {
         // - запоминаем пути до этих файлов
     //    parser.processTypeStatistic(irdbDirName);
 
-    //    parser.findByFunctions(irdbDirName, AIR_CONDITIONER);
+        parser.findByFunctions(irdbDirName, AIR_CONDITIONER);
 
-        parser.parseIrdb(irdbDirName);
+        //parser.parseIrdb(irdbDirName);
     }
 
     private void parseIrdb(String irdbDirName) {
@@ -252,12 +252,19 @@ public class IrdbDataParser {
                         }
                     }
                     */
-                    //*
+                    /*
                     if (functionNames.contains(data[0])) {
                         System.out.println("\n------- file = " + file.getAbsolutePath());
                         System.out.println("  Has function: '" + data[0] + "'");
                     }
                     //*/
+
+                    // NECx-f16: {D=7,S=7,F=2}, beg=0, end=67
+                    //if (data[1].equals("NECx-f16") && data[2].equals("7")) {
+                    if (data[2].equals("7") && data[3].equals("7") && data[4].equals("2")) {
+                        System.out.println("\n------- file = " + file.getAbsolutePath());
+                        System.out.println("  Has function: " + DumpTools.printArray(data, " | "));
+                    }
                 }
                 csvReader.close();
             } else {

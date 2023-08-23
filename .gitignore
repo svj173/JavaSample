@@ -5,6 +5,7 @@
 *.iws
 
 JavaSample.iml
+JavaSample.iws
 
 ant/build.number
 
