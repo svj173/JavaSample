@@ -57,7 +57,7 @@ public class IrcConvertTest {
 
 
         // вкл
-        String str;
+        String str, result;
         //str = "4272;4508;401;1776;426;649;400;1776;401;1776;425;651;401;675;425;1752;425;650;401;674;401;1777;400;675;425;650;423;1753;426;1751;400;675;425;1752;400;675;401;1776;424;1753;401;1776;401;1776;425;650;401;1776;402;1775;418;1759;400;675;400;675;426;650;400;675;401;1776;401;675;424;651;400;1776;401;1776;400;1776;400;675;400;676;400;675;400;675;400;675;401;675;400;676;400;676;400;1776;424;1753;425;1752;400;1776;400;1777;401;5343;4282;4530;401;1777;400;675;400;1777;400;1777;400;676;400;676;400;1776;400;675;400;676;400;1776;400;676;399;676;400;1777;400;1777;400;676;399;1776;400;676;399;1777;400;1777;400;1777;399;1777;399;676;400;1776;400;1776;401;1776;400;675;400;676;399;676;400;675;399;1777;400;676;399;676;399;1778;400;1776;399;1777;400;676;399;676;400;676;399;676;399;676;399;676;400;676;399;677;399;1777;400;1777;400;1776;400;1777;399;1777;399;";
         // Samsung20, D=1, S=8, F=63
         str = "0000 006C 0000 0016 00AD 00AD 0016 0041 0016 0016 0016 0016 0016 0016 0016 0016 0016 0016 0016 0016 0016 0016 0016 0016 0016 0041 0016 0016 0016 0016 0016 0041 0016 0041 0016 0041 0016 0041 0016 0041 0016 0041 0016 0016 0016 0016 0016 08D3";
@@ -66,6 +66,8 @@ public class IrcConvertTest {
         try {
             // импульсы в код
             IrcConvertTest handler = new IrcConvertTest();
+
+            /*
         //    handler.convertToIr(str);
 
             // код в импульсы  - протокол - утсройство - подустройство - функция
@@ -86,6 +88,24 @@ public class IrcConvertTest {
 
 
             handler.convertToImpuls(protocol);
+        */
+
+            // проверяем S=-1
+            String protocolName;
+            //protocolName = "EltexAir2";
+            protocolName = "Samsung20";
+            // protocolName = 'EltexAir2' parameters = {D=1, F=0, S=-1}. Error: null
+            Map<String, Long> parameters = new HashMap<>();
+            //parameters.put("D", 1L);
+            //parameters.put("S", -1L);
+            //parameters.put("F", 0L);
+            // Samsung20, D=1, S=8, F=63
+            parameters.put("D", 1L);
+            parameters.put("S", 8L);
+            parameters.put("F", 63L);
+            // irpToArray(String protocolName, Map<String, Long> parameters)
+            result = handler.irpToArray(protocolName, parameters);
+            System.out.println("result = " + result);
 
 
         } catch (Exception e) {
@@ -241,6 +261,39 @@ public class IrcConvertTest {
         return protocol;
     }
 
+    public String irpToArray(String protocolName, Map<String, Long> parameters) throws Exception {
+        try {
+            Protocol protocol = getProtocol(protocolName);
+            System.out.println("protocol = " + protocol);
+
+            parameters.entrySet().removeIf((entry) -> {
+                System.out.println("entry = " + entry);
+                String name = entry.getKey();
+                Long value = entry.getValue();
+
+                ParameterSpec spec = protocol.getParameterSpecs().getParameterSpec(name);
+                System.out.println("spec = " + spec);
+                boolean b = spec.isWithinDomain(value);
+                System.out.println("b = " + b);
+                //return !protocol.getParameterSpecs().getParameterSpec(name).isWithinDomain(value);
+                return !b;
+            });
+
+            IrSignal irSignal = protocol.toIrSignal(parameters);
+            System.out.println("irSignal = " + irSignal);
+
+            // формируем массив импульсов в десятичном виде, с разделителем - точка с запятой. впереди - частота
+            String strIrArray = IrSequence.concatenate(irSignal.toIrSequences()).toString(false, ";");
+
+            return Math.round(irSignal.getFrequencyWithDefault()) + "|" + strIrArray;
+
+        } catch (Exception ex) {
+            System.out.println("protocolName = '" + protocolName + "' parameters = " + parameters +
+                    ". Error: " + ex.getMessage());
+            ex.printStackTrace();
+            throw ex;
+        }
+    }
     /*
     public IrSignal render() throws IrpException, IrCoreException, ParseException {
         Map<String, Long> parameters = getParameters();

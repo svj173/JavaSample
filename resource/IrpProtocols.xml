@@ -2879,11 +2879,12 @@ C3=D:1:2 + #(F&44) + #(D&2)
         <irp:parameter name="uei-executor">0022[8,,S;F]</irp:parameter>
     </irp:protocol>
 
-    <irp:protocol name="Midea">
+
+    <irp:protocol name="EltexAir2">
         <irp:irp>
-            <![CDATA[{38.4k,125,msb}<3,-675u|3,-14>(4587u,-4587u,A:48,3,-4587u)*{D=178}[S:0..255,F:0..65535]]]>
+            <![CDATA[{38.4k,128,msb}<3,-5|3,-14>(4588u,-4588u,A:48,3,-4588u)*{A=0xb24d1fe07887}]]>
         </irp:irp>
-        <irp:documentation xml:space="preserve">Special case of the Midea protocol, with D = ?.</irp:documentation>
+        <irp:documentation xml:space="preserve">Eltex AIR bilding 2.</irp:documentation>
     </irp:protocol>
     
 </irp:protocols>
