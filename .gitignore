@@ -4,12 +4,10 @@
 *.ipr
 *.iws
 
-JavaSample.iml
-JavaSample.iws
-
 ant/build.number
 
 deploy
+./deploy
 docs
 out
 

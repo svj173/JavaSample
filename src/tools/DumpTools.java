@@ -98,6 +98,22 @@ public class DumpTools
         return sb.toString();
     }
 
+    public static String printArray ( short[] array )
+    {
+        StringBuilder sb;
+
+        sb = new StringBuilder ( 128 );
+        if ( ( array == null ) || ( array.length == 0 ) ) return "";
+
+        int ic = array.length;
+        for ( int i = 0; i < ic; i++ )
+        {
+            sb.append ( '\n' );
+            sb.append ( array[ i ] );
+        }
+        return sb.toString();
+    }
+
     public static String printArray ( Object[] array, String sep )
     {
         StringBuilder sb;
