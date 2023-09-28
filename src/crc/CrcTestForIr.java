@@ -46,6 +46,7 @@ public class CrcTestForIr {
 
         int countBytes = data.length;
 
+
         /*
         try (FileInputStream in = new FileInputStream(file)) {
             //читаем байты из файла
