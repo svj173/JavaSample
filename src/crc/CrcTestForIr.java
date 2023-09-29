@@ -1,7 +1,5 @@
 package crc;
 
-import tools.DumpTools;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -13,6 +11,12 @@ import java.util.zip.CRC32;
  * <BR/> Имеем - A=0x55600600c4022a00,B=0x1c6
  * <BR/> - где 0x1c6 - это контрольная сумма для  55600600c4022a00
  * <BR/> Необходимо олпределть алгоритм вычисления.
+ * <BR/>
+ * <BR/>
+ * - A=0x55600600c4012a00,B=0x1c0
+ * - A=0x55600600c4013a00,B=0x1e0
+ * - A=0x55a00600c4012a00,B=0xc0
+ * - A=0x550006000a812a00, B=0x1e8
  * <BR/>
  * <BR/> User: svj
  * <BR/> Date: 28.09.23 19:49
@@ -30,12 +34,17 @@ public class CrcTestForIr {
         // 55600600c4022a00 - 55 60 06 00 c4 02 2a 00   --- 1c6     -- 454   -- 1 198
         //byte[] buffer = new byte[] {0x55, 0x60, 0x06, 0x00, (byte) 0xC4, 0x02, 0x2a, 0x00 };  // 196
         //short[] data = new short[] {0x55, 0x60, 0x06, 0x00, 0xC4, 0x02, 0x2a, 0x00 };  // 196
-        byte[] data = new byte[] {0x55, 0x60, 0x06, 0x00, (byte)0xC4, 0x02, 0x2a, 0x00 };  // 196
+        byte[] data = new byte[] {0x55, 0x60, 0x06, 0x00, (byte)0xC4, 0x02, 0x2a, 0x00 };  // C4 - 196
+
+        // 55 00 06 00 0a 81 2a 00
+        byte[] data4 = new byte[] {0x55, 0x00, 0x06, 0x00, 0x0a, (byte)0x81, 0x2a, 0x00 };  // 81 -
 
         //short[] result = handler.create16(data);
-        short[] result = handler.create32(data);
+        //short[] result = handler.create32(data);
+        short result = handler.createSum(data);
 
-        System.out.println("result = " + DumpTools.printArray(result));
+        //System.out.println("result = " + DumpTools.printArray(result));
+        System.out.println("result = " + result);
 
     }
 
@@ -104,6 +113,14 @@ public class CrcTestForIr {
             System.out.println("CheckSum: " + crc32.getValue() + "(CRC32)");
             System.out.println("CheckSum: " + adler32.getValue() + "(Adler32)");
         }
+    }
+
+    private short createSum(byte[] data) {
+        short checksum = 0x00;
+        for (int i=0; i < (data.length-1); i++) {
+          checksum += data[i];
+        }
+        return checksum;
     }
 
     /**
