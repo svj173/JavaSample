@@ -302,7 +302,7 @@ abstract class NamedIrSignal {
             }
             return true;
         }
-
+/*
         protected boolean checkCommandSanity(Command command) {
             if (!checkName(command.getName()))
                 return false;
@@ -315,6 +315,7 @@ abstract class NamedIrSignal {
                 return false;
             }
         }
+        */
 
         public synchronized void clearComment() {
             for (int row = 0; row < getRowCount(); row++) {

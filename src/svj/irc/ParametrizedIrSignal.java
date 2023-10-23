@@ -17,6 +17,7 @@ this program. If not, see http://www.gnu.org/licenses/.
 
 package svj.irc;
 
+import org.harctoolbox.IrpMaster.IrpMasterException;
 import org.harctoolbox.girr.Command;
 import org.harctoolbox.girr.GirrException;
 import org.harctoolbox.ircore.IrCoreUtils;
@@ -190,7 +191,13 @@ class ParametrizedIrSignal extends NamedIrSignal {
 
 
     public Command toCommand() throws GirrException {
-        return new Command(getName(), getComment(), protocolName, parameters);
+        HashMap<String,Long> pars = new HashMap<String,Long>();
+        if (parameters != null)  pars.putAll(parameters);
+        try {
+            return new Command(getName(), getComment(), protocolName, pars);
+        } catch (IrpMasterException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     private String dummyName() {
