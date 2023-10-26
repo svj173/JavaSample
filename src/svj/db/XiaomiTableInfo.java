@@ -8,26 +8,38 @@ package svj.db;
  */
 public class XiaomiTableInfo {
 
-    // номер колонки, которая содержит зашифрованные данные. (от 1)
+    // номер колонки, которая содержит зашифрованные данные. (от 1). 0 - нет зашифрованных данных.
     private final int cryptColumn;
     private final String jsonCryptParamName;
+    private final String jsonCryptParamName2;
 
     public XiaomiTableInfo() {
-        this(0, null);
+        this(0, null, null);
     }
 
     public XiaomiTableInfo(int cryptColumn) {
-        this(cryptColumn, null);
+        this(cryptColumn, null, null);
     }
 
     public XiaomiTableInfo(int cryptColumn, String jsonCryptParamName) {
+        this(cryptColumn, jsonCryptParamName,null);
+    }
 
+    public XiaomiTableInfo(int cryptColumn, String jsonCryptParamName, String jsonCryptParamName2) {
         this.cryptColumn = cryptColumn;
         this.jsonCryptParamName  = jsonCryptParamName;
+        this.jsonCryptParamName2  = jsonCryptParamName2;
     }
 
     public int getCryptColumn() {
         return cryptColumn;
     }
 
+    public String getJsonCryptParamName() {
+        return jsonCryptParamName;
+    }
+
+    public String getJsonCryptParamName2() {
+        return jsonCryptParamName2;
+    }
 }
