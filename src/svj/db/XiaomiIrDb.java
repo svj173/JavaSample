@@ -26,15 +26,24 @@ public class XiaomiIrDb {
         XiaomiIrDb handler = new XiaomiIrDb();
         handler.handle();
 
+        String str;
         /*
-        String str = "tox8lCVn4ynewQesJtKAfADYgJ/LOzl7dwYxnMZ2fVoB2wa0OvwMQ2GL0IJuPzCwxRj96sRpTjWkZ/3PdFG9QxQkJFoR8kSCCgSM2vewRDY=";
+        // Дешифрация текстов внутри шифра
+
+        //str = "tox8lCVn4ynewQesJtKAfADYgJ/LOzl7dwYxnMZ2fVoB2wa0OvwMQ2GL0IJuPzCwxRj96sRpTjWkZ/3PdFG9QxQkJFoR8kSCCgSM2vewRDY=";
+        //str = "IjWQ0qwMnmYwQ1lsXW69NwKoghKEhM7MHtk19Ucqdiz98CoN0KqtvqAUYRcjnzZMuOe2Nb72nCtuXWsaHSaHtq3hnLQLiABLfBH2F5yo1SJ5K3VKh2zVPWXZ9LPWEN1698Z9yDMGQjmoZm07aRvADIX22ZWW5+IQxXR3ynEHssWHE8bjSTiQ2+UhQUYXdyAnjZcae7M6rqFbm/x6t52xzg==";
+
+        //str = "tox8lCVn4ynewQesJtKAfN9j3aatfFPi68F2s1aA+IpXmhanTxC0ompop++zmtkhyKSNAbfV3NiJMbEOWXzT9iHrNTcabWAcnyNmXIBNBPY=";
+
+        str = "tox8lCVn4ynewQesJtKAfADYgJ/LOzl7dwYxnMZ2fVoB2wa0OvwMQ2GL0IJuPzCwxRj96sRpTjWkZ/3PdFG9QxQkJFoR8kSCCgSM2vewRDY=";
+
         try {
             String result = handler.decryptData(str, KEY);
             System.out.println("result = " + result);
         } catch (Exception e) {
             e.printStackTrace();
         }
-        */
+        //*/
     }
 
     private void handle() {
@@ -50,25 +59,15 @@ public class XiaomiIrDb {
             statement = conn.createStatement();
 
             /*
-            // получаем записи из однйо колонки - имя таблицы
+            // получаем список таблиц - записи из однйо колонки - имя таблицы
             resultSet = statement.executeQuery("SELECT name FROM sqlite_master WHERE type='table';");
 
-            System.out.println("resultSet = " + resultSet);
-
-            metaData = resultSet.getMetaData();
-            System.out.println("metaData = " + metaData);
-            System.out.println("getFetchSize = " + resultSet.getFetchSize());   // 0
-            System.out.println("getFetchDirection = " + resultSet.getFetchDirection());  // 1000
-
-
-            System.out.println("getColumnCount = " + metaData.getColumnCount());
-            //System.out.println("metaData = " + metaData);
-            //System.out.println("metaData = " + metaData);
-            //System.out.println("metaData = " + metaData);
+            while (resultSet.next()) {
+                System.out.println(" - " + resultSet.getObject(1));
+            }
             */
 
             /*
-
             Имена таблиц - 20 шт
  - devicebrands
  - sqlite_sequence
@@ -92,46 +91,21 @@ public class XiaomiIrDb {
  - version
              */
 
-            /*
-            while (resultSet.next()) {
-                System.out.println(" - " + resultSet.getObject(1));
-            }
-            //*/
-
-            /*
-            cursor = conn.cursor();
-
-            cursor.execute("SELECT name FROM sqlite_master WHERE type='table';");
-            tables = cursor.fetchall()
-
-            for table in tables:
-             print(table) # информация о таблицах
-             print(table[1]) #названия тадлиц
-
-             2)
-             " SELECT tbl_name, sql FROM sqlite_master WHERE type = 'table' AND sql LIKE '%RGB INTEGER%' " .Где RGB INTEGER - нужное имя и тип колонки
-
-
-             3)
-             // Регистрируем драйвер, с которым будем работать
-        // в нашем случае Sqlite
-        DriverManager.registerDriver(new JDBC());
-                    */
-
-            String str = "SELECT * FROM version;";  // 176 записей
+            String str = "SELECT * FROM kk_match;";
             resultSet = statement.executeQuery(str);
             metaData = resultSet.getMetaData();
             int columnCount = metaData.getColumnCount();
             System.out.println("-- getColumnCount = " + columnCount);
             System.out.println();
 
+            // колонки и тип данных в них
             for (int ic=1; ic<=columnCount; ic++) {
                 System.out.println(" - " + metaData.getColumnName(ic) + " / " + metaData.getColumnClassName(ic));
             }
             System.out.println();
             System.out.println();
 
-            // header
+            // header - имена колонок одной строкой
             for (int ic=1; ic<=columnCount; ic++) {
                 System.out.print(metaData.getColumnName(ic) + " | ");
             }
@@ -139,7 +113,7 @@ public class XiaomiIrDb {
 
             String content;
             int size = 0;
-            int number = 600;
+            int number = 6;
             while (resultSet.next()) {
                 size++;
                 //if (size > 5) break;
@@ -154,13 +128,10 @@ public class XiaomiIrDb {
                     }
                 }
                 System.out.println();
-
             }
             System.out.println("\ntable size = " + size);
 
-
         } catch (Exception e) {
-            //throw new RuntimeException(e);
             e.printStackTrace();
         } finally {
             try {
@@ -180,12 +151,8 @@ public class XiaomiIrDb {
         }
     }
 
-    private String parseContent(String content) {
-        return null;
-    }
 
-
-    public String decompress(byte[] bArr) throws IOException {
+    private String decompress(byte[] bArr) throws IOException {
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         GZIPInputStream gZIPInputStream = new GZIPInputStream(new ByteArrayInputStream(bArr));
         byte[] bArr2 = new byte[256];
@@ -199,7 +166,7 @@ public class XiaomiIrDb {
         }
     }
 
-    public String decryptData(String data, String key) throws Exception {
+    private String decryptData(String data, String key) throws Exception {
         if (data == null || key == null) {
             return null;
         }
