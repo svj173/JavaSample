@@ -34,19 +34,65 @@ public class CrcTestForIr {
         // 55600600c4022a00 - 55 60 06 00 c4 02 2a 00   --- 1c6     -- 454   -- 1 198
         //byte[] buffer = new byte[] {0x55, 0x60, 0x06, 0x00, (byte) 0xC4, 0x02, 0x2a, 0x00 };  // 196
         //short[] data = new short[] {0x55, 0x60, 0x06, 0x00, 0xC4, 0x02, 0x2a, 0x00 };  // 196
-        byte[] data = new byte[] {0x55, 0x60, 0x06, 0x00, (byte)0xC4, 0x02, 0x2a, 0x00 };  // C4 - 196
+        // 0xC4 = 196
+        // в байти С4 - это отрицательное число
+        byte[] dataByte = new byte[] {0x55, 0x60, 0x06, 0x00, (byte)0xC4, 0x02, 0x2a, 0x00 };  // C4 - 196
+        int[] dataInt = new int[] {0x55, 0x60, 0x06, 0x00, 0xC4, 0x02, 0x2a, 0x00 };  // C4 - 196
+        // todo long - точно знак пропадет
+        long[] dataLong = new long[] {0x55, 0x60, 0x06, 0x00, 0xC4, 0x02, 0x2a, 0x00 };  // C4 - 196
 
         // 55 00 06 00 0a 81 2a 00
-        byte[] data4 = new byte[] {0x55, 0x00, 0x06, 0x00, 0x0a, (byte)0x81, 0x2a, 0x00 };  // 81 -
+        byte[] dataByte4 = new byte[] {0x55, 0x00, 0x06, 0x00, 0x0a, (byte)0x81, 0x2a, 0x00 };  // 81 -
+
+        checkByte();
 
         //short[] result = handler.create16(data);
         //short[] result = handler.create32(data);
-        short result = handler.createSum(data);
+        //short result = handler.createSum4(dataInt);
+        long result = handler.createSumLong1(dataLong);
+
+        // исходник
+        //printSourceByte(dataByte);
+        printSource(dataLong);
 
         //System.out.println("result = " + DumpTools.printArray(result));
         System.out.println("result = " + result);
 
     }
+
+
+    private static void checkByte() {
+        /*
+        // 0xC4    - 196
+        //byte b0 = 196;
+        int i1 = 0xC4;
+        byte b1 = (byte)0xC4;
+        System.out.println("0xC4: int = " + i1 + "; byte = " + b1);
+        // 0xC4: int = 196; byte = -60
+
+        // int myInt = myByte & 0xff;
+        //short myShort = myByte & 0xff;
+        int myInt = i1 & 0xff;
+        short myInt2 = i1 & 0xff;
+
+        Byte.
+        */
+    }
+
+
+    private static void printSourceByte(byte[] data) {
+        for (int i=0; i < data.length; i++) {
+            System.out.print(Byte.toString(data[i])  + " ");
+        }
+    }
+
+    private static void printSource(long[] data) {
+        for (int i=0; i < data.length; i++) {
+            System.out.print(data[i] + " ");
+            System.out.println();
+        }
+    }
+
 
     private short[] create32(byte[] data) {
         CRC32 crc32 = new CRC32();
@@ -119,6 +165,58 @@ public class CrcTestForIr {
         short checksum = 0x00;
         for (int i=0; i < (data.length-1); i++) {
           checksum += data[i];
+        }
+        return checksum;
+    }
+
+    private byte createSum3(byte[] data) {
+        byte checksum = 0x00;
+        for (int i=0; i < (data.length-1); i++) {
+          checksum += data[i];
+        }
+        return checksum;
+    }
+
+    private short createSum2(byte[] data) {
+        short checksum = 0x00;
+        for (int i=0; i < (data.length-1); i++) {
+          checksum ^= data[i];
+        }
+        return checksum;
+        /*
+ int add(int a, int b) {
+   while (b != 0) {
+     int sum = a ^ b; // суммирование без переноса
+     int carry = (a & b) << 1; // перенос без суммирования
+     a = sum;
+     b = carry;
+   }
+   return a;
+ }
+
+         */
+    }
+
+    private int createSum4(int[] data) {
+        int checksum = 0x00;
+        for (int i=0; i < (data.length-1); i++) {
+          checksum += data[i];
+        }
+        return checksum;
+    }
+
+    private int createSum5(int[] data) {
+        int checksum = 0x00;
+        for (int i=0; i < (data.length-1); i++) {
+          checksum ^= data[i];
+        }
+        return checksum;
+    }
+
+    private long createSumLong1(long[] data) {
+        long checksum = 0x00;
+        for (int i=0; i < data.length; i++) {
+          checksum ^= data[i];
         }
         return checksum;
     }
